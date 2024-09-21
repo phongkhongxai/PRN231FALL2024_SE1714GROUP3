@@ -1,48 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Semester 8\\PRN231\\Recuitment_Project\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Migrations\\20240921062001_v2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessObjects\\Migrations\\20240921062001_v2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|d:\\semester 8\\prn231\\recuitment_project\\businessobjects\\entity\\recuitmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\entity\\recuitmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|d:\\semester 8\\prn231\\recuitment_project\\businessobjects\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|d:\\semester 8\\prn231\\recuitment_project\\businessobjects\\entity\\interview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\entity\\interview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|d:\\semester 8\\prn231\\recuitment_project\\businessobjects\\entity\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\entity\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Migrations\\20240921061436_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessObjects\\Migrations\\20240921061436_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Migrations\\20240921060653_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessObjects\\Migrations\\20240921060653_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\semester 8\\prn231\\recuitment_project\\recuitment_group3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|d:\\semester 8\\prn231\\recuitment_project\\businessobjects\\entity\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\entity\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\semester 8\\prn231\\recuitment_project\\recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -50,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -63,136 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20240921062001_v2.cs",
-              "DocumentMoniker": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Migrations\\20240921062001_v2.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Migrations\\20240921062001_v2.cs",
-              "ToolTip": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Migrations\\20240921062001_v2.cs",
-              "RelativeToolTip": "BusinessObjects\\Migrations\\20240921062001_v2.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T06:20:01.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Interview.cs",
-              "DocumentMoniker": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Entity\\Interview.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Entity\\Interview.cs",
-              "ToolTip": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Entity\\Interview.cs",
-              "RelativeToolTip": "BusinessObjects\\Entity\\Interview.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T06:18:55.184Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20240921061436_Initial.cs",
-              "DocumentMoniker": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Migrations\\20240921061436_Initial.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Migrations\\20240921061436_Initial.cs",
-              "ToolTip": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Migrations\\20240921061436_Initial.cs",
-              "RelativeToolTip": "BusinessObjects\\Migrations\\20240921061436_Initial.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T06:14:36.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "20240921060653_Initial.cs",
-              "DocumentMoniker": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Migrations\\20240921060653_Initial.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Migrations\\20240921060653_Initial.cs",
-              "ToolTip": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Migrations\\20240921060653_Initial.cs",
-              "RelativeToolTip": "BusinessObjects\\Migrations\\20240921060653_Initial.cs",
-              "ViewState": "AQIAACwBAAAAAAAAAAAYwA4AAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T06:06:53.978Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Application.cs",
-              "DocumentMoniker": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Entity\\Application.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Entity\\Application.cs",
-              "ToolTip": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Entity\\Application.cs",
-              "RelativeToolTip": "BusinessObjects\\Entity\\Application.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T06:04:15.672Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Semester 8\\PRN231\\Recuitment_Project\\Recuitment_Group3\\appsettings.json",
-              "RelativeDocumentMoniker": "Recuitment_Group3\\appsettings.json",
-              "ToolTip": "D:\\Semester 8\\PRN231\\Recuitment_Project\\Recuitment_Group3\\appsettings.json",
-              "RelativeToolTip": "Recuitment_Group3\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-21T05:54:01.802Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Role.cs",
-              "DocumentMoniker": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Entity\\Role.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Entity\\Role.cs",
-              "ToolTip": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Entity\\Role.cs",
-              "RelativeToolTip": "BusinessObjects\\Entity\\Role.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T05:52:58.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Entity\\User.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Entity\\User.cs",
-              "ToolTip": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Entity\\User.cs",
-              "RelativeToolTip": "BusinessObjects\\Entity\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T05:52:52.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RecuitmentDbContext.cs",
-              "DocumentMoniker": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Entity\\RecuitmentDbContext.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Entity\\RecuitmentDbContext.cs",
-              "ToolTip": "D:\\Semester 8\\PRN231\\Recuitment_Project\\BusinessObjects\\Entity\\RecuitmentDbContext.cs",
-              "RelativeToolTip": "BusinessObjects\\Entity\\RecuitmentDbContext.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAiwFUAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T05:45:04.939Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Semester 8\\PRN231\\Recuitment_Project\\Recuitment_Group3\\Program.cs",
-              "RelativeDocumentMoniker": "Recuitment_Group3\\Program.cs",
-              "ToolTip": "D:\\Semester 8\\PRN231\\Recuitment_Project\\Recuitment_Group3\\Program.cs",
-              "RelativeToolTip": "Recuitment_Group3\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T05:44:31.176Z",
-              "EditorCaption": ""
             }
           ]
         }
