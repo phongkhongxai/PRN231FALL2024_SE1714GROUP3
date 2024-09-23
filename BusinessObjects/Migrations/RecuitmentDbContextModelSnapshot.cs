@@ -30,11 +30,14 @@ namespace BusinessObjects.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
                     b.Property<long>("JobId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Resume")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long>("ResumeId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
@@ -45,6 +48,8 @@ namespace BusinessObjects.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("JobId");
+
+                    b.HasIndex("ResumeId");
 
                     b.HasIndex("UserId");
 
@@ -65,6 +70,9 @@ namespace BusinessObjects.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
@@ -74,12 +82,17 @@ namespace BusinessObjects.Migrations
                     b.Property<long?>("Round")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("ScheduleId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationId");
+
+                    b.HasIndex("ScheduleId");
 
                     b.ToTable("Interviews");
                 });
@@ -101,6 +114,9 @@ namespace BusinessObjects.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Position")
                         .IsRequired()
@@ -138,6 +154,31 @@ namespace BusinessObjects.Migrations
                     b.ToTable("JobSkills");
                 });
 
+            modelBuilder.Entity("BusinessObjects.Entity.Resume", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Resumes");
+                });
+
             modelBuilder.Entity("BusinessObjects.Entity.Role", b =>
                 {
                     b.Property<long>("Id")
@@ -145,6 +186,9 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -166,8 +210,8 @@ namespace BusinessObjects.Migrations
                     b.Property<TimeSpan?>("EndTime")
                         .HasColumnType("time");
 
-                    b.Property<long>("InterviewId")
-                        .HasColumnType("bigint");
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
@@ -183,8 +227,6 @@ namespace BusinessObjects.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("InterviewId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Schedules");
@@ -197,6 +239,9 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -224,6 +269,9 @@ namespace BusinessObjects.Migrations
 
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -272,6 +320,12 @@ namespace BusinessObjects.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("BusinessObjects.Entity.Resume", "Resume")
+                        .WithMany("Applications")
+                        .HasForeignKey("ResumeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("BusinessObjects.Entity.User", "User")
                         .WithMany("Applications")
                         .HasForeignKey("UserId")
@@ -279,6 +333,8 @@ namespace BusinessObjects.Migrations
                         .IsRequired();
 
                     b.Navigation("Job");
+
+                    b.Navigation("Resume");
 
                     b.Navigation("User");
                 });
@@ -291,7 +347,15 @@ namespace BusinessObjects.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("BusinessObjects.Entity.Schedule", "Schedule")
+                        .WithMany("Interviews")
+                        .HasForeignKey("ScheduleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Application");
+
+                    b.Navigation("Schedule");
                 });
 
             modelBuilder.Entity("BusinessObjects.Entity.Job", b =>
@@ -324,19 +388,22 @@ namespace BusinessObjects.Migrations
                     b.Navigation("Skill");
                 });
 
-            modelBuilder.Entity("BusinessObjects.Entity.Schedule", b =>
+            modelBuilder.Entity("BusinessObjects.Entity.Resume", b =>
                 {
-                    b.HasOne("BusinessObjects.Entity.Interview", "Interview")
-                        .WithMany("Schedules")
-                        .HasForeignKey("InterviewId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("BusinessObjects.Entity.User", "User")
+                        .WithMany("Resumes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Entity.Schedule", b =>
+                {
                     b.HasOne("BusinessObjects.Entity.User", "User")
                         .WithMany("Schedules")
                         .HasForeignKey("UserId");
-
-                    b.Navigation("Interview");
 
                     b.Navigation("User");
                 });
@@ -376,11 +443,6 @@ namespace BusinessObjects.Migrations
                     b.Navigation("Interviews");
                 });
 
-            modelBuilder.Entity("BusinessObjects.Entity.Interview", b =>
-                {
-                    b.Navigation("Schedules");
-                });
-
             modelBuilder.Entity("BusinessObjects.Entity.Job", b =>
                 {
                     b.Navigation("Applications");
@@ -388,9 +450,19 @@ namespace BusinessObjects.Migrations
                     b.Navigation("JobSkills");
                 });
 
+            modelBuilder.Entity("BusinessObjects.Entity.Resume", b =>
+                {
+                    b.Navigation("Applications");
+                });
+
             modelBuilder.Entity("BusinessObjects.Entity.Role", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Entity.Schedule", b =>
+                {
+                    b.Navigation("Interviews");
                 });
 
             modelBuilder.Entity("BusinessObjects.Entity.Skill", b =>
@@ -403,6 +475,8 @@ namespace BusinessObjects.Migrations
             modelBuilder.Entity("BusinessObjects.Entity.User", b =>
                 {
                     b.Navigation("Applications");
+
+                    b.Navigation("Resumes");
 
                     b.Navigation("Schedules");
 

@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AutoMapper/13.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.35.0": {
         "type": "package",
         "dependencies": {
@@ -1202,6 +1218,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "AutoMapper": "13.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.2",
           "Microsoft.Extensions.Configuration": "8.0.0",
           "Microsoft.Extensions.Configuration.Json": "8.0.0"
@@ -1213,35 +1230,51 @@
           "bin/placeholder/BusinessObjects.dll": {}
         }
       },
-      "DAO/1.0.0": {
+      "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "BusinessObjects": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/DAO.dll": {}
+          "bin/placeholder/DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DAO.dll": {}
+          "bin/placeholder/DAL.dll": {}
         }
       },
-      "Repositories/1.0.0": {
+      "Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "DAO": "1.0.0"
+          "BusinessObjects": "1.0.0",
+          "DAL": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Repositories.dll": {}
+          "bin/placeholder/Services.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Repositories.dll": {}
+          "bin/placeholder/Services.dll": {}
         }
       }
     }
   },
   "libraries": {
+    "AutoMapper/13.0.1": {
+      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "type": "package",
+      "path": "automapper/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.13.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net6.0/AutoMapper.dll",
+        "lib/net6.0/AutoMapper.xml"
+      ]
+    },
     "Azure.Core/1.35.0": {
       "sha512": "hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==",
       "type": "package",
@@ -3547,42 +3580,38 @@
       "path": "../BusinessObjects/BusinessObjects.csproj",
       "msbuildProject": "../BusinessObjects/BusinessObjects.csproj"
     },
-    "DAO/1.0.0": {
+    "DAL/1.0.0": {
       "type": "project",
-      "path": "../DAO/DAO.csproj",
-      "msbuildProject": "../DAO/DAO.csproj"
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
     },
-    "Repositories/1.0.0": {
+    "Services/1.0.0": {
       "type": "project",
-      "path": "../Repositories/Repositories.csproj",
-      "msbuildProject": "../Repositories/Repositories.csproj"
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Repositories >= 1.0.0",
+      "BusinessObjects >= 1.0.0",
+      "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\84868\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\phong.truong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Semester 8\\PRN231\\Recuitment_Project\\Recuitment_Group3\\Recuitment_Group3.csproj",
+      "projectUniqueName": "D:\\FPT\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Recuitment_Group3.csproj",
       "projectName": "Recuitment_Group3",
-      "projectPath": "D:\\Semester 8\\PRN231\\Recuitment_Project\\Recuitment_Group3\\Recuitment_Group3.csproj",
-      "packagesPath": "C:\\Users\\84868\\.nuget\\packages\\",
-      "outputPath": "D:\\Semester 8\\PRN231\\Recuitment_Project\\Recuitment_Group3\\obj\\",
+      "projectPath": "D:\\FPT\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Recuitment_Group3.csproj",
+      "packagesPath": "C:\\Users\\phong.truong\\.nuget\\packages\\",
+      "outputPath": "D:\\FPT\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\84868\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\phong.truong\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3590,15 +3619,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Semester 8\\PRN231\\Recuitment_Project\\Repositories\\Repositories.csproj": {
-              "projectPath": "D:\\Semester 8\\PRN231\\Recuitment_Project\\Repositories\\Repositories.csproj"
+            "D:\\FPT\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\BusinessObjects.csproj": {
+              "projectPath": "D:\\FPT\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\BusinessObjects.csproj"
+            },
+            "D:\\FPT\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Services.csproj": {
+              "projectPath": "D:\\FPT\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Services.csproj"
             }
           }
         }
@@ -3607,11 +3638,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3642,7 +3668,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
