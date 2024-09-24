@@ -1,0 +1,16 @@
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\bin\Debug\net8.0\DAL.deps.json
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\bin\Debug\net8.0\DAL.dll
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\bin\Debug\net8.0\DAL.pdb
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\bin\Debug\net8.0\BusinessObjects.dll
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\bin\Debug\net8.0\BusinessObjects.pdb
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\DAL.csproj.Up2Date
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\DAL.dll
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\refint\DAL.dll
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\DAL.pdb
+D:\Semester 8\PRN231\PRN231FALL2024_SE1714GROUP3\DAL\obj\Debug\net8.0\ref\DAL.dll
