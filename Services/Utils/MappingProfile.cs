@@ -9,7 +9,9 @@ namespace Services.Utils
         public MappingProfile()
         {
             CreateMap<User, UserDTO>();
-            CreateMap<UserDTO, User>();
+            CreateMap<UserDTO, User>(); 
+            CreateMap<Job, JobDTO>(); 
+            CreateMap<JobCreateDTO, Job>();
         }
     }
 }
