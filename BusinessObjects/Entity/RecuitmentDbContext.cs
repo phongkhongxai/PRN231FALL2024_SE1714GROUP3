@@ -11,6 +11,7 @@ namespace BusinessObjects.Entity
         public DbSet<Role> Roles { get; set; }
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Skill> Skills { get; set; }
+        public DbSet<Resume> Resumes { get; set; } 
         public DbSet<UserSkill> UserSkills { get; set; }
         public DbSet<JobSkill> JobSkills { get; set; }
         public DbSet<Application> Applications { get; set; }
@@ -25,7 +26,7 @@ namespace BusinessObjects.Entity
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345;database=RecuitmentDB;TrustServerCertificate=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-MKM1I2A\\PHONGTT;uid=sa;pwd=12345;database=RecuitmentDB;TrustServerCertificate=True;");
 
             }
         }
@@ -83,10 +84,10 @@ namespace BusinessObjects.Entity
                 .WithMany(i => i.Interviews)
                 .HasForeignKey(i => i.ApplicationId);
 
-            modelBuilder.Entity<Schedule>()
-                .HasOne(s => s.Interview)
-                .WithMany(s => s.Schedules)
-                .HasForeignKey(s => s.InterviewId);
+            modelBuilder.Entity<Interview>()
+                .HasOne(s => s.Schedule)
+                .WithMany(s => s.Interviews)
+                .HasForeignKey(s => s.ScheduleId);
 
             modelBuilder.Entity<Schedule>()
                 .HasOne(s => s.User)
@@ -97,6 +98,19 @@ namespace BusinessObjects.Entity
                 .HasOne(u => u.Role)
                 .WithMany(u => u.Users)
                 .HasForeignKey(u => u.RoleId);
+
+            modelBuilder.Entity<Resume>()
+                .HasOne(r => r.User) 
+                .WithMany(r => r.Resumes)
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.Restrict); ;
+
+            modelBuilder.Entity<Application>()
+                .HasOne(a => a.Resume)
+                .WithMany(a => a.Applications)
+                .HasForeignKey(a => a.ResumeId)
+                .OnDelete(DeleteBehavior.Restrict); ;  
+
         }
     }
 }
