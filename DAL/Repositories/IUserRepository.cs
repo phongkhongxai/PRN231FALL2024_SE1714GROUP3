@@ -9,6 +9,6 @@ namespace DAL.Repositories
 {
     public interface IUserRepository
     {
-        public User GetUserById(long id);
+        Task<User> GetUserByIdAsync(long id);
     }
 }

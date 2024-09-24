@@ -14,9 +14,10 @@ namespace Services.Impl
             this.userRepository = userRepository;
             this.mapper = mapper;
         }
-        public UserDTO GetUserById(long id)
+        public async Task<UserDTO> GetUserById(long id)
         {
-            return mapper.Map<UserDTO>(userRepository.GetUserById(id));
+            var user = await userRepository.GetUserByIdAsync(id);
+            return mapper.Map<UserDTO>(user);
         }
     }
 }
