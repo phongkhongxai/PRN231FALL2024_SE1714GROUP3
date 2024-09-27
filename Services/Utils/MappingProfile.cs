@@ -10,8 +10,11 @@ namespace Services.Utils
         {
             CreateMap<User, UserDTO>();
             CreateMap<UserDTO, User>(); 
+            CreateMap<UserUpdateDTO, User>();
             CreateMap<Job, JobDTO>(); 
             CreateMap<JobCreateDTO, Job>();
+            CreateMap<JobUpdateDTO, Job>();
+
         }
     }
 }

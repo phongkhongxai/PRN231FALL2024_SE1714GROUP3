@@ -15,7 +15,7 @@ namespace DAL.Repositories.Impl
             return await UserDAO.Instance.GetUserById(id);
         }
         public async Task<List<User>> GetAllUsers()=> await UserDAO.Instance.GetAllUsers();
-        public async Task DeleteUser(long id)=> await UserDAO.Instance.DeleteUser(id);
-        public async Task UpdateUser(User user)=> await UserDAO.Instance.UpdateUser(user);
+        public async Task<bool> DeleteUser(long id)=> await UserDAO.Instance.DeleteUser(id);
+        public async Task<User> UpdateUser(User user)=> await UserDAO.Instance.UpdateUser(user);
     }
 }

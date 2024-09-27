@@ -28,24 +28,45 @@ namespace Services.Impl
             return mapper.Map<List<UserDTO>>(user);
         }
 
-        public async Task UpdateUser(UserDTO userDTO)
-        {
-            var user = await userRepository.GetUserByIdAsync(userDTO.Id);
-            if (user != null)
-            {
-                mapper.Map(userDTO, user);
-                await userRepository.UpdateUser(user);
-            }
-        }
-
-        public async Task DeleteUser(long id)
+        public async Task<UserDTO> UpdateUser(long id, UserUpdateDTO userDTO)
         {
             var user = await userRepository.GetUserByIdAsync(id);
             if (user != null)
             {
-                //mapper.Map(userDTO, user);
-                await userRepository.DeleteUser(id);
+                if (userDTO.Email != null)
+                {
+                    user.Email= userDTO.Email;
+                }
+                if (userDTO.Address != null)
+                {
+                    user.Address = userDTO.Address;
+                }
+                if (userDTO.Phone != null)
+                {
+                    user.Phone = userDTO.Phone;
+                }
+                if (userDTO.Gender != null)
+                {
+                    user.Gender = userDTO.Gender;
+                }
+                var updated = await userRepository.UpdateUser(user);
+                return mapper.Map<UserDTO>(updated);
             }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<bool> DeleteUser(long id)
+        {
+            var user = await userRepository.GetUserByIdAsync(id);
+            if (user == null)
+            {
+                return false;
+            }
+            return await userRepository.DeleteUser(id);
+
         }
     }
 }

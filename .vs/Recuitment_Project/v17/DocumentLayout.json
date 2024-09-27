@@ -3,36 +3,32 @@
   "WorkspaceRootPath": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\recuitment_group3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\recuitment_group3\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\services\\impl\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\recuitment_group3\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\services\\impl\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\services\\ijobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\ijobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\dal\\dbcontenxt\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\dal\\dbcontenxt\\jobdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\jobdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\services\\utils\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\utils\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\services\\impl\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\services\\impl\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\businessobjects\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\dal\\repositories\\impl\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,28 +39,12 @@
       "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\dal\\dbcontenxt\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\services\\utils\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\utils\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\dal\\dbcontenxt\\authdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\authdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\dal\\repositories\\impl\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\impl\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\dal\\repositories\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|d:\\fptu_ky8\\prn231\\prn231fall2024_se1714group3\\businessobjects\\dto\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\dto\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,8 +54,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\IUserRepository.cs",
+              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IUserRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T18:05:15.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserUpdateDTO.cs",
+              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\UserUpdateDTO.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\DTO\\UserUpdateDTO.cs",
+              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\UserUpdateDTO.cs",
+              "RelativeToolTip": "BusinessObjects\\DTO\\UserUpdateDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T17:50:17.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\Impl\\UserRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\Impl\\UserRepository.cs",
+              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\Impl\\UserRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\Impl\\UserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T17:47:40.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JobDAO.cs",
+              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\JobDAO.cs",
+              "RelativeDocumentMoniker": "DAL\\DbContenxt\\JobDAO.cs",
+              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\JobDAO.cs",
+              "RelativeToolTip": "DAL\\DbContenxt\\JobDAO.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwFQAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T17:46:02.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserDAO.cs",
+              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\UserDAO.cs",
+              "RelativeDocumentMoniker": "DAL\\DbContenxt\\UserDAO.cs",
+              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\UserDAO.cs",
+              "RelativeToolTip": "DAL\\DbContenxt\\UserDAO.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwDQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T17:46:25.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\IUserService.cs",
+              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IUserService.cs",
+              "RelativeToolTip": "Services\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T17:44:23.048Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -87,195 +145,67 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "JobService.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\JobService.cs",
-              "RelativeDocumentMoniker": "Services\\Impl\\JobService.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\JobService.cs",
-              "RelativeToolTip": "Services\\Impl\\JobService.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAIwD0AAAAxAAAA",
+              "Title": "JobsController.cs",
+              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\JobsController.cs",
+              "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\JobsController.cs",
+              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\JobsController.cs",
+              "RelativeToolTip": "Recuitment_Group3\\Controllers\\JobsController.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAcwD4AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T03:07:25.099Z"
+              "WhenOpened": "2024-09-27T16:51:37.018Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IJobService.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IJobService.cs",
-              "RelativeDocumentMoniker": "Services\\IJobService.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IJobService.cs",
-              "RelativeToolTip": "Services\\IJobService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Recuitment_Group3\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAQwCcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T03:07:23.105Z"
+              "WhenOpened": "2024-09-27T16:49:43.034Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Utils\\MappingProfile.cs",
               "RelativeDocumentMoniker": "Services\\Utils\\MappingProfile.cs",
               "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Utils\\MappingProfile.cs",
               "RelativeToolTip": "Services\\Utils\\MappingProfile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAmAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:56:11.351Z"
+              "WhenOpened": "2024-09-25T02:56:11.351Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\Impl\\UserService.cs",
               "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\UserService.cs",
               "RelativeToolTip": "Services\\Impl\\UserService.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAQwBIAAAA3AAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAIwEEAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:56:05.01Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserDTO.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\UserDTO.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\DTO\\UserDTO.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\UserDTO.cs",
-              "RelativeToolTip": "BusinessObjects\\DTO\\UserDTO.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA4AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:55:12.715Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IUserService.cs",
-              "RelativeDocumentMoniker": "Services\\IUserService.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IUserService.cs",
-              "RelativeToolTip": "Services\\IUserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:54:31.909Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\Impl\\UserRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\Impl\\UserRepository.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\Impl\\UserRepository.cs",
-              "RelativeToolTip": "DAL\\Repositories\\Impl\\UserRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:52:37.408Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\IUserRepository.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IUserRepository.cs",
-              "RelativeToolTip": "DAL\\Repositories\\IUserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:51:27.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserDAO.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\UserDAO.cs",
-              "RelativeDocumentMoniker": "DAL\\DbContenxt\\UserDAO.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\UserDAO.cs",
-              "RelativeToolTip": "DAL\\DbContenxt\\UserDAO.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAgwDkAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:39:19.759Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "JobDAO.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\JobDAO.cs",
-              "RelativeDocumentMoniker": "DAL\\DbContenxt\\JobDAO.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\JobDAO.cs",
-              "RelativeToolTip": "DAL\\DbContenxt\\JobDAO.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAmwFQAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:21:16.883Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AuthDAO.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\AuthDAO.cs",
-              "RelativeDocumentMoniker": "DAL\\DbContenxt\\AuthDAO.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\AuthDAO.cs",
-              "RelativeToolTip": "DAL\\DbContenxt\\AuthDAO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T02:21:09.235Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Recuitment_Group3\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T18:54:58.027Z",
+              "WhenOpened": "2024-09-27T17:42:09.715Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IAuthRepository.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IAuthRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\IAuthRepository.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IAuthRepository.cs",
-              "RelativeToolTip": "DAL\\Repositories\\IAuthRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAA+AAAA",
+              "DocumentIndex": 5,
+              "Title": "JobService.cs",
+              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\JobService.cs",
+              "RelativeDocumentMoniker": "Services\\Impl\\JobService.cs",
+              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\JobService.cs",
+              "RelativeToolTip": "Services\\Impl\\JobService.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwDMAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T18:47:42.402Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AuthRepository.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\Impl\\AuthRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\Impl\\AuthRepository.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\Impl\\AuthRepository.cs",
-              "RelativeToolTip": "DAL\\Repositories\\Impl\\AuthRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T18:47:30.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IAuthService.cs",
-              "RelativeDocumentMoniker": "Services\\IAuthService.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IAuthService.cs",
-              "RelativeToolTip": "Services\\IAuthService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T18:47:04.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\AuthService.cs",
-              "RelativeDocumentMoniker": "Services\\Impl\\AuthService.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\AuthService.cs",
-              "RelativeToolTip": "Services\\Impl\\AuthService.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwCgAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T18:46:39.398Z"
+              "WhenOpened": "2024-09-25T03:07:25.099Z",
+              "EditorCaption": ""
             }
           ]
         }

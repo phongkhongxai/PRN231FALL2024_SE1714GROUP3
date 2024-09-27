@@ -22,7 +22,7 @@ namespace Services.Impl
         }
         public async Task<JobDTO> CreateJobAsync(JobCreateDTO jobCreateDto)
         {
-            var job = _mapper.Map<Job>(jobCreateDto); // Map từ JobCreateDTO sang Job entity
+            var job = _mapper.Map<Job>(jobCreateDto); 
             var createdJob = await _jobRepository.CreateJobAsync(job);
             return _mapper.Map<JobDTO>(createdJob);
         }
@@ -49,17 +49,35 @@ namespace Services.Impl
             return _mapper.Map<JobDTO>(job);
         }
 
-        public async Task<JobDTO> UpdateJobAsync(long id, JobCreateDTO jobCreateDto)
+        public async Task<JobDTO> UpdateJobAsync(long id, JobUpdateDTO jobCreateDto)
         {
             var job = await _jobRepository.GetJobByIdAsync(id);
             if (job == null)
             {
-                return null;  
-            } 
-            _mapper.Map(jobCreateDto, job);
-            var updatedJob = await _jobRepository.UpdateJobAsync(job);
+                return null;
+            }
 
+            // Kiểm tra và cập nhật từng trường
+            if (jobCreateDto.Title != null)
+            {
+                job.Title = jobCreateDto.Title;
+            }
+            if (jobCreateDto.Description != null)
+            {
+                job.Description = jobCreateDto.Description;
+            }
+            if (jobCreateDto.Position != null)
+            {
+                job.Position = jobCreateDto.Position;
+            }
+            if (jobCreateDto.Amount.HasValue)
+            {
+                job.Amount = jobCreateDto.Amount.Value;
+            }
+
+            var updatedJob = await _jobRepository.UpdateJobAsync(job);
             return _mapper.Map<JobDTO>(updatedJob);
         }
+
     }
 }
