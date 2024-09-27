@@ -16,8 +16,16 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 //builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IJobService, JobService>();
+
+
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IJobRepository, JobRepository>();
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 
@@ -66,36 +74,6 @@ builder.Services.AddAuthentication(item =>
 });
 
 builder.Services.AddEndpointsApiExplorer();
-// Config JWT for swagger
-builder.Services.AddSwaggerGen(c =>
-{
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "Enter the Bearer Authorization string as following: `Bearer Generated-JWT-Token`",
-    });
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                },
-                Scheme = "oauth2",
-                Name = "Bearer",
-                In = ParameterLocation.Header,
-            },
-            new string[] {}
-        }
-    });
-});
 
 builder.Services.AddCors(option =>
 {
