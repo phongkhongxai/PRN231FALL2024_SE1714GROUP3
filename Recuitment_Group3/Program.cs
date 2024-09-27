@@ -1,4 +1,4 @@
-using DAL.Repositories.Impl;
+﻿using DAL.Repositories.Impl;
 using DAL.Repositories;
 using Services.Impl;
 using Services;
@@ -14,9 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+//builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 
@@ -66,16 +65,61 @@ builder.Services.AddAuthentication(item =>
     };
 });
 
+builder.Services.AddEndpointsApiExplorer();
+// Config JWT for swagger
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter the Bearer Authorization string as following: `Bearer Generated-JWT-Token`",
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
+                Scheme = "oauth2",
+                Name = "Bearer",
+                In = ParameterLocation.Header,
+            },
+            new string[] {}
+        }
+    });
+});
+
+builder.Services.AddCors(option =>
+{
+    option.AddDefaultPolicy(p =>
+            p.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "OData V1");
+    });
 }
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 

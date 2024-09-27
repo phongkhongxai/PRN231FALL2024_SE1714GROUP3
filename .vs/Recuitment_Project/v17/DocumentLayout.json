@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\repositories\\impl\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\impl\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\repositories\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\semester 8\\prn231\\prn231fall2024_se1714group3\\recuitment_group3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\semester 8\\prn231\\prn231fall2024_se1714group3\\recuitment_group3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\semester 8\\prn231\\prn231fall2024_se1714group3\\services\\irefreshhandlerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\irefreshhandlerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\semester 8\\prn231\\prn231fall2024_se1714group3\\recuitment_group3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|d:\\semester 8\\prn231\\prn231fall2024_se1714group3\\businessobjects\\dto\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,28 +59,8 @@
       "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\irefreshhandlerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\dbcontenxt\\authdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\authdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\repositories\\impl\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\impl\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\repositories\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\services\\impl\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -86,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "AuthDTO.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\AuthDTO.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\DTO\\AuthDTO.cs",
@@ -115,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "TokenDTO.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\TokenDTO.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\DTO\\TokenDTO.cs",
@@ -128,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "IRefreshHandlerRepository.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IRefreshHandlerRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\IRefreshHandlerRepository.cs",
@@ -141,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "RefreshHandlerRepository.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\Impl\\RefreshHandlerRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\Impl\\RefreshHandlerRepository.cs",
@@ -154,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "RefreshHandlerService.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\RefreshHandlerService.cs",
               "RelativeDocumentMoniker": "Services\\Impl\\RefreshHandlerService.cs",
@@ -167,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "IRefreshHandlerService.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IRefreshHandlerService.cs",
               "RelativeDocumentMoniker": "Services\\IRefreshHandlerService.cs",
@@ -180,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "RefreshToken.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\RefreshToken.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Entity\\RefreshToken.cs",
@@ -193,20 +193,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\AuthController.cs",
               "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Recuitment_Group3\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAgwIoAAAAiAAAA",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAgwFQAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T09:03:18.925Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\appsettings.json",
               "RelativeDocumentMoniker": "Recuitment_Group3\\appsettings.json",
@@ -219,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "AuthDAO.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\AuthDAO.cs",
               "RelativeDocumentMoniker": "DAL\\DbContenxt\\AuthDAO.cs",
@@ -244,13 +244,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "AuthRepository.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\Impl\\AuthRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\Impl\\AuthRepository.cs",
               "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\Impl\\AuthRepository.cs",
               "RelativeToolTip": "DAL\\Repositories\\Impl\\AuthRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA8AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T03:33:36.365Z",
               "EditorCaption": ""
@@ -281,13 +281,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Program.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Program.cs",
               "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Program.cs",
               "RelativeToolTip": "Recuitment_Group3\\Program.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAkwBkAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-25T06:29:19.991Z",
               "EditorCaption": ""
@@ -306,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "IAuthRepository.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IAuthRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\IAuthRepository.cs",
@@ -319,26 +319,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IAuthService.cs",
               "RelativeDocumentMoniker": "Services\\IAuthService.cs",
               "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\IAuthService.cs",
               "RelativeToolTip": "Services\\IAuthService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T18:47:04.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 3,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\AuthService.cs",
               "RelativeDocumentMoniker": "Services\\Impl\\AuthService.cs",
               "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\AuthService.cs",
               "RelativeToolTip": "Services\\Impl\\AuthService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAABFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T18:46:39.398Z",
               "EditorCaption": ""

@@ -27,7 +27,7 @@ namespace DAL.DbContenxt
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345;database=RecuitmentDB;TrustServerCertificate=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-MKM1I2A\\PHONGTT;uid=sa;pwd=12345;database=RecuitmentDB;TrustServerCertificate=True;");
 
             }
         }
