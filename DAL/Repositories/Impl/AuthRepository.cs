@@ -10,6 +10,11 @@ namespace DAL.Repositories.Impl
 {
     public class AuthRepository : IAuthRepository
     {
+        public void CreateUser(User user)
+        {
+            AuthDAO.Instance.CreateUser(user);
+        }
+
         public User GetUserByEmailOrUsername(string emailOrUsername)
         {
             return AuthDAO.Instance.GetUserByEmailOrUsername(emailOrUsername);

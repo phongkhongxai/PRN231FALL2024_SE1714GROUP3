@@ -1,0 +1,45 @@
+﻿using BusinessObjects.Entity;
+using DAL.DbContenxt;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DAL.Repositories.Impl
+{
+    public class JobRepository : IJobRepository
+    {
+        public async Task<IEnumerable<Job>> GetAllJobsAsync()
+        {
+            return await JobDAO.Instance.GetAllAsync();
+        }
+
+        public async Task<Job> GetJobByIdAsync(long id)
+        {
+            return await JobDAO.Instance.GetByIdAsync(id);
+        }
+
+        public async Task<Job> CreateJobAsync(Job job)
+        {
+            return await JobDAO.Instance.AddAsync(job);
+        }
+
+        public async Task<Job> UpdateJobAsync(Job job)
+        {
+            return await JobDAO.Instance.UpdateAsync(job);
+        }
+
+        public async Task<bool> DeleteAsync(long id)
+        {
+            return await JobDAO.Instance.DeleteAsync(id);
+        }
+        //demo use findAsync
+        public async Task<IEnumerable<Job>> GetHighPayingJobsAsync(long salaryThreshold)
+        {
+            return await JobDAO.Instance.FindAsync(j => j.Amount > salaryThreshold);
+        } 
+        
+    }
+}

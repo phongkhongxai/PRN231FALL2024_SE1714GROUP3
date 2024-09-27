@@ -28,5 +28,18 @@ namespace Recuitment_Group3.Controllers
 
             return Ok(authResult);
         }
+
+        [HttpPost("register")]
+        public IActionResult Signup([FromBody] UserDTO userDTO)
+        {
+            try
+            {
+                var user = _authService.SignUp(userDTO);
+                return Ok(user);
+            } catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

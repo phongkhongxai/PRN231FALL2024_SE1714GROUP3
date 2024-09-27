@@ -10,10 +10,57 @@ namespace DAL.DbContenxt
 {
     public class UserDAO
     {
-        public static User GetUserById(long id)
+        private static UserDAO instance;
+        public static UserDAO Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new UserDAO();
+                }
+                return instance; 
+            }
+        }
+        public async Task<User> GetUserById(long id)
         {
             using var db = new RecuitmentDbContext();
-            return db.Users.Include(u => u.Role).FirstOrDefault(u => u.Id == id && !u.IsDelete);
+            return db.Users.Include(u => u.Role)
+                .Include(u => u.Resumes)
+                .Include(u => u.Applications)
+                .Include(u => u.Schedules)
+                .Include(u => u.UserSkills)
+                .FirstOrDefault(u => u.Id == id && !u.IsDelete);
         }
+        public async Task<List<User>> GetAllUsers()
+        {
+            using var db = new RecuitmentDbContext();
+            return await db.Users.Include(u => u.Role)
+                .Include(u => u.Resumes)
+                .Include(u => u.Applications)
+                .Include(u => u.Schedules)
+                .Include(u => u.UserSkills)
+                .Where(u => !u.IsDelete).ToListAsync();
+        }
+
+        public async Task UpdateUser(User user)
+        {
+            using var db = new RecuitmentDbContext();
+            db.Entry(user).State = EntityState.Modified;
+            await db.SaveChangesAsync();
+        }
+
+        public async Task DeleteUser(long id)
+        {
+            var db = new RecuitmentDbContext();
+            var user = await db.Users.FindAsync(id);
+            if (user != null)
+            {
+                user.IsDelete = true;
+                db.Entry(user).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+            }
+        }
+
     }
 }

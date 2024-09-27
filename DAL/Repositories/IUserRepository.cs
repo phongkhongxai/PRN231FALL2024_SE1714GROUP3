@@ -9,6 +9,10 @@ namespace DAL.Repositories
 {
     public interface IUserRepository
     {
-        public User GetUserById(long id);
+        Task<User> GetUserByIdAsync(long id);
+        Task<List<User>> GetAllUsers();
+        Task UpdateUser(User user);
+        Task DeleteUser(long id);
+
     }
 }

@@ -9,6 +9,10 @@ namespace Services
 {
     public interface IUserService
     {
-        public UserDTO GetUserById(long id); 
+        public Task<UserDTO> GetUserById(long id);
+        Task<List<UserDTO>> GetAllUsers();
+        Task UpdateUser(UserDTO userDTO);
+        Task DeleteUser(long id);
+
     }
 }

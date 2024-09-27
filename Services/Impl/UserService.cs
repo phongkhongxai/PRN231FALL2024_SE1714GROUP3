@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BusinessObjects.DTO;
-using DAL.Repositories; 
+using DAL.DbContenxt;
+using DAL.Repositories;
 
 namespace Services.Impl
 {
@@ -14,9 +15,37 @@ namespace Services.Impl
             this.userRepository = userRepository;
             this.mapper = mapper;
         }
-        public UserDTO GetUserById(long id)
+
+        public async Task<UserDTO> GetUserById(long id)
         {
-            return mapper.Map<UserDTO>(userRepository.GetUserById(id));
+            var user = await userRepository.GetUserByIdAsync(id);
+            return mapper.Map<UserDTO>(user);
+        }
+
+        public async Task<List<UserDTO>> GetAllUsers()
+        {
+            var user = await userRepository.GetAllUsers();
+            return mapper.Map<List<UserDTO>>(user);
+        }
+
+        public async Task UpdateUser(UserDTO userDTO)
+        {
+            var user = await userRepository.GetUserByIdAsync(userDTO.Id);
+            if (user != null)
+            {
+                mapper.Map(userDTO, user);
+                await userRepository.UpdateUser(user);
+            }
+        }
+
+        public async Task DeleteUser(long id)
+        {
+            var user = await userRepository.GetUserByIdAsync(id);
+            if (user != null)
+            {
+                //mapper.Map(userDTO, user);
+                await userRepository.DeleteUser(id);
+            }
         }
     }
 }

@@ -10,9 +10,12 @@ namespace DAL.Repositories.Impl
 {
     public class UserRepository : IUserRepository
     {
-        public User GetUserById(long id)
+        public async Task<User> GetUserByIdAsync(long id)
         {
-            return UserDAO.GetUserById(id);
+            return await UserDAO.Instance.GetUserById(id);
         }
+        public async Task<List<User>> GetAllUsers()=> await UserDAO.Instance.GetAllUsers();
+        public async Task DeleteUser(long id)=> await UserDAO.Instance.DeleteUser(id);
+        public async Task UpdateUser(User user)=> await UserDAO.Instance.UpdateUser(user);
     }
 }
