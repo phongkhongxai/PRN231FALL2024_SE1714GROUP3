@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Recuitment_Group3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4868a5f9459054a0fce2804de91dbe650e37377")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf1a275eabce3aacaf310c46afb00bbe5a34fa42")]
 [assembly: System.Reflection.AssemblyProductAttribute("Recuitment_Group3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Recuitment_Group3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
