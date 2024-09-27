@@ -10,6 +10,6 @@ namespace DAL.Repositories
     public interface IAuthRepository
     {
         User GetUserByEmailOrUsername(string emailOrUsername);
-
+        void CreateUser(User user);
     }
 }

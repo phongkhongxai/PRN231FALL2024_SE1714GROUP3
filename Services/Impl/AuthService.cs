@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Services.Impl
@@ -24,7 +25,7 @@ namespace Services.Impl
         public AuthDTO Authenticate(string emailOrUsername, string password)
         {
             var user = _authRepository.GetUserByEmailOrUsername(emailOrUsername);
-            if (user == null || user.Password != password) 
+            if (user == null || user.Password != HashPassword(password))
             {
                 return new AuthDTO
                 {
@@ -43,12 +44,56 @@ namespace Services.Impl
             };
         }
 
-        public string GenerateJwtToken(User user)
+        public UserDTO SignUp(UserDTO userDTO)
         {
-            var claims = new[]
+            if (_authRepository.GetUserByEmailOrUsername(userDTO.Email) != null)
+            {
+                throw new Exception("User already exists with this email or username.");
+            }
+
+            var newUser = CreateUser(userDTO);
+            _authRepository.CreateUser(newUser);
+
+            return MapToUserDTO(newUser);
+        }
+
+        private User CreateUser(UserDTO userDTO)
+        {
+            return new User
+            {
+                Username = userDTO.Username,
+                Email = userDTO.Email,
+                Password = HashPassword(userDTO.Password),
+                Phone = userDTO.Phone ?? "default",
+                Address = userDTO.Address ?? "default",
+                Gender = userDTO.Gender ?? "default",
+                RoleId = 1,
+                IsDelete = false
+            };
+        }
+
+        private UserDTO MapToUserDTO(User user)
+        {
+            return new UserDTO
+            {
+                Id = user.Id,
+                Username = user.Username,
+                Email = user.Email,
+                Password = user.Password,
+                Phone = user.Phone,
+                Address = user.Address,
+                Gender = user.Gender,
+                RoleId = user.RoleId
+            };
+        }
+
+        private string GenerateJwtToken(User user)
+        {
+            var authClaims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Role, user.RoleId.ToString())  
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -57,12 +102,26 @@ namespace Services.Impl
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
-                claims: claims,
+                claims: authClaims,
                 expires: DateTime.UtcNow.AddHours(1),
                 signingCredentials: creds
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                var builder = new StringBuilder();
+                foreach (var b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
     }
 }
