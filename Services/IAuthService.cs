@@ -10,7 +10,7 @@ namespace Services
 {
     public interface IAuthService
     {
-        AuthDTO Authenticate(string emailOrUsername, string password);
+        Task<AuthDTO> Authenticate(string emailOrUsername, string password);
         string GenerateJwtToken(User user);
         UserDTO SignUp(UserDTO user);
     }

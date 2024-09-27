@@ -22,9 +22,9 @@ namespace Services.Impl
             _configuration = configuration;
         }
 
-        public AuthDTO Authenticate(string emailOrUsername, string password)
+        public async Task<AuthDTO> Authenticate(string emailOrUsername, string password)
         {
-            var user = _authRepository.GetUserByEmailOrUsername(emailOrUsername);
+            var user = await _authRepository.GetUserByEmailOrUsername(emailOrUsername);
             if (user == null || user.Password != HashPassword(password)) 
             {
                 return new AuthDTO

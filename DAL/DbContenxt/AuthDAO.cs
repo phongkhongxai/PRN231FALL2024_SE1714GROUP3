@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,10 @@ namespace DAL.DbContenxt
             }
         }
 
-        public User GetUserByEmailOrUsername(string emailOrUsername)
+        public Task<User> GetUserByEmailOrUsername(string emailOrUsername)
         {
             var db = new RecuitmentDbContext();
-            return db.Users.FirstOrDefault(c => c.Email == emailOrUsername || c.Username == emailOrUsername);
+            return db.Users.FirstOrDefaultAsync(c => c.Email == emailOrUsername || c.Username == emailOrUsername);
         }
 
         public void CreateUser(User user)
