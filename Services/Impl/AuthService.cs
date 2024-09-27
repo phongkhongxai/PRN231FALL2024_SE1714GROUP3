@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Services.Impl
@@ -24,7 +25,7 @@ namespace Services.Impl
         public AuthDTO Authenticate(string emailOrUsername, string password)
         {
             var user = _authRepository.GetUserByEmailOrUsername(emailOrUsername);
-            if (user == null || user.Password != password) 
+            if (user == null || user.Password != HashPassword(password)) 
             {
                 return new AuthDTO
                 {
@@ -63,6 +64,57 @@ namespace Services.Impl
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                var builder = new StringBuilder();
+                foreach (var b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
+        public UserDTO SignUp(UserDTO userDTO)
+        {
+            var existingUser = _authRepository.GetUserByEmailOrUsername(userDTO.Email);
+            if (existingUser != null)
+            {
+                throw new Exception("User already exists with this email or username.");
+            }
+
+            var hashPassword = HashPassword(userDTO.Password);
+
+            var newUser = new User
+            {
+                Username = userDTO.Username,
+                Email = userDTO.Email,
+                Password = hashPassword,
+                Phone = "default" ?? userDTO.Phone,
+                Address = "default" ?? userDTO.Address,
+                Gender = "default" ?? userDTO.Gender,
+                RoleId = 1,
+                IsDelete = false
+            };
+
+            _authRepository.CreateUser(newUser);
+
+            return new UserDTO
+            {
+                Id = newUser.Id,
+                Username = newUser.Username,
+                Email = newUser.Email,
+                Password = newUser.Password,
+                Phone = newUser.Phone,
+                Address = newUser.Address,
+                Gender = newUser.Gender,
+                RoleId = newUser.RoleId
+            };
         }
     }
 }

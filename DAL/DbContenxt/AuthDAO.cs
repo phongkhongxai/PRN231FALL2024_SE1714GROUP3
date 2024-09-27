@@ -27,5 +27,12 @@ namespace DAL.DbContenxt
             var db = new RecuitmentDbContext();
             return db.Users.FirstOrDefault(c => c.Email == emailOrUsername || c.Username == emailOrUsername);
         }
+
+        public void CreateUser(User user)
+        {
+            var db = new RecuitmentDbContext();
+            db.Users.Add(user);
+            db.SaveChanges();
+        }
     }
 }

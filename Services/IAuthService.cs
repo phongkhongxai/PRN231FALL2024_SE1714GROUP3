@@ -12,5 +12,6 @@ namespace Services
     {
         AuthDTO Authenticate(string emailOrUsername, string password);
         string GenerateJwtToken(User user);
+        UserDTO SignUp(UserDTO user);
     }
 }
