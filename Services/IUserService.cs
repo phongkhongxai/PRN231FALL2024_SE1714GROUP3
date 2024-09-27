@@ -11,8 +11,8 @@ namespace Services
     {
         public Task<UserDTO> GetUserById(long id);
         Task<List<UserDTO>> GetAllUsers();
-        Task UpdateUser(UserDTO userDTO);
-        Task DeleteUser(long id);
+        Task<UserDTO> UpdateUser(long id, UserUpdateDTO userDTO);
+        Task<bool> DeleteUser(long id);
 
     }
 }

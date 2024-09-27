@@ -38,7 +38,7 @@ namespace Recuitment_Group3.Controllers
             var job = await jobService.GetJobByIdAsync(id);
             if (job == null)
             {
-                return BadRequest();
+                return NotFound();
             }
             return Ok(job);
         }

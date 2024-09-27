@@ -1,4 +1,5 @@
-﻿using BusinessObjects.Entity;
+﻿using BusinessObjects.DTO;
+using BusinessObjects.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,8 @@ namespace DAL.Repositories
     {
         Task<User> GetUserByIdAsync(long id);
         Task<List<User>> GetAllUsers();
-        Task UpdateUser(User user);
-        Task DeleteUser(long id);
+        Task<User> UpdateUser(User user);
+        Task<bool> DeleteUser(long id);
 
     }
 }
