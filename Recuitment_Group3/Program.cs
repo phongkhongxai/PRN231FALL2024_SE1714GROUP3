@@ -6,10 +6,6 @@ using Services.Utils;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.OData;
-using Microsoft.OData.ModelBuilder;
-using BusinessObjects.DTO;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,48 +14,56 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
-builder.Services.AddEndpointsApiExplorer(); 
+//builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 
-builder.Services.AddScoped<IJobService, JobService>();
-builder.Services.AddScoped<IJobRepository, JobRepository>();
-var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
+var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 
-builder.Services.AddControllers().AddOData(opt =>
+builder.Services.AddSwaggerGen(options =>
 {
-    var odataBuilder = new ODataConventionModelBuilder();
-    odataBuilder.EntitySet<JobDTO>("Jobs");  
-
-    opt.AddRouteComponents("odata", odataBuilder.GetEdmModel())  
-        .Select()  
-        .Filter()  
-        .OrderBy()  
-        .SetMaxTop(100)  
-        .Count();  
-}); 
-
-builder.Services 
-    .AddAuthentication(options =>
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(key)
-        };
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter the JWT token obtained from the login endpoint",
+        Name = "Authorization"
     });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+});
+builder.Services.AddAuthentication(item =>
+{
+    item.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    item.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(item =>
+{
+    item.RequireHttpsMetadata = true;
+    item.SaveToken = true;
+    item.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ClockSkew = TimeSpan.Zero
+    };
+});
 
 builder.Services.AddEndpointsApiExplorer();
 // Config JWT for swagger

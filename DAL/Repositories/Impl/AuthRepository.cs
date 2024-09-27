@@ -15,7 +15,7 @@ namespace DAL.Repositories.Impl
             AuthDAO.Instance.CreateUser(user);
         }
 
-        public User GetUserByEmailOrUsername(string emailOrUsername)
+        public Task<User> GetUserByEmailOrUsername(string emailOrUsername)
         {
             return AuthDAO.Instance.GetUserByEmailOrUsername(emailOrUsername);
         }
