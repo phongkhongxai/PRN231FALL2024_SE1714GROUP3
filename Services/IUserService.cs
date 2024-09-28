@@ -13,6 +13,6 @@ namespace Services
         Task<List<UserDTO>> GetAllUsers();
         Task<UserDTO> UpdateUser(long id, UserUpdateDTO userDTO);
         Task<bool> DeleteUser(long id);
-
+        Task<UserDTO> FindByEmail(string email);
     }
 }

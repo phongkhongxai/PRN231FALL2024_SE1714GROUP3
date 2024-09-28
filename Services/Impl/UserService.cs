@@ -68,5 +68,11 @@ namespace Services.Impl
             return await userRepository.DeleteUser(id);
 
         }
+
+        public async Task<UserDTO> FindByEmail(string email)
+        {
+            var user = await userRepository.FindByEmail(email);
+            return mapper.Map<UserDTO>(user);
+        }
     }
 }

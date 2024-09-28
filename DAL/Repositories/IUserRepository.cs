@@ -14,6 +14,6 @@ namespace DAL.Repositories
         Task<List<User>> GetAllUsers();
         Task<User> UpdateUser(User user);
         Task<bool> DeleteUser(long id);
-
+        Task<User> FindByEmail(string email);
     }
 }

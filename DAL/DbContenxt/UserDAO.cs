@@ -65,5 +65,11 @@ namespace DAL.DbContenxt
             return true;
         }
 
+        public async Task<User> FindByEmail(string email)
+        {
+            var db = new RecuitmentDbContext();
+            return await db.Users.FirstOrDefaultAsync(c => c.Email == email);
+        }
+
     }
 }
