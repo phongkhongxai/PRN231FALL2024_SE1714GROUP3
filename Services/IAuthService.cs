@@ -12,6 +12,6 @@ namespace Services
     {
         Task<AuthDTO> Authenticate(string emailOrUsername, string password);
         string GenerateJwtToken(User user);
-        UserDTO SignUp(UserDTO user);
+        Task<UserDTO> SignUp(UserDTO userDTO);
     }
 }

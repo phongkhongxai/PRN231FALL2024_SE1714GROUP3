@@ -18,11 +18,13 @@ namespace Recuitment_Group3.Controllers
     {
         private readonly IAuthService _authService;
         private readonly IUserService _userService;
+        private readonly IEmailService _emailService;
 
-        public AuthController(IAuthService authService, IUserService userService)
+        public AuthController(IAuthService authService, IUserService userService, IEmailService emailService)
         {
             _authService = authService;
             _userService = userService;
+            _emailService = emailService;
         }
 
         [HttpPost("login")]
@@ -38,11 +40,11 @@ namespace Recuitment_Group3.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult Signup([FromBody] UserDTO userDTO)
+        public async Task<IActionResult> Signup([FromBody] UserDTO userDTO)
         {
             try
             {
-                var user = _authService.SignUp(userDTO);
+                var user = await _authService.SignUp(userDTO);
                 return Ok(user);
             }
             catch (Exception ex)
@@ -51,7 +53,7 @@ namespace Recuitment_Group3.Controllers
             }
         }
 
-        [HttpPost("Logout")]
+        [HttpPost("logout")]
         public IActionResult Logout()
         {
             try
@@ -87,6 +89,48 @@ namespace Recuitment_Group3.Controllers
                     IsAuthenticated = false,
                     Message = "Something go wrong" + ex.Message
                 });
+            }
+        }
+
+        [HttpPost("fotgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDTO forgot)
+        {
+            var user = await _userService.FindByEmail(forgot.Email);
+            if (user == null)
+            {
+                return BadRequest(new
+                {
+                    message = "User not found"
+                });
+            }
+            try
+            {
+                await _emailService.SendPasswordResetTokenAsync(forgot.Email);
+                return Ok(new
+                {
+                    message = "Password reset token sent to your email."
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDTO reset)
+        {
+            if (reset == null)
+            {
+                return BadRequest("Reset password data is required.");
+            }
+            try
+            {
+                await _emailService.ResetPasswordAsync(reset.Email, reset.Token, reset.NewPassword);
+                return Ok("Password reset successfully");
+            } catch (Exception ex)
+            {
+                return BadRequest($"Error resetting password: {ex.Message}");
             }
         }
     }
