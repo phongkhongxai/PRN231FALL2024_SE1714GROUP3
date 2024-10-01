@@ -13,19 +13,37 @@ namespace Services.Impl
     public class JobService : IJobService
     {
         private readonly IJobRepository _jobRepository;
+        private readonly ISkillRepository _skillRepository;
         private readonly IMapper _mapper;
 
-        public JobService(IJobRepository jobRepository, IMapper mapper)
+        public JobService(IJobRepository jobRepository, ISkillRepository skillRepository, IMapper mapper)
         {
             _jobRepository = jobRepository;
+            _skillRepository = skillRepository;
             _mapper = mapper;
-        }
+        } 
+
         public async Task<JobDTO> CreateJobAsync(JobCreateDTO jobCreateDto)
-        {
-            var job = _mapper.Map<Job>(jobCreateDto); 
+        { 
+            var job = _mapper.Map<Job>(jobCreateDto);
+             
             var createdJob = await _jobRepository.CreateJobAsync(job);
+            if (createdJob == null)
+            {
+                throw new Exception("Job creation failed.");
+            }
+             
+            if (jobCreateDto.SkillDetails != null && jobCreateDto.SkillDetails.Any())
+            {
+                foreach (var skillDetail in jobCreateDto.SkillDetails)
+                {
+                    await _jobRepository.AddSkillToJobAsync(createdJob.Id, skillDetail.SkillId, skillDetail.Experiences);
+                }
+            }
+             
             return _mapper.Map<JobDTO>(createdJob);
         }
+
 
         public async Task<bool> DeleteJobAsync(long id)
         {
@@ -78,6 +96,9 @@ namespace Services.Impl
             var updatedJob = await _jobRepository.UpdateJobAsync(job);
             return _mapper.Map<JobDTO>(updatedJob);
         }
+
+         
+
 
     }
 }

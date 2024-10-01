@@ -43,23 +43,32 @@ namespace DAL.DbContenxt
                 .Where(u => !u.IsDelete).ToListAsync();
         }
 
-        public async Task UpdateUser(User user)
+        public async Task<User> UpdateUser(User user)
         {
             using var db = new RecuitmentDbContext();
             db.Entry(user).State = EntityState.Modified;
             await db.SaveChangesAsync();
+            return user;
         }
 
-        public async Task DeleteUser(long id)
+        public async Task<bool> DeleteUser(long id)
         {
             var db = new RecuitmentDbContext();
             var user = await db.Users.FindAsync(id);
-            if (user != null)
+            if (user == null)
             {
+                return false;
+            }
                 user.IsDelete = true;
                 db.Entry(user).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-            }
+            return true;
+        }
+
+        public async Task<User> FindByEmail(string email)
+        {
+            var db = new RecuitmentDbContext();
+            return await db.Users.FirstOrDefaultAsync(c => c.Email == email);
         }
 
     }

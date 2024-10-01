@@ -30,7 +30,8 @@ namespace DAL.DbContenxt
             return await _context.Jobs
                 .Include(j => j.User)             
                 .Include(j => j.Applications)     
-                .Include(j => j.JobSkills)        
+                .Include(j => j.JobSkills)
+                .ThenInclude(js => js.Skill)
                 .ToListAsync();
         }
 
@@ -42,6 +43,7 @@ namespace DAL.DbContenxt
                 .Include(j => j.User)
                 .Include(j => j.Applications)
                 .Include(j => j.JobSkills)
+                .ThenInclude(js => js.Skill)
                 .FirstOrDefaultAsync(j => j.Id == id && !j.IsDelete);
         }
 
@@ -90,6 +92,53 @@ namespace DAL.DbContenxt
             await _context.SaveChangesAsync();  
             return true;
         }
+
+        public async Task<bool> AddSkillToJobAsync(long jobId, long skillId, string? experiences = null)
+        {
+            var _context = new RecuitmentDbContext();
+
+            // Kiểm tra Job có tồn tại hay không
+            var job = await _context.Jobs
+                .Include(j => j.JobSkills)
+                .FirstOrDefaultAsync(j => j.Id == jobId && !j.IsDelete);
+            if (job == null)
+            {
+                throw new KeyNotFoundException("Job not found.");
+            }
+
+            // Kiểm tra Skill có tồn tại hay không
+            var skill = await _context.Skills.FirstOrDefaultAsync(s => s.Id == skillId && !s.IsDelete);
+            if (skill == null)
+            {
+                throw new KeyNotFoundException("Skill not found.");
+            }
+
+            // Kiểm tra Skill đã có trong Job hay chưa
+            if (job.JobSkills.Any(js => js.SkillId == skillId))
+            {
+                throw new InvalidOperationException("Skill already exists in the job.");
+            }
+
+            // Thêm JobSkill vào Job
+            var jobSkill = new JobSkill
+            {
+                JobId = job.Id,
+                SkillId = skill.Id,
+                Experiences = experiences
+            };
+
+            job.JobSkills.Add(jobSkill);
+
+            // Cập nhật Job và lưu thay đổi vào cơ sở dữ liệu
+            _context.Jobs.Update(job);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+
+
+
     }
 
 }

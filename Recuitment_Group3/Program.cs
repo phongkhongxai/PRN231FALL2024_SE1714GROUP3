@@ -7,6 +7,10 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.OData;
+using Microsoft.OData.ModelBuilder;
+using BusinessObjects.DTO;
+using Recuitment_Group3.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,13 +25,35 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IJobService, JobService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<ISkillService, SkillService>();
 
 
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IJobRepository, JobRepository>();
+builder.Services.AddScoped<ISkillRepository, SkillRepository>();
+
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
+
+
+builder.Services.AddControllers().AddOData(opt =>
+{
+    var odataBuilder = new ODataConventionModelBuilder();
+    odataBuilder.EntitySet<JobDTO>("Jobs");
+    odataBuilder.EntitySet<SkillDTO>("Skills");  
+    opt.AddRouteComponents("odata", odataBuilder.GetEdmModel())
+        .Select()
+        .Filter()
+        .OrderBy()
+        .SetMaxTop(100)
+        .Expand()
+        .Count();
+});
+
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -98,6 +124,10 @@ if (app.Environment.IsDevelopment())
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseCors(builder =>
+       builder.WithOrigins("*")
+           .AllowAnyMethod()
+           .AllowAnyHeader());
 
 app.MapControllers();
 

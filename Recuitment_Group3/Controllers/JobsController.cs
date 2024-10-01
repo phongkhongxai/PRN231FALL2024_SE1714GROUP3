@@ -30,7 +30,7 @@ namespace Recuitment_Group3.Controllers
             return Ok(jobs);
         }
 
-        // GET: odata/Jobs/{id}
+         
         [HttpGet("{id}")]
         [EnableQuery]
         public async Task<ActionResult<JobDTO>> GetJobById([FromRoute] long id)
@@ -38,7 +38,7 @@ namespace Recuitment_Group3.Controllers
             var job = await jobService.GetJobByIdAsync(id);
             if (job == null)
             {
-                return BadRequest();
+                return NotFound();
             }
             return Ok(job);
         }
@@ -49,9 +49,9 @@ namespace Recuitment_Group3.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
-
-            var createdJob = await jobService.CreateJobAsync(jobCreateDto);
+            } 
+            var createdJob = await jobService.CreateJobAsync(jobCreateDto);  
+            
             return Created(new Uri($"/odata/Jobs({createdJob.Id})", UriKind.Relative), createdJob);
         }
 

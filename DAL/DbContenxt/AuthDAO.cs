@@ -23,10 +23,10 @@ namespace DAL.DbContenxt
             }
         }
 
-        public Task<User> GetUserByEmailOrUsername(string emailOrUsername)
+        public async Task<User> GetUserByEmailOrUsername(string emailOrUsername)
         {
             var db = new RecuitmentDbContext();
-            return db.Users.FirstOrDefaultAsync(c => c.Email == emailOrUsername || c.Username == emailOrUsername);
+            return await db.Users.FirstOrDefaultAsync(c => c.Email == emailOrUsername || c.Username == emailOrUsername);
         }
 
         public void CreateUser(User user)

@@ -16,6 +16,8 @@ namespace BusinessObjects.Entity
         public bool IsDelete { get; set; } = false;
         public string? Gender { get; set; }
         public long RoleId { get; set; }
+        public string? ResetPasswordToken { get; set; } 
+        public DateTime? ResetPasswordExpiry { get; set; }
 
         public Role Role { get; set; }
         public ICollection<Resume> Resumes { get; set; } = new List<Resume>();

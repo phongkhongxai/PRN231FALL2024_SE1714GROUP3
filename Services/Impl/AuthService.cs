@@ -45,9 +45,10 @@ namespace Services.Impl
             };
         }
 
-        public UserDTO SignUp(UserDTO userDTO)
+        public async Task<UserDTO> SignUp(UserDTO userDTO)
         {
-            if (_authRepository.GetUserByEmailOrUsername(userDTO.Email) != null)
+            var existingUser = await _authRepository.GetUserByEmailOrUsername(userDTO.Email);
+            if (existingUser != null)
             {
                 throw new Exception("User already exists with this email or username.");
             }
