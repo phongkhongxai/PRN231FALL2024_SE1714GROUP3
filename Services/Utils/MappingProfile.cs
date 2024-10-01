@@ -22,6 +22,10 @@ namespace Services.Utils
             CreateMap<JobUpdateDTO, Job>();
             CreateMap<SkillDTO, Skill>();
             CreateMap<Skill, SkillDTO>();
+            CreateMap<ScheduleCreateDTO, Schedule>();
+            CreateMap<ScheduleDTO, Schedule>();
+            CreateMap<Schedule, ScheduleDTO>();
+
 
 
         }
