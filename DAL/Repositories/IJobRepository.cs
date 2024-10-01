@@ -15,5 +15,6 @@ namespace DAL.Repositories
         Task<Job> CreateJobAsync(Job job);
         Task<Job> UpdateJobAsync(Job job);
         Task<bool> DeleteAsync(long id);
+        Task<bool> AddSkillToJobAsync(long jobId, long skillId, string? experiences = null);
     }
 }

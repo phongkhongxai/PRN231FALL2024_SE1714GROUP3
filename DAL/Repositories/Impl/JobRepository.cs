@@ -39,7 +39,11 @@ namespace DAL.Repositories.Impl
         public async Task<IEnumerable<Job>> GetHighPayingJobsAsync(long salaryThreshold)
         {
             return await JobDAO.Instance.FindAsync(j => j.Amount > salaryThreshold);
-        } 
-        
+        }
+
+        public async Task<bool> AddSkillToJobAsync(long jobId, long skillId, string? experiences = null)
+        {
+            return await JobDAO.Instance.AddSkillToJobAsync(jobId, skillId, experiences);
+        }
     }
 }
