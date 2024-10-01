@@ -14,5 +14,7 @@ namespace Services
         Task<UserDTO> UpdateUser(long id, UserUpdateDTO userDTO);
         Task<bool> DeleteUser(long id);
         Task<UserDTO> FindByEmail(string email);
+        Task<bool> ChangePassword(long id, ChangePasswordDTO changePasswordDTO);
+
     }
 }
