@@ -28,8 +28,7 @@ namespace DAL.DbContenxt
             using var db = new RecuitmentDbContext();
             return db.Users.Include(u => u.Role)
                 .Include(u => u.Resumes)
-                .Include(u => u.Applications)
-                .Include(u => u.Schedules)
+                .Include(u => u.Applications) 
                 .Include(u => u.UserSkills)
                 .FirstOrDefault(u => u.Id == id && !u.IsDelete);
         }
@@ -38,8 +37,7 @@ namespace DAL.DbContenxt
             using var db = new RecuitmentDbContext();
             return await db.Users.Include(u => u.Role)
                 .Include(u => u.Resumes)
-                .Include(u => u.Applications)
-                .Include(u => u.Schedules)
+                .Include(u => u.Applications) 
                 .Include(u => u.UserSkills)
                 .Where(u => !u.IsDelete).ToListAsync();
         }

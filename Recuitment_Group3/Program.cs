@@ -26,15 +26,16 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
-builder.Services.AddScoped<ISkillService, SkillService>();
-builder.Services.AddScoped<IScheduleService, ScheduleService>();
+builder.Services.AddScoped<ISkillService, SkillService>(); 
+builder.Services.AddScoped<IInterviewRoundService, InterviewRoundService>();
 
 
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IJobRepository, JobRepository>();
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();
-builder.Services.AddScoped<IScheduleRepository, ScheduleRepository>();
+builder.Services.AddScoped<IInterviewRoundRepository, InterviewRoundRepository>();
+
 
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
@@ -44,7 +45,8 @@ builder.Services.AddControllers().AddOData(opt =>
 {
     var odataBuilder = new ODataConventionModelBuilder();
     odataBuilder.EntitySet<JobDTO>("Jobs");
-    odataBuilder.EntitySet<SkillDTO>("Skills");  
+    odataBuilder.EntitySet<SkillDTO>("Skills");
+    odataBuilder.EntitySet<InterviewRoundDTO>("InterviewRounds"); 
     opt.AddRouteComponents("odata", odataBuilder.GetEdmModel())
         .Select()
         .Filter()

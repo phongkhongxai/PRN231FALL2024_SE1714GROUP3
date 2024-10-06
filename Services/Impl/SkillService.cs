@@ -23,7 +23,9 @@ namespace Services.Impl
 
         public async Task<SkillDTO> CreateSkillAsync(SkillDTO skillCreateDto)
         {
-            var skill = _mapper.Map<Skill>(skillCreateDto);
+            var skill = new Skill();
+            skill.Name = skillCreateDto.Name;
+            skill.Type = skillCreateDto.Type;
             var createdSkill = await _skillRepository.AddSkillAsync(skill);
             return _mapper.Map<SkillDTO>(createdSkill);
         }

@@ -56,7 +56,9 @@ namespace DAL.DbContenxt
             if (existingSkill == null) return null;
 
             existingSkill.Name = skill.Name;
-             
+            existingSkill.Type = skill.Type;
+
+
 
             await _context.SaveChangesAsync();
             return existingSkill;

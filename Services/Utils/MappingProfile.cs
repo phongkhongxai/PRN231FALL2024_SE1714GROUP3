@@ -19,12 +19,13 @@ namespace Services.Utils
                 Experiences = js.Experiences
             })));
             CreateMap<JobCreateDTO, Job>();
-            CreateMap<JobUpdateDTO, Job>();
+            CreateMap<JobUpdatedDTO, Job>();
             CreateMap<SkillDTO, Skill>();
             CreateMap<Skill, SkillDTO>();
-            CreateMap<ScheduleCreateDTO, Schedule>();
-            CreateMap<ScheduleDTO, Schedule>();
-            CreateMap<Schedule, ScheduleDTO>();
+            CreateMap<InterviewRound, InterviewRoundDTO>();
+            CreateMap<InterviewRoundCreateDTO, InterviewRound>();
+
+
 
 
 

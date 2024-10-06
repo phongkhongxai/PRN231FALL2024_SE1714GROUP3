@@ -12,12 +12,16 @@ namespace DAL.DbContenxt
         public DbSet<Role> Roles { get; set; }
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Skill> Skills { get; set; }
-        public DbSet<Resume> Resumes { get; set; }
+        public DbSet<Resume> Resumes { get; set; } 
         public DbSet<UserSkill> UserSkills { get; set; }
         public DbSet<JobSkill> JobSkills { get; set; }
         public DbSet<Application> Applications { get; set; }
-        public DbSet<Interview> Interviews { get; set; }
-        public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<InterviewSession> InterviewSessions { get; set; }
+        public DbSet<InterviewRound> InterviewRounds { get; set; }
+        public DbSet<SessionApplication> SessionApplications { get; set; }
+        public DbSet<SessionInterviewer> SessionInterviewers { get; set; }
+
+
 
         public RecuitmentDbContext(DbContextOptions<RecuitmentDbContext> options) : base(options)
         {
@@ -68,6 +72,34 @@ namespace DAL.DbContenxt
                 .WithMany(u => u.UserSkills)
                 .HasForeignKey(u => u.SkillId);
 
+            modelBuilder.Entity<SessionApplication>()
+                .HasKey(js => new { js.ApplicationId, js.InterviewSessionId });
+
+            modelBuilder.Entity<SessionApplication>()
+                .HasOne(js => js.Application)
+                .WithMany(j => j.SessionApplications)
+                .HasForeignKey(j => j.ApplicationId);
+
+            modelBuilder.Entity<SessionApplication>()
+                .HasOne(j => j.InterviewSession)
+                .WithMany(j => j.SessionApplications)
+                .HasForeignKey(j => j.InterviewSessionId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<SessionInterviewer>()
+                .HasKey(js => new { js.UserId, js.InterviewSessionId });
+
+            modelBuilder.Entity<SessionInterviewer>()
+                .HasOne(js => js.User)
+                .WithMany(j => j.SessionInterviewers)
+                .HasForeignKey(j => j.UserId);
+
+            modelBuilder.Entity<SessionInterviewer>()
+                .HasOne(j => j.InterviewSession)
+                .WithMany(j => j.SessionInterviewers)
+                .HasForeignKey(j => j.InterviewSessionId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.Entity<Application>()
                 .HasOne(a => a.Job)
                 .WithMany(a => a.Applications)
@@ -80,20 +112,15 @@ namespace DAL.DbContenxt
                 .HasForeignKey(a => a.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Interview>()
-                .HasOne(i => i.Application)
-                .WithMany(i => i.Interviews)
-                .HasForeignKey(i => i.ApplicationId);
+            modelBuilder.Entity<InterviewSession>()
+                .HasOne(i => i.InterviewRound)
+                .WithMany(i => i.InterviewSessions)
+                .HasForeignKey(i => i.InterviewRoundId);
 
-            modelBuilder.Entity<Interview>()
-                .HasOne(s => s.Schedule)
-                .WithMany(s => s.Interviews)
-                .HasForeignKey(s => s.ScheduleId);
-
-            modelBuilder.Entity<Schedule>()
-                .HasOne(s => s.User)
-                .WithMany(s => s.Schedules)
-                .HasForeignKey(s => s.UserId);
+            modelBuilder.Entity<InterviewRound>()
+                .HasOne(s => s.Job)
+                .WithMany(s => s.InterviewRounds)
+                .HasForeignKey(s => s.JobId); 
 
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Role)
@@ -101,7 +128,7 @@ namespace DAL.DbContenxt
                 .HasForeignKey(u => u.RoleId);
 
             modelBuilder.Entity<Resume>()
-                .HasOne(r => r.User)
+                .HasOne(r => r.User) 
                 .WithMany(r => r.Resumes)
                 .HasForeignKey(r => r.UserId)
                 .OnDelete(DeleteBehavior.Restrict); ;
@@ -110,7 +137,7 @@ namespace DAL.DbContenxt
                 .HasOne(a => a.Resume)
                 .WithMany(a => a.Applications)
                 .HasForeignKey(a => a.ResumeId)
-                .OnDelete(DeleteBehavior.Restrict); ;
+                .OnDelete(DeleteBehavior.Restrict); ;  
 
         }
     }

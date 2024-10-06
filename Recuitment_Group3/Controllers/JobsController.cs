@@ -11,7 +11,7 @@ using Services.Impl;
 namespace Recuitment_Group3.Controllers
 {
 
-    [Authorize]
+     
     [Route("odata/[controller]")]
     [ApiController]
     public class JobsController : ODataController
@@ -57,7 +57,7 @@ namespace Recuitment_Group3.Controllers
 
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateJob([FromRoute] long id, [FromBody] JobUpdateDTO jobUpdate)
+        public async Task<IActionResult> UpdateJob([FromRoute] long id, [FromBody] JobUpdatedDTO jobUpdate)
         { 
             var updatedJob = await jobService.UpdateJobAsync(id, jobUpdate);
             if (updatedJob == null)
