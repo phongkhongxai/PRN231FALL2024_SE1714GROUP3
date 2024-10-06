@@ -12,7 +12,7 @@ namespace Services
         Task<IEnumerable<JobDTO>> GetAllJobsAsync();
         Task<JobDTO> GetJobByIdAsync(long id);
         Task<JobDTO> CreateJobAsync(JobCreateDTO jobCreateDto);
-        Task<JobDTO> UpdateJobAsync(long id, JobUpdateDTO jobCreateDto);
+        Task<JobDTO> UpdateJobAsync(long id, JobUpdatedDTO jobCreateDto);
         Task<bool> DeleteJobAsync(long id); 
     }
 }

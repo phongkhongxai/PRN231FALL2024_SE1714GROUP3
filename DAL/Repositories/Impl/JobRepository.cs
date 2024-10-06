@@ -45,5 +45,20 @@ namespace DAL.Repositories.Impl
         {
             return await JobDAO.Instance.AddSkillToJobAsync(jobId, skillId, experiences);
         }
+        public async Task<bool> RemoveSkillFromJobAsync(long jobId, long skillId)
+        {
+            return await JobDAO.Instance.RemoveSkillFromJobAsync(jobId, skillId );
+        }
+
+        public async Task<bool> AddInterviewRoundAsync(long jobId, InterviewRound interviewRound)
+        {
+            return await JobDAO.Instance.AddInterviewRoundAsync(jobId, interviewRound);
+        }
+
+        public async Task<bool> DeleteInterviewRoundAsync(long jobId, long interviewRoundId)
+        {
+            return await JobDAO.Instance.DeleteInterviewRoundAsync(jobId, interviewRoundId);
+
+        }
     }
 }

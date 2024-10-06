@@ -10,6 +10,7 @@ namespace BusinessObjects.Entity
         public long Id { get; set; }
         public bool IsDelete { get; set; } = false;
         public string Name { get; set; }
+        public string Type { get; set; } 
 
         public ICollection<JobSkill> JobSkills { get; set; } = new List<JobSkill>();
         public ICollection<UserSkill> UserSkills { get; set; } = new HashSet<UserSkill>();
