@@ -1,0 +1,36 @@
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\Services.deps.json
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\Services.dll
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\Services.pdb
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\BusinessObjects.dll
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\DAL.dll
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\BusinessObjects.pdb
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\DAL.pdb
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.csproj.AssemblyReference.cache
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.AssemblyInfoInputs.cache
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.AssemblyInfo.cs
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.csproj.CoreCompileInputs.cache
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.sourcelink.json
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.csproj.Up2Date
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.dll
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\refint\Services.dll
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.pdb
+E:\PRN231\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\ref\Services.dll
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\Services.deps.json
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\Services.dll
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\Services.pdb
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\BusinessObjects.dll
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\DAL.dll
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\BusinessObjects.pdb
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\bin\Debug\net8.0\DAL.pdb
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.csproj.AssemblyReference.cache
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.AssemblyInfoInputs.cache
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.AssemblyInfo.cs
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.csproj.CoreCompileInputs.cache
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.sourcelink.json
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.csproj.CopyComplete
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.dll
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\refint\Services.dll
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\Services.pdb
+D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\Services\obj\Debug\net8.0\ref\Services.dll
