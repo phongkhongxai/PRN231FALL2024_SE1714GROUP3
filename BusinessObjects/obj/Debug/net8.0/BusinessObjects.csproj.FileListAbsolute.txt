@@ -13,18 +13,3 @@ E:\PRN231\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\refint\Bu
 E:\PRN231\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
 E:\PRN231\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
 E:\PRN231\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.sourcelink.json
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
-D:\FPT\PRN231\Group Project\PRN231FALL2024_SE1714GROUP3\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
