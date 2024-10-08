@@ -28,7 +28,7 @@ namespace DAL.DbContenxt
         public async Task<List<Schedule>> GetAllSchedules()
         {
             var db = new RecuitmentDbContext();
-            return await db.Schedules.Include(c=>c.Interviews).ToListAsync();
+            return await db.Schedules.Include(c=>c.User).ToListAsync();
         }
 
         public async Task<Schedule> GetScheduleById(long id)

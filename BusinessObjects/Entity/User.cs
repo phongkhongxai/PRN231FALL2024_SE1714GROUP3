@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace BusinessObjects.Entity
 {
@@ -21,7 +22,7 @@ namespace BusinessObjects.Entity
 
         public Role Role { get; set; }
         public ICollection<Resume> Resumes { get; set; } = new List<Resume>();
-
+        
         public ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
         public ICollection<Application> Applications { get; set; } = new List<Application>();
         public ICollection<UserSkill> UserSkills { get; set; } = new List<UserSkill>();

@@ -12,7 +12,7 @@ namespace Recuitment_Group3.Controllers
 {
 
     [Authorize]
-    [Route("odata/[controller]")]
+    [Route("odata/[controller]")]       
     [ApiController]
     public class JobsController : ODataController
     {
