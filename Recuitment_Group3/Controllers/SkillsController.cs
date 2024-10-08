@@ -9,7 +9,7 @@ using Services;
 
 namespace Recuitment_Group3.Controllers
 {
-    [Authorize] 
+      
     [Route("odata/[controller]")]
     [ApiController]
     public class SkillsController : ODataController
@@ -50,8 +50,7 @@ namespace Recuitment_Group3.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
-
+            } 
             var createdSkill = await _skillService.CreateSkillAsync(skillCreateDto);
             return Created(new Uri($"/odata/Skills({createdSkill.Id})", UriKind.Relative), createdSkill);
         }

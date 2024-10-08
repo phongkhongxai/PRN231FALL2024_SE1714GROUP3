@@ -18,13 +18,23 @@ namespace Services.Utils
                 SkillName = js.Skill.Name,  
                 Experiences = js.Experiences
             })));
+
+            CreateMap<Application, ApplicationDTO>()
+                .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User))
+                .ForMember(dest => dest.Job, opt => opt.MapFrom(src => src.Job))
+                //.ForMember(dest => dest.Resume, opt => opt.MapFrom(src => src.Resume))
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
+
             CreateMap<JobCreateDTO, Job>();
-            CreateMap<JobUpdateDTO, Job>();
+            CreateMap<JobUpdatedDTO, Job>();
             CreateMap<SkillDTO, Skill>();
             CreateMap<Skill, SkillDTO>();
-            CreateMap<ScheduleCreateDTO, Schedule>();
-            CreateMap<ScheduleDTO, Schedule>();
-            CreateMap<Schedule, ScheduleDTO>();
+            CreateMap<InterviewRound, InterviewRoundDTO>();
+            CreateMap<InterviewRoundCreateDTO, InterviewRound>();
+            CreateMap<ApplicationCreateDTO, Application>();
+            CreateMap<ApplicationUpdateDTO, Application>();
+
+
 
 
 
