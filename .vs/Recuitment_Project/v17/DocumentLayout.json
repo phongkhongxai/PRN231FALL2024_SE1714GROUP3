@@ -1,42 +1,78 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\",
+  "WorkspaceRootPath": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\services\\impl\\applicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\applicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\services\\impl\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\semester 8\\prn231\\prn231fall2024_se1714group3\\services\\impl\\skillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\skillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\dal\\dbcontenxt\\applicationdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\applicationdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\recuitment_group3\\controllers\\skillscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\skillscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\services\\iapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\iapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\dbcontenxt\\skilldao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\skilldao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\dal\\repositories\\iapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\iapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\repositories\\iskillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\iskillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\services\\utils\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\utils\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\recuitment_group3\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\jobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\businessobjects\\dto\\applicationcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\dto\\applicationcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\recuitment_group3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\services\\ijobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\ijobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\businessobjects\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\businessobjects\\dto\\jobcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\dto\\jobcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\recuitment_group3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\businessobjects\\entity\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\entity\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\businessobjects\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\businessobjects\\entity\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\entity\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Migrations\\20241006113937_updateDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessObjects\\Migrations\\20241006113937_updateDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\businessobjects\\entity\\recuitmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\entity\\recuitmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\dbcontenxt\\recuitmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\recuitmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\dbcontenxt\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Migrations\\20241006114123_updateDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:BusinessObjects\\Migrations\\20241006114123_updateDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,11 +82,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
@@ -59,119 +99,220 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "JobService.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\JobService.cs",
-              "RelativeDocumentMoniker": "Services\\Impl\\JobService.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\JobService.cs",
-              "RelativeToolTip": "Services\\Impl\\JobService.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAcwE4AAAAAAAAA",
+              "Title": "SkillService.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\SkillService.cs",
+              "RelativeDocumentMoniker": "Services\\Impl\\SkillService.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\SkillService.cs",
+              "RelativeToolTip": "Services\\Impl\\SkillService.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAawEUAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:55:55.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApplicationService.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\ApplicationService.cs",
-              "RelativeDocumentMoniker": "Services\\Impl\\ApplicationService.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\ApplicationService.cs",
-              "RelativeToolTip": "Services\\Impl\\ApplicationService.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAcwEsAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:50:03.235Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ApplicationCreateDTO.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\ApplicationCreateDTO.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\DTO\\ApplicationCreateDTO.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\ApplicationCreateDTO.cs",
-              "RelativeToolTip": "BusinessObjects\\DTO\\ApplicationCreateDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:43:12.391Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "JobCreateDTO.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\JobCreateDTO.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\DTO\\JobCreateDTO.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\JobCreateDTO.cs",
-              "RelativeToolTip": "BusinessObjects\\DTO\\JobCreateDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:39:46.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IJobService.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\IJobService.cs",
-              "RelativeDocumentMoniker": "Services\\IJobService.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\IJobService.cs",
-              "RelativeToolTip": "Services\\IJobService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:38:20.099Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IApplicationService.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\IApplicationService.cs",
-              "RelativeDocumentMoniker": "Services\\IApplicationService.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\IApplicationService.cs",
-              "RelativeToolTip": "Services\\IApplicationService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:36:07.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\Utils\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "Services\\Utils\\MappingProfile.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\Utils\\MappingProfile.cs",
-              "RelativeToolTip": "Services\\Utils\\MappingProfile.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAswBAAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:29:50.047Z",
+              "WhenOpened": "2024-10-09T04:46:36.308Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "IApplicationRepository.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IApplicationRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\IApplicationRepository.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IApplicationRepository.cs",
-              "RelativeToolTip": "DAL\\Repositories\\IApplicationRepository.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAA7AAAA",
+              "Title": "ISkillRepository.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\ISkillRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\ISkillRepository.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\ISkillRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\ISkillRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:17:38.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-09T04:46:03.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SkillDAO.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\SkillDAO.cs",
+              "RelativeDocumentMoniker": "DAL\\DbContenxt\\SkillDAO.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\SkillDAO.cs",
+              "RelativeToolTip": "DAL\\DbContenxt\\SkillDAO.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAEwDIAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T04:33:41.169Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Program.cs",
+              "RelativeDocumentMoniker": "Recuitment_Group3\\Program.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Program.cs",
+              "RelativeToolTip": "Recuitment_Group3\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T02:04:07.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Skill.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\Skill.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Entity\\Skill.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\Skill.cs",
+              "RelativeToolTip": "BusinessObjects\\Entity\\Skill.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T02:03:28.71Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ApplicationDAO.cs",
-              "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\ApplicationDAO.cs",
-              "RelativeDocumentMoniker": "DAL\\DbContenxt\\ApplicationDAO.cs",
-              "ToolTip": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\ApplicationDAO.cs",
-              "RelativeToolTip": "DAL\\DbContenxt\\ApplicationDAO.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAUwEYAAAANAAAA",
+              "Title": "SkillsController.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\SkillsController.cs",
+              "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\SkillsController.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\SkillsController.cs",
+              "RelativeToolTip": "Recuitment_Group3\\Controllers\\SkillsController.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAiwD0AAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:06:32.742Z",
+              "WhenOpened": "2024-10-09T01:46:46.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "JobsController.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\JobsController.cs",
+              "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\JobsController.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\JobsController.cs",
+              "RelativeToolTip": "Recuitment_Group3\\Controllers\\JobsController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwCYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T01:38:33.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\User.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Entity\\User.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\User.cs",
+              "RelativeToolTip": "BusinessObjects\\Entity\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T12:18:13.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Application.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\Application.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Entity\\Application.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\Application.cs",
+              "RelativeToolTip": "BusinessObjects\\Entity\\Application.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T12:18:03.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "20241006114123_updateDB.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Migrations\\20241006114123_updateDB.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Migrations\\20241006114123_updateDB.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Migrations\\20241006114123_updateDB.cs",
+              "RelativeToolTip": "BusinessObjects\\Migrations\\20241006114123_updateDB.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T11:41:23.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20241006113937_updateDB.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Migrations\\20241006113937_updateDB.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Migrations\\20241006113937_updateDB.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Migrations\\20241006113937_updateDB.cs",
+              "RelativeToolTip": "BusinessObjects\\Migrations\\20241006113937_updateDB.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T11:39:37.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\appsettings.json",
+              "RelativeDocumentMoniker": "Recuitment_Group3\\appsettings.json",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\appsettings.json",
+              "RelativeToolTip": "Recuitment_Group3\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-06T11:38:27.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RecuitmentDbContext.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\RecuitmentDbContext.cs",
+              "RelativeDocumentMoniker": "DAL\\DbContenxt\\RecuitmentDbContext.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\RecuitmentDbContext.cs",
+              "RelativeToolTip": "DAL\\DbContenxt\\RecuitmentDbContext.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAmwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T11:38:23.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RecuitmentDbContext.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\RecuitmentDbContext.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Entity\\RecuitmentDbContext.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\RecuitmentDbContext.cs",
+              "RelativeToolTip": "BusinessObjects\\Entity\\RecuitmentDbContext.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T11:38:16.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Recuitment_Group3\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwC4AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T11:35:36.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\UserDTO.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\DTO\\UserDTO.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\UserDTO.cs",
+              "RelativeToolTip": "BusinessObjects\\DTO\\UserDTO.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAA1wAkAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T06:43:03.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\Impl\\AuthService.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\AuthService.cs",
+              "RelativeToolTip": "Services\\Impl\\AuthService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T06:03:48.568Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserDAO.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\UserDAO.cs",
+              "RelativeDocumentMoniker": "DAL\\DbContenxt\\UserDAO.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\UserDAO.cs",
+              "RelativeToolTip": "DAL\\DbContenxt\\UserDAO.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T05:43:33.654Z"
             }
           ]
         }

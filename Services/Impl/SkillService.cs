@@ -65,6 +65,10 @@ namespace Services.Impl
             {
                 skill.Name = skillUpdateDto.Name;
             }
+            if(skillUpdateDto.Type != null)
+            {
+                skill.Type = skillUpdateDto.Type;
+            }
 
             var updatedSkill = await _skillRepository.UpdateSkillAsync(skill);
             return _mapper.Map<SkillDTO>(updatedSkill);
