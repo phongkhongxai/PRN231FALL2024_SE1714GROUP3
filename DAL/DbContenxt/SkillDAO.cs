@@ -59,7 +59,7 @@ namespace DAL.DbContenxt
             existingSkill.Type = skill.Type;
 
 
-
+            _context.Skills.Update(existingSkill);
             await _context.SaveChangesAsync();
             return existingSkill;
         }
@@ -72,6 +72,7 @@ namespace DAL.DbContenxt
             if (skill == null) return false;
 
             skill.IsDelete = true; 
+            _context.Skills.Update(skill);
             await _context.SaveChangesAsync();
             return true;
         }
