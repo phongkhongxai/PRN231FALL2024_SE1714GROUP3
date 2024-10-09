@@ -11,7 +11,7 @@ using Services.Impl;
 namespace Recuitment_Group3.Controllers
 {
 
-    [Authorize]
+     
     [Route("odata/[controller]")]
     [ApiController]
     public class JobsController : ODataController
@@ -30,7 +30,7 @@ namespace Recuitment_Group3.Controllers
             return Ok(jobs);
         }
 
-        // GET: odata/Jobs/{id}
+         
         [HttpGet("{id}")]
         [EnableQuery]
         public async Task<ActionResult<JobDTO>> GetJobById([FromRoute] long id)
@@ -49,15 +49,15 @@ namespace Recuitment_Group3.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
-
-            var createdJob = await jobService.CreateJobAsync(jobCreateDto);
+            } 
+            var createdJob = await jobService.CreateJobAsync(jobCreateDto);  
+            
             return Created(new Uri($"/odata/Jobs({createdJob.Id})", UriKind.Relative), createdJob);
         }
 
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateJob([FromRoute] long id, [FromBody] JobUpdateDTO jobUpdate)
+        public async Task<IActionResult> UpdateJob([FromRoute] long id, [FromBody] JobUpdatedDTO jobUpdate)
         { 
             var updatedJob = await jobService.UpdateJobAsync(id, jobUpdate);
             if (updatedJob == null)

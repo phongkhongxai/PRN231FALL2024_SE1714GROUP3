@@ -57,5 +57,17 @@ namespace Recuitment_Group3.Controllers
 
             return NoContent();
         }
+
+        [HttpPut("{id}/change-password")]
+        public async Task<IActionResult> ChangePassword([FromRoute] long id, [FromBody] ChangePasswordDTO changePasswordDTO)
+        {
+            var success = await userService.ChangePassword(id, changePasswordDTO);
+
+            if (!success)
+            {
+                return BadRequest("Current password is incorrect or user not found.");
+            }
+            return NoContent();
+        }
     }
 }

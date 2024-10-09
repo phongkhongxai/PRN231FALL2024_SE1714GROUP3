@@ -16,6 +16,6 @@ namespace BusinessObjects.Entity
         public Resume Resume { get; set; } 
         public Job Job { get; set; }
         public User User { get; set; }
-        public  ICollection<Interview> Interviews { get; set; } = new List<Interview>();
+        public  ICollection<SessionApplication> SessionApplications { get; set; } = new List<SessionApplication>();
     }
 }

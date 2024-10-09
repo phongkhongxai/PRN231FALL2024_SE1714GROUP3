@@ -20,9 +20,8 @@ namespace BusinessObjects.Entity
         public DateTime? ResetPasswordExpiry { get; set; }
 
         public Role Role { get; set; }
-        public ICollection<Resume> Resumes { get; set; } = new List<Resume>();
-
-        public ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
+        public ICollection<Resume> Resumes { get; set; } = new List<Resume>(); 
+        public ICollection<SessionInterviewer> SessionInterviewers { get; set; } = new List<SessionInterviewer>();
         public ICollection<Application> Applications { get; set; } = new List<Application>();
         public ICollection<UserSkill> UserSkills { get; set; } = new List<UserSkill>();
     }

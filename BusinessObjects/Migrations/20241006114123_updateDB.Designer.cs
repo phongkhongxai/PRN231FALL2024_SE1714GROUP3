@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BusinessObjects.Migrations
 {
     [DbContext(typeof(RecuitmentDbContext))]
-    [Migration("20240928031755_update")]
-    partial class update
+    [Migration("20241006114123_updateDB")]
+    partial class updateDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,7 +59,7 @@ namespace BusinessObjects.Migrations
                     b.ToTable("Applications");
                 });
 
-            modelBuilder.Entity("BusinessObjects.Entity.Interview", b =>
+            modelBuilder.Entity("BusinessObjects.Entity.InterviewRound", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,37 +67,71 @@ namespace BusinessObjects.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<long>("ApplicationId")
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("JobId")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<string>("RoundName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoundNumber")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JobId");
+
+                    b.ToTable("InterviewRounds");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Entity.InterviewSession", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<TimeSpan>("Duration")
+                        .HasColumnType("time");
+
+                    b.Property<DateTime>("InterviewDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<long>("InterviewRoundId")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
                     b.Property<string>("Location")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Result")
+                    b.Property<string>("Position")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<long?>("Round")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("ScheduleId")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("Status")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicationId");
+                    b.HasIndex("InterviewRoundId");
 
-                    b.HasIndex("ScheduleId");
-
-                    b.ToTable("Interviews");
+                    b.ToTable("InterviewSessions");
                 });
 
             modelBuilder.Entity("BusinessObjects.Entity.Job", b =>
@@ -120,6 +154,12 @@ namespace BusinessObjects.Migrations
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
+
+                    b.Property<double>("MaxSalary")
+                        .HasColumnType("float");
+
+                    b.Property<double>("MinSalary")
+                        .HasColumnType("float");
 
                     b.Property<string>("Position")
                         .IsRequired()
@@ -202,37 +242,41 @@ namespace BusinessObjects.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("BusinessObjects.Entity.Schedule", b =>
+            modelBuilder.Entity("BusinessObjects.Entity.SessionApplication", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<long>("ApplicationId")
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    b.Property<long>("InterviewSessionId")
+                        .HasColumnType("bigint");
 
-                    b.Property<TimeSpan?>("EndTime")
-                        .HasColumnType("time");
-
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Location")
+                    b.Property<string>("Result")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ScheduledDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<TimeSpan?>("StartTime")
-                        .HasColumnType("time");
+                    b.HasKey("ApplicationId", "InterviewSessionId");
 
-                    b.Property<long?>("UserId")
+                    b.HasIndex("InterviewSessionId");
+
+                    b.ToTable("SessionApplications");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Entity.SessionInterviewer", b =>
+                {
+                    b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
-                    b.HasKey("Id");
+                    b.Property<long>("InterviewSessionId")
+                        .HasColumnType("bigint");
 
-                    b.HasIndex("UserId");
+                    b.HasKey("UserId", "InterviewSessionId");
 
-                    b.ToTable("Schedules");
+                    b.HasIndex("InterviewSessionId");
+
+                    b.ToTable("SessionInterviewers");
                 });
 
             modelBuilder.Entity("BusinessObjects.Entity.Skill", b =>
@@ -247,6 +291,10 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -348,23 +396,26 @@ namespace BusinessObjects.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("BusinessObjects.Entity.Interview", b =>
+            modelBuilder.Entity("BusinessObjects.Entity.InterviewRound", b =>
                 {
-                    b.HasOne("BusinessObjects.Entity.Application", "Application")
-                        .WithMany("Interviews")
-                        .HasForeignKey("ApplicationId")
+                    b.HasOne("BusinessObjects.Entity.Job", "Job")
+                        .WithMany("InterviewRounds")
+                        .HasForeignKey("JobId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BusinessObjects.Entity.Schedule", "Schedule")
-                        .WithMany("Interviews")
-                        .HasForeignKey("ScheduleId")
+                    b.Navigation("Job");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Entity.InterviewSession", b =>
+                {
+                    b.HasOne("BusinessObjects.Entity.InterviewRound", "InterviewRound")
+                        .WithMany("InterviewSessions")
+                        .HasForeignKey("InterviewRoundId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Application");
-
-                    b.Navigation("Schedule");
+                    b.Navigation("InterviewRound");
                 });
 
             modelBuilder.Entity("BusinessObjects.Entity.Job", b =>
@@ -408,11 +459,40 @@ namespace BusinessObjects.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("BusinessObjects.Entity.Schedule", b =>
+            modelBuilder.Entity("BusinessObjects.Entity.SessionApplication", b =>
                 {
+                    b.HasOne("BusinessObjects.Entity.Application", "Application")
+                        .WithMany("SessionApplications")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BusinessObjects.Entity.InterviewSession", "InterviewSession")
+                        .WithMany("SessionApplications")
+                        .HasForeignKey("InterviewSessionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Application");
+
+                    b.Navigation("InterviewSession");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Entity.SessionInterviewer", b =>
+                {
+                    b.HasOne("BusinessObjects.Entity.InterviewSession", "InterviewSession")
+                        .WithMany("SessionInterviewers")
+                        .HasForeignKey("InterviewSessionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("BusinessObjects.Entity.User", "User")
-                        .WithMany("Schedules")
-                        .HasForeignKey("UserId");
+                        .WithMany("SessionInterviewers")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("InterviewSession");
 
                     b.Navigation("User");
                 });
@@ -449,12 +529,26 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.Entity.Application", b =>
                 {
-                    b.Navigation("Interviews");
+                    b.Navigation("SessionApplications");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Entity.InterviewRound", b =>
+                {
+                    b.Navigation("InterviewSessions");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Entity.InterviewSession", b =>
+                {
+                    b.Navigation("SessionApplications");
+
+                    b.Navigation("SessionInterviewers");
                 });
 
             modelBuilder.Entity("BusinessObjects.Entity.Job", b =>
                 {
                     b.Navigation("Applications");
+
+                    b.Navigation("InterviewRounds");
 
                     b.Navigation("JobSkills");
                 });
@@ -467,11 +561,6 @@ namespace BusinessObjects.Migrations
             modelBuilder.Entity("BusinessObjects.Entity.Role", b =>
                 {
                     b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("BusinessObjects.Entity.Schedule", b =>
-                {
-                    b.Navigation("Interviews");
                 });
 
             modelBuilder.Entity("BusinessObjects.Entity.Skill", b =>
@@ -487,7 +576,7 @@ namespace BusinessObjects.Migrations
 
                     b.Navigation("Resumes");
 
-                    b.Navigation("Schedules");
+                    b.Navigation("SessionInterviewers");
 
                     b.Navigation("UserSkills");
                 });

@@ -74,5 +74,10 @@ namespace Services.Impl
             var user = await userRepository.FindByEmail(email);
             return mapper.Map<UserDTO>(user);
         }
+
+        public async Task<bool> ChangePassword(long id, ChangePasswordDTO changePasswordDTO)
+        {
+            return await userRepository.ChangePassword(id, changePasswordDTO.currentPassword, changePasswordDTO.newPassword);
+        }
     }
 }

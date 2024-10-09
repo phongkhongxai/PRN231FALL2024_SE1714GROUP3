@@ -17,7 +17,7 @@ namespace DAL.Repositories.Impl
         public async Task<List<User>> GetAllUsers()=> await UserDAO.Instance.GetAllUsers();
         public async Task<bool> DeleteUser(long id)=> await UserDAO.Instance.DeleteUser(id);
         public async Task<User> UpdateUser(User user)=> await UserDAO.Instance.UpdateUser(user);
-
+        public Task<bool> ChangePassword(long id, string currentPass, string newPass) => UserDAO.Instance.ChangePassword(id, currentPass, newPass);
         public Task<User> FindByEmail(string email)
         {
             return UserDAO.Instance.FindByEmail(email);

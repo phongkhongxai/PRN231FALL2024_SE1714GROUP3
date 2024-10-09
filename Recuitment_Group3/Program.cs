@@ -7,6 +7,10 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.OData;
+using Microsoft.OData.ModelBuilder;
+using BusinessObjects.DTO;
+using Recuitment_Group3.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,13 +26,38 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<ISkillService, SkillService>(); 
+builder.Services.AddScoped<IInterviewRoundService, InterviewRoundService>();
 
 
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IJobRepository, JobRepository>();
+builder.Services.AddScoped<ISkillRepository, SkillRepository>();
+builder.Services.AddScoped<IInterviewRoundRepository, InterviewRoundRepository>();
+
+
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
+
+
+builder.Services.AddControllers().AddOData(opt =>
+{
+    var odataBuilder = new ODataConventionModelBuilder();
+    odataBuilder.EntitySet<JobDTO>("Jobs");
+    odataBuilder.EntitySet<SkillDTO>("Skills");
+    odataBuilder.EntitySet<InterviewRoundDTO>("InterviewRounds"); 
+    opt.AddRouteComponents("odata", odataBuilder.GetEdmModel())
+        .Select()
+        .Filter()
+        .OrderBy()
+        .SetMaxTop(100)
+        .Expand()
+        .Count();
+});
+
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 
 builder.Services.AddSwaggerGen(options =>
 {
