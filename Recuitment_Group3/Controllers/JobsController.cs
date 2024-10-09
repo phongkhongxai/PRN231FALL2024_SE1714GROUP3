@@ -9,9 +9,7 @@ using Services;
 using Services.Impl;
 
 namespace Recuitment_Group3.Controllers
-{
-
-     
+{     
     [Route("odata/[controller]")]
     [ApiController]
     public class JobsController : ODataController

@@ -69,7 +69,7 @@ namespace Services.Impl
                 Phone = userDTO.Phone ?? "default",
                 Address = userDTO.Address ?? "default",
                 Gender = userDTO.Gender ?? "default",
-                RoleId = 1,
+                RoleId = 3,
                 IsDelete = false
             };
         }
@@ -95,7 +95,8 @@ namespace Services.Impl
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Role, user.RoleId.ToString())  
+                new Claim(ClaimTypes.Role, user.RoleId.ToString()),
+                new Claim("username", user.Username),
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

@@ -11,6 +11,9 @@ using Microsoft.AspNetCore.OData;
 using Microsoft.OData.ModelBuilder;
 using BusinessObjects.DTO;
 using Recuitment_Group3.Infrastructure;
+using Microsoft.Extensions.FileProviders;
+using DinkToPdf.Contracts;
+using DinkToPdf;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +40,7 @@ builder.Services.AddScoped<ISkillRepository, SkillRepository>();
 builder.Services.AddScoped<IInterviewRoundRepository, InterviewRoundRepository>();
 
 
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 
@@ -124,6 +128,14 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "OData V1");
     });
 }
+
+app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(builder.Environment.ContentRootPath, "PDFs")),
+    RequestPath = "/PDFs"
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
