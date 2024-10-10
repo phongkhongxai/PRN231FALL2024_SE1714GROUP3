@@ -31,14 +31,14 @@ builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<ISkillService, SkillService>(); 
 builder.Services.AddScoped<IInterviewRoundService, InterviewRoundService>();
-
+builder.Services.AddScoped<IResumeService, ResumeService>();
 
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IJobRepository, JobRepository>();
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();
 builder.Services.AddScoped<IInterviewRoundRepository, InterviewRoundRepository>();
-
+builder.Services.AddScoped<IResumeRepository, ResumeRepository>();
 
 builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
@@ -50,7 +50,8 @@ builder.Services.AddControllers().AddOData(opt =>
     var odataBuilder = new ODataConventionModelBuilder();
     odataBuilder.EntitySet<JobDTO>("Jobs");
     odataBuilder.EntitySet<SkillDTO>("Skills");
-    odataBuilder.EntitySet<InterviewRoundDTO>("InterviewRounds"); 
+    odataBuilder.EntitySet<InterviewRoundDTO>("InterviewRounds");
+    odataBuilder.EntitySet<ResponseResumeDTO>("Resumes");
     opt.AddRouteComponents("odata", odataBuilder.GetEdmModel())
         .Select()
         .Filter()

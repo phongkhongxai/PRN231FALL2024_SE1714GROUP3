@@ -33,6 +33,15 @@ namespace Services.Utils
             CreateMap<InterviewRoundCreateDTO, InterviewRound>();
             CreateMap<ApplicationCreateDTO, Application>();
             CreateMap<ApplicationUpdateDTO, Application>();
+            CreateMap<Resume, ResponseResumeDTO>().ReverseMap();
+            //    .ForMember(dest => dest.Applications, 
+            //    opt => opt.MapFrom(src => src.Applications.Select(sl => new ApplicationDTO
+            //{
+            //    Id = sl.Id,
+            //    Status=sl.Status,
+            //    User = new UserDTO {
+                    
+            //    })));
 
 
 
