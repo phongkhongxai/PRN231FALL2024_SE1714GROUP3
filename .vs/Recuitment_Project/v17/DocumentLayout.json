@@ -66,8 +66,7 @@
               "RelativeToolTip": "Services\\Impl\\JobService.cs",
               "ViewState": "AQIAAEMAAAAAAAAAAAAcwE4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:55:55.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T17:55:55.399Z"
             },
             {
               "$type": "Document",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "BusinessObjects\\DTO\\ApplicationCreateDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:43:12.391Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T17:43:12.391Z"
             },
             {
               "$type": "Document",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "BusinessObjects\\DTO\\JobCreateDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:39:46.599Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T17:39:46.599Z"
             },
             {
               "$type": "Document",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "Services\\IJobService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:38:20.099Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T17:38:20.099Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "Services\\IApplicationService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:36:07.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T17:36:07.924Z"
             },
             {
               "$type": "Document",
@@ -144,8 +139,7 @@
               "RelativeToolTip": "Services\\Utils\\MappingProfile.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAswBAAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:29:50.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T17:29:50.047Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "DAL\\Repositories\\IApplicationRepository.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:17:38.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T17:17:38.857Z"
             },
             {
               "$type": "Document",
@@ -170,8 +163,7 @@
               "RelativeToolTip": "DAL\\DbContenxt\\ApplicationDAO.cs",
               "ViewState": "AQIAADgAAAAAAAAAAAAUwEYAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:06:32.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T17:06:32.742Z"
             }
           ]
         }
