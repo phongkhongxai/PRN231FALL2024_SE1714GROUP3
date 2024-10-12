@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\semester 8\\prn231\\prn231fall2024_se1714group3\\services\\impl\\skillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\skillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\semester 8\\prn231\\prn231fall2024_se1714group3\\recuitment_group3\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\recuitment_group3\\controllers\\skillscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\skillscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\semester 8\\prn231\\prn231fall2024_se1714group3\\recuitment_group3\\controllers\\interviewroundscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\interviewroundscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\dbcontenxt\\skilldao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\skilldao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|d:\\semester 8\\prn231\\prn231fall2024_se1714group3\\services\\impl\\skillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F099CEA-17FF-4744-ABB9-B0B1BE3B391D}|Services\\Services.csproj|solutionrelative:services\\impl\\skillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\dal\\repositories\\iskillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,7 +90,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 19,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,7 +106,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Recuitment_Group3\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T08:43:21.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InterviewRoundsController.cs",
+              "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\InterviewRoundsController.cs",
+              "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\InterviewRoundsController.cs",
+              "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\InterviewRoundsController.cs",
+              "RelativeToolTip": "Recuitment_Group3\\Controllers\\InterviewRoundsController.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T08:42:55.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "SkillService.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\SkillService.cs",
               "RelativeDocumentMoniker": "Services\\Impl\\SkillService.cs",
@@ -111,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ISkillRepository.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\ISkillRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\ISkillRepository.cs",
@@ -129,13 +163,14 @@
               "RelativeDocumentMoniker": "DAL\\DbContenxt\\SkillDAO.cs",
               "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\SkillDAO.cs",
               "RelativeToolTip": "DAL\\DbContenxt\\SkillDAO.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAEwDIAAAAxAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAawDIAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T04:33:41.169Z"
+              "WhenOpened": "2024-10-09T04:33:41.169Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Program.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Program.cs",
@@ -147,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Skill.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\Skill.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Entity\\Skill.cs",
@@ -159,19 +194,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "SkillsController.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\SkillsController.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\SkillsController.cs",
               "ToolTip": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\SkillsController.cs",
               "RelativeToolTip": "Recuitment_Group3\\Controllers\\SkillsController.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAiwD0AAABDAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAAAkwD0AAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T01:46:46.331Z"
+              "WhenOpened": "2024-10-09T01:46:46.331Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "JobsController.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\JobsController.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\JobsController.cs",
@@ -183,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\User.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Entity\\User.cs",
@@ -195,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Application.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\Application.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Entity\\Application.cs",
@@ -207,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "20241006114123_updateDB.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Migrations\\20241006114123_updateDB.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Migrations\\20241006114123_updateDB.cs",
@@ -219,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "20241006113937_updateDB.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Migrations\\20241006113937_updateDB.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Migrations\\20241006113937_updateDB.cs",
@@ -231,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\appsettings.json",
               "RelativeDocumentMoniker": "Recuitment_Group3\\appsettings.json",
@@ -243,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "RecuitmentDbContext.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\RecuitmentDbContext.cs",
               "RelativeDocumentMoniker": "DAL\\DbContenxt\\RecuitmentDbContext.cs",
@@ -255,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "RecuitmentDbContext.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\RecuitmentDbContext.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Entity\\RecuitmentDbContext.cs",
@@ -267,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\AuthController.cs",
@@ -279,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\UserDTO.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\DTO\\UserDTO.cs",
@@ -291,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\AuthService.cs",
               "RelativeDocumentMoniker": "Services\\Impl\\AuthService.cs",
@@ -304,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "UserDAO.cs",
               "DocumentMoniker": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\UserDAO.cs",
               "RelativeDocumentMoniker": "DAL\\DbContenxt\\UserDAO.cs",
