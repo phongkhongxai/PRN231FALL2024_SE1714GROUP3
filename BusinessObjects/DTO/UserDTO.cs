@@ -22,7 +22,6 @@ namespace BusinessObjects.DTO
         [Required]
         [StringLength(100)]
         public string Password { get; set; }
-        [Phone]
         [RegularExpression(@"^0\d{9}$", ErrorMessage = "Phone number must start with 0 and be 10 digits long.")]
         public string? Phone { get; set; }
         public string? Address { get; set; }
