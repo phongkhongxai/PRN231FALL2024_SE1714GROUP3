@@ -72,10 +72,9 @@ namespace Services.Impl
             var job = await _jobRepository.GetJobByIdAsync(id);
             if (job == null)
             {
-                return null; // Or throw an exception if preferred
+                return null;  
             }
-
-            // Update job properties only if new values are provided
+             
             if (!string.IsNullOrEmpty(jobUpdatedDto.Title))
             {
                 job.Title = jobUpdatedDto.Title;

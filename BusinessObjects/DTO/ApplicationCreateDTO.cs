@@ -9,8 +9,7 @@ namespace BusinessObjects.DTO
     public class ApplicationCreateDTO
     {
         public long JobId { get; set; }
-        public long UserId { get; set; }
-        //public string? Status { get; set; }
+        public long UserId { get; set; } 
         public long ResumeId { get; set; }
 
     }
