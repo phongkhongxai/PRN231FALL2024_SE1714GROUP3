@@ -14,8 +14,7 @@ namespace BusinessObjects.DTOs
         public string Position { get; set; }
         public TimeSpan Duration { get; set; }
         public string Status { get; set; }
-        public InterviewRoundDTO InterviewRound { get; set; }
-
+        public InterviewRoundDTO InterviewRound { get; set; } 
         public ICollection<SessionApplicationDTO> SessionApplications { get; set; } = new List<SessionApplicationDTO>();
         public ICollection<SessionInterviewerDTO> SessionInterviewers { get; set; } = new List<SessionInterviewerDTO>();
     }

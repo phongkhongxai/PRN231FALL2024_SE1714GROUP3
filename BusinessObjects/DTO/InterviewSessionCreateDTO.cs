@@ -11,7 +11,7 @@ namespace BusinessObjects.DTOs
         public string Position { get; set; }
         public TimeSpan Duration { get; set; }
         public string Status { get; set; }
-        public List<long> ApplicationIds { get; set; } = new List<long>();
-        public List<long> InterviewerIds { get; set; } = new List<long>();
+        public List<long>? ApplicationIds { get; set; } = new List<long>();
+        public List<long>? InterviewerIds { get; set; } = new List<long>();
     }
 }

@@ -53,13 +53,11 @@ var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 builder.Services.AddControllers().AddOData(opt =>
 {
     var odataBuilder = new ODataConventionModelBuilder();
-    odataBuilder.EntitySet<JobDTO>("Jobs")
-     .EntityType.HasKey(sa => sa.Id);
+    odataBuilder.EntitySet<JobDTO>("Jobs");
     odataBuilder.EntitySet<SkillDTO>("Skills");
     odataBuilder.EntitySet<InterviewRoundDTO>("InterviewRounds");
     odataBuilder.EntitySet<ResponseResumeDTO>("Resumes");
-    odataBuilder.EntitySet<InterviewSessionDTO>("InterviewSessions")
-    .EntityType.HasKey(sa => sa.Id);
+    odataBuilder.EntitySet<InterviewSessionDTO>("InterviewSessions");
     opt.AddRouteComponents("odata", odataBuilder.GetEdmModel())
         .Select()
         .Filter()
