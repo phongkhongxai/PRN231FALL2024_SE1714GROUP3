@@ -51,7 +51,7 @@ namespace Recuitment_Group3.Controllers
             }
             var createdSession = await _interviewSessionService.CreateSessionAsync(interviewSessionCreateDTO);
 
-            return CreatedAtAction(nameof(GetSessionById), new { key = createdSession.Id }, createdSession); 
+            return Created(new Uri($"/odata/InterviewSessions({createdSession.Id})", UriKind.Relative), createdSession); 
         }
 
 

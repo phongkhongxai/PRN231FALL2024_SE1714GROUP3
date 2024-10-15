@@ -27,50 +27,61 @@ namespace Services.Impl
             _userRepository = userRepository;
         }
         public async Task<InterviewSessionDTO> CreateSessionAsync(InterviewSessionCreateDTO interviewSessionCreateDTO)
-        { 
-            var session = _mapper.Map<InterviewSession>(interviewSessionCreateDTO);
-
-            var createdSession = await _interviewSessionRepository.CreateInterviewSessionAsync(session);
-            if (createdSession == null)
-            {
-                throw new Exception("Session creation failed.");
-            }
-
+        {
+            // Kiểm tra từng interviewer
             foreach (var interviewerId in interviewSessionCreateDTO.InterviewerIds)
-            { 
-                if (await _userRepository.GetUserByIdAsync(interviewerId)==null)
+            {
+                if (await _userRepository.GetUserByIdAsync(interviewerId) == null)
                 {
                     throw new Exception($"Interviewer with ID {interviewerId} does not exist.");
                 }
 
-                var existingSession = await _interviewSessionRepository.GetActiveSessionByInterviewerIdAsync(interviewerId, session.InterviewDate);
+                var existingSession = await _interviewSessionRepository.GetActiveSessionByInterviewerIdAsync(interviewerId, interviewSessionCreateDTO.InterviewDate);
                 if (existingSession != null)
                 {
                     throw new Exception($"Interviewer with ID {interviewerId} is already assigned to another active session.");
                 }
-                await _interviewSessionRepository.AddInterviewerToSessionAsync(createdSession.Id, interviewerId);
             }
 
             // Kiểm tra từng application
             foreach (var applicationId in interviewSessionCreateDTO.ApplicationIds)
             {
                 // Kiểm tra xem application có tồn tại không
-                if (await _applicationRepository.GetApplicationByIdAsync(applicationId)==null)
+                if (await _applicationRepository.GetApplicationByIdAsync(applicationId) == null)
                 {
                     throw new Exception($"Application with ID {applicationId} does not exist.");
                 }
 
-                var existingSession = await _interviewSessionRepository.GetActiveSessionByApplicationIdAsync(applicationId, session.InterviewDate);
+                var existingSession = await _interviewSessionRepository.GetActiveSessionByApplicationIdAsync(applicationId, interviewSessionCreateDTO.InterviewDate);
                 if (existingSession != null)
                 {
                     throw new Exception($"Application with ID {applicationId} is already part of another active session.");
                 }
-                await _interviewSessionRepository.AddInterviewerToSessionAsync(createdSession.Id, applicationId);
+            }
 
-            } 
+            // Tạo session sau khi tất cả các kiểm tra đã thành công
+            var session = _mapper.Map<InterviewSession>(interviewSessionCreateDTO);
+            var createdSession = await _interviewSessionRepository.CreateInterviewSessionAsync(session);
+            if (createdSession == null)
+            {
+                throw new Exception("Session creation failed.");
+            }
+
+            // Thêm các interviewer vào session
+            foreach (var interviewerId in interviewSessionCreateDTO.InterviewerIds)
+            {
+                await _interviewSessionRepository.AddInterviewerToSessionAsync(createdSession.Id, interviewerId);
+            }
+
+            // Thêm các application vào session
+            foreach (var applicationId in interviewSessionCreateDTO.ApplicationIds)
+            {
+                await _interviewSessionRepository.AddApplicationToSessionAsync(createdSession.Id, applicationId);
+            }
 
             return _mapper.Map<InterviewSessionDTO>(createdSession);
         }
+
 
 
         public async Task<bool> DeleteSessionAsync(long id)
