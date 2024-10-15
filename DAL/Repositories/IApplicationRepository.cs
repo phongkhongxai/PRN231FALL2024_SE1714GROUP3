@@ -12,6 +12,7 @@ namespace DAL.Repositories
         Task<IEnumerable<Application>> GetAllApplicationsAsync();
         Task<Application> GetApplicationByIdAsync(long id);
         Task<IEnumerable<Application>> GetApplicationByUserIdAsync(long id);
+        Task<IEnumerable<Application>> GetApplicationByJobIdAsync(long id);
         Task<Application> CreateApplicationAsync(Application application);
         Task<Application> UpdateApplicationAsync(Application application);
         Task<bool> DeleteAsync(long id);
