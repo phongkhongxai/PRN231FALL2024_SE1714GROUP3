@@ -59,6 +59,18 @@ namespace DAL.DbContenxt
             }
         }
 
+        public async Task<IEnumerable<Application>> GetByJobIdAsync(long id)
+        {
+            using (var _context = new RecuitmentDbContext())
+            {
+                return await _context.Applications
+                    .Include(c => c.User)
+                    .Include(c => c.Resume)
+                    .Include(c => c.Job)
+                    .Where(c => c.JobId == id && !c.IsDelete).ToListAsync();
+            }
+        }
+
         public async Task<Application> AddAsync(Application application)
         {
             using (var _context = new RecuitmentDbContext())

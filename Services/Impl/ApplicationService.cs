@@ -62,6 +62,11 @@ namespace Services.Impl
             var applications = await repository.GetApplicationByUserIdAsync(id);
             return mapper.Map<IEnumerable<ApplicationDTO>>(applications);
         }
+        public async Task<IEnumerable<ApplicationDTO>> GetApplicationByJobIdAsync(long id)
+        {
+            var applications = await repository.GetApplicationByJobIdAsync(id);
+            return mapper.Map<IEnumerable<ApplicationDTO>>(applications);
+        }
 
         public async Task<ApplicationDTO> UpdateApplicationAsync(long id, ApplicationUpdateDTO applicationUpdateDTO)
         {

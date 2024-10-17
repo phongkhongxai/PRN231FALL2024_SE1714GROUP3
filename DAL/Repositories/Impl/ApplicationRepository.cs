@@ -19,6 +19,7 @@ namespace DAL.Repositories.Impl
         public Task<Application> GetApplicationByIdAsync(long id)=> ApplicationDAO.Instance.GetByIdAsync(id);
 
         public Task<IEnumerable<Application>> GetApplicationByUserIdAsync(long id)=> ApplicationDAO.Instance.GetByUserIdAsync(id);
+        public Task<IEnumerable<Application>> GetApplicationByJobIdAsync(long id) => ApplicationDAO.Instance.GetByJobIdAsync(id);
 
         public Task<Application> UpdateApplicationAsync(Application application) => ApplicationDAO.Instance.UpdateAsync(application);
     }
