@@ -72,8 +72,7 @@ namespace Services.Impl
             {
                 await _interviewSessionRepository.AddInterviewerToSessionAsync(createdSession.Id, interviewerId);
             }
-
-            // Thêm các application vào session
+             
             foreach (var applicationId in interviewSessionCreateDTO.ApplicationIds)
             {
                 await _interviewSessionRepository.AddApplicationToSessionAsync(createdSession.Id, applicationId);
