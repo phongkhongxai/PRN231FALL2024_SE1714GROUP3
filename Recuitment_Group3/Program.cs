@@ -11,6 +11,9 @@ using Microsoft.AspNetCore.OData;
 using Microsoft.OData.ModelBuilder;
 using BusinessObjects.DTO;
 using Recuitment_Group3.Infrastructure;
+using Microsoft.Extensions.FileProviders;
+using DinkToPdf.Contracts;
+using DinkToPdf;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,15 +31,16 @@ builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<ISkillService, SkillService>(); 
 builder.Services.AddScoped<IInterviewRoundService, InterviewRoundService>();
-
+builder.Services.AddScoped<IResumeService, ResumeService>();
 
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IJobRepository, JobRepository>();
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();
 builder.Services.AddScoped<IInterviewRoundRepository, InterviewRoundRepository>();
+builder.Services.AddScoped<IResumeRepository, ResumeRepository>();
 
-
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 
@@ -46,7 +50,8 @@ builder.Services.AddControllers().AddOData(opt =>
     var odataBuilder = new ODataConventionModelBuilder();
     odataBuilder.EntitySet<JobDTO>("Jobs");
     odataBuilder.EntitySet<SkillDTO>("Skills");
-    odataBuilder.EntitySet<InterviewRoundDTO>("InterviewRounds"); 
+    odataBuilder.EntitySet<InterviewRoundDTO>("InterviewRounds");
+    odataBuilder.EntitySet<ResponseResumeDTO>("Resumes");
     opt.AddRouteComponents("odata", odataBuilder.GetEdmModel())
         .Select()
         .Filter()
@@ -124,6 +129,14 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "OData V1");
     });
 }
+
+app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(builder.Environment.ContentRootPath, "PDFs")),
+    RequestPath = "/PDFs"
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
