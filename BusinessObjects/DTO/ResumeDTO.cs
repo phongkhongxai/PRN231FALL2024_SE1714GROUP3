@@ -9,12 +9,12 @@ namespace BusinessObjects.DTO
 {
     public class ResumeDTO
     {
-        public string? Name {  get; set; }
-        public string? Phone { get; set; }
-        public string? Email { get; set; }
-        public string? Address { get; set; }
+        public string Name {  get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
         //Mục tiêu nghề nghiệp
-        public string? CareerGoal { get; set; }
+        public string CareerGoal { get; set; }
         public List<WorkExperienceDTO>? WorkExperience { get; set; }
         public List<ProjectDTO>? Project { get; set; }
         public List<EducationDTO>? Education { get; set; }
@@ -22,10 +22,19 @@ namespace BusinessObjects.DTO
         public List<SkillsDTO>? Skills { get; set; }
         public List<AwardAndCertificateDTO>? AwardAndCertificate { get; set; }
 
-        public string? MoreInfomation { get; set; }
+        public string MoreInfomation { get; set; }
 
     }
 
+    public class ContactInfoDTO 
+    {
+        public string Name { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public string CareerGoal { get; set; }
+        public string MoreInfomation { get; set; }
+    }
 
     public class WorkExperienceDTO
     {

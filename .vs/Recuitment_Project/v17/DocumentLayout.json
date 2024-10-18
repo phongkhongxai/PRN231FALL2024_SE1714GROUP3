@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\dal\\dbcontenxt\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -83,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\dto\\applicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|d:\\fptu_ky8\\prn231\\masno\\prn231fall2024_se1714group3\\dal\\dbcontenxt\\interviewrounddao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7DEEB089-76AF-471C-B4A6-955188282434}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontenxt\\interviewrounddao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -134,7 +134,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -146,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SkillAddDTO.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\SkillAddDTO.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\DTO\\SkillAddDTO.cs",
@@ -154,12 +154,11 @@
               "RelativeToolTip": "BusinessObjects\\DTO\\SkillAddDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T15:29:43.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T15:29:43.597Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "JobUpdatedDTO.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\JobUpdatedDTO.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\DTO\\JobUpdatedDTO.cs",
@@ -167,12 +166,11 @@
               "RelativeToolTip": "BusinessObjects\\DTO\\JobUpdatedDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T15:29:32.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T15:29:32.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\IUserRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\IUserRepository.cs",
@@ -180,12 +178,11 @@
               "RelativeToolTip": "DAL\\Repositories\\IUserRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T15:24:59.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T15:24:59.549Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "SkillDAO.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\SkillDAO.cs",
               "RelativeDocumentMoniker": "DAL\\DbContenxt\\SkillDAO.cs",
@@ -193,12 +190,11 @@
               "RelativeToolTip": "DAL\\DbContenxt\\SkillDAO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T15:21:54.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T15:21:54.1Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "UserSkill.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\UserSkill.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Entity\\UserSkill.cs",
@@ -206,12 +202,11 @@
               "RelativeToolTip": "BusinessObjects\\Entity\\UserSkill.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T15:08:04.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T15:08:04.352Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ResumesController.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\ResumesController.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\ResumesController.cs",
@@ -219,12 +214,11 @@
               "RelativeToolTip": "Recuitment_Group3\\Controllers\\ResumesController.cs",
               "ViewState": "AQIAAHcAAAAAWsjuYDoawIUAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:18:51.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-16T08:18:51.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\Repositories\\Impl\\UserRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\Impl\\UserRepository.cs",
@@ -232,12 +226,11 @@
               "RelativeToolTip": "DAL\\Repositories\\Impl\\UserRepository.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T16:25:38.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T16:25:38.156Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\Impl\\UserService.cs",
@@ -245,12 +238,11 @@
               "RelativeToolTip": "Services\\Impl\\UserService.cs",
               "ViewState": "AQIAACsAAAAAAAAAAAAIwDQAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T14:15:51.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T14:15:51.476Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\UserDTO.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\DTO\\UserDTO.cs",
@@ -262,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "UserUpdateDTO.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\UserUpdateDTO.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\DTO\\UserUpdateDTO.cs",
@@ -270,8 +262,7 @@
               "RelativeToolTip": "BusinessObjects\\DTO\\UserUpdateDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T14:14:17.393Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T14:14:17.393Z"
             },
             {
               "$type": "Document",
@@ -287,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "JobDAO.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\JobDAO.cs",
               "RelativeDocumentMoniker": "DAL\\DbContenxt\\JobDAO.cs",
@@ -295,12 +286,11 @@
               "RelativeToolTip": "DAL\\DbContenxt\\JobDAO.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAAowGsAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T06:44:26.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T06:44:26.131Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserDAO.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\UserDAO.cs",
               "RelativeDocumentMoniker": "DAL\\DbContenxt\\UserDAO.cs",
@@ -313,19 +303,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Program.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Program.cs",
               "ToolTip": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Program.cs",
               "RelativeToolTip": "Recuitment_Group3\\Program.cs",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAAAF4AAAATAAAA",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAAAGsAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T09:20:43.094Z"
+              "WhenOpened": "2024-10-12T09:20:43.094Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "JobsController.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\JobsController.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\JobsController.cs",
@@ -333,12 +324,11 @@
               "RelativeToolTip": "Recuitment_Group3\\Controllers\\JobsController.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T09:15:00.532Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-12T09:15:00.532Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "ApllicationController.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\ApllicationController.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\ApllicationController.cs",
@@ -362,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\AuthService.cs",
               "RelativeDocumentMoniker": "Services\\Impl\\AuthService.cs",
@@ -386,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ApplicationDTO.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\ApplicationDTO.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\DTO\\ApplicationDTO.cs",
@@ -410,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\UserController.cs",
@@ -418,12 +408,11 @@
               "RelativeToolTip": "Recuitment_Group3\\Controllers\\UserController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T08:43:38.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-12T08:43:38.183Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "JobService.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\JobService.cs",
               "RelativeDocumentMoniker": "Services\\Impl\\JobService.cs",
@@ -431,12 +420,11 @@
               "RelativeToolTip": "Services\\Impl\\JobService.cs",
               "ViewState": "AQIAAF0AAAAAAAAAAAAmwHMAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T17:55:55.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T17:55:55.399Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ApplicationService.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\ApplicationService.cs",
               "RelativeDocumentMoniker": "Services\\Impl\\ApplicationService.cs",
@@ -520,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ApplicationDAO.cs",
               "DocumentMoniker": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\DbContenxt\\ApplicationDAO.cs",
               "RelativeDocumentMoniker": "DAL\\DbContenxt\\ApplicationDAO.cs",
