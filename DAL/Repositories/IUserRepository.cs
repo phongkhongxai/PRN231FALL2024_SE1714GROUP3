@@ -16,6 +16,6 @@ namespace DAL.Repositories
         Task<bool> DeleteUser(long id);
         Task<User> FindByEmail(string email);
         Task<bool> ChangePassword(long id, string currentPass, string newPass);
-
+        Task<bool> AddUserSkill(long id, long skillId, string? ex);
     }
 }
