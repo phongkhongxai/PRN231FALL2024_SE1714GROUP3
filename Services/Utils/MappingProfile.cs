@@ -1,6 +1,7 @@
 ﻿using BusinessObjects.DTO;
 using BusinessObjects.Entity; 
 using AutoMapper;
+using BusinessObjects.DTOs;
 
 namespace Services.Utils
 {
@@ -33,17 +34,24 @@ namespace Services.Utils
             CreateMap<InterviewRoundCreateDTO, InterviewRound>();
             CreateMap<ApplicationCreateDTO, Application>();
             CreateMap<ApplicationUpdateDTO, Application>();
-            CreateMap<Resume, ResponseResumeDTO>().ReverseMap();
-            //    .ForMember(dest => dest.Applications, 
-            //    opt => opt.MapFrom(src => src.Applications.Select(sl => new ApplicationDTO
-            //{
-            //    Id = sl.Id,
-            //    Status=sl.Status,
-            //    User = new UserDTO {
-                    
-            //    })));
+            CreateMap<Resume, ResponseResumeDTO>()
+                .ReverseMap();
 
+            CreateMap<InterviewSession, InterviewSessionDTO>()
+                .ForMember(dest => dest.InterviewRound, opt => opt.MapFrom(src => src.InterviewRound))
+                .ForMember(dest => dest.SessionApplications, opt => opt.MapFrom(src => src.SessionApplications))
+                .ForMember(dest => dest.SessionInterviewers, opt => opt.MapFrom(src => src.SessionInterviewers));
 
+            CreateMap<InterviewSessionCreateDTO, InterviewSession>();
+            CreateMap<InterviewSessionUpdateDTO, InterviewSession>();
+
+            // Mapping cho SessionApplication và SessionInterviewer
+            CreateMap<SessionApplication, SessionApplicationDTO>()
+                .ForMember(dest => dest.Application, opt => opt.MapFrom(src => src.Application));
+
+            CreateMap<SessionInterviewer, SessionInterviewerDTO>()
+                .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User));
+             
 
 
 

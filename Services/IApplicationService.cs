@@ -12,6 +12,7 @@ namespace Services
         public Task<IEnumerable<ApplicationDTO>> GetAllApplicationsAsync();
         public Task<ApplicationDTO> GetApplicationByIdAsync(long id);
         public Task<IEnumerable<ApplicationDTO>> GetApplicationByUserIdAsync(long id);
+        public Task<IEnumerable<ApplicationDTO>> GetApplicationByJobIdAsync(long id);
         public Task<ApplicationDTO> CreateApplicationAsync(ApplicationCreateDTO applicationCreateDTO);
         public Task<ApplicationDTO> UpdateApplicationAsync(long id, ApplicationUpdateDTO applicationUpdateDTO);
         public Task<bool> DeleteApplicationAsync(long id);

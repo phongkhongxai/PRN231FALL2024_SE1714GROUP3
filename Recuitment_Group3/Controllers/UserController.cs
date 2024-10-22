@@ -8,7 +8,7 @@ using Services.Impl;
 
 namespace Recuitment_Group3.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase

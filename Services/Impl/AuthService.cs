@@ -96,7 +96,7 @@ namespace Services.Impl
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Role, user.RoleId.ToString()),
-                new Claim("username", user.Username),
+                new Claim("fullname", user.FullName),
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

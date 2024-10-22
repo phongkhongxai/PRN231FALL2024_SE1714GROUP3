@@ -14,6 +14,7 @@ using Recuitment_Group3.Infrastructure;
 using Microsoft.Extensions.FileProviders;
 using DinkToPdf.Contracts;
 using DinkToPdf;
+using BusinessObjects.DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +33,8 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<ISkillService, SkillService>(); 
 builder.Services.AddScoped<IInterviewRoundService, InterviewRoundService>();
 builder.Services.AddScoped<IResumeService, ResumeService>();
+builder.Services.AddScoped<IApplicationService, ApplicationService>();
+builder.Services.AddScoped<IInterviewSessionService, InterviewSessionService>();
 
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -39,6 +42,8 @@ builder.Services.AddScoped<IJobRepository, JobRepository>();
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();
 builder.Services.AddScoped<IInterviewRoundRepository, InterviewRoundRepository>();
 builder.Services.AddScoped<IResumeRepository, ResumeRepository>();
+builder.Services.AddScoped<IApplicationRepository, ApplicationRepository>();
+builder.Services.AddScoped<IInterviewSessionRepository, InterviewSessionRepository>();
 
 builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
@@ -52,6 +57,7 @@ builder.Services.AddControllers().AddOData(opt =>
     odataBuilder.EntitySet<SkillDTO>("Skills");
     odataBuilder.EntitySet<InterviewRoundDTO>("InterviewRounds");
     odataBuilder.EntitySet<ResponseResumeDTO>("Resumes");
+    odataBuilder.EntitySet<InterviewSessionDTO>("InterviewSessions");
     opt.AddRouteComponents("odata", odataBuilder.GetEdmModel())
         .Select()
         .Filter()

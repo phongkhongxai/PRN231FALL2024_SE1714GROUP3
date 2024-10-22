@@ -10,6 +10,7 @@ using RazorLight;
 using Services;
 using Services.Impl;
 using System;
+using System.Net.Mime;
 using System.Reflection;
 using System.Security.Claims;
 
@@ -82,6 +83,35 @@ namespace Recuitment_Group3.Controllers
             return NoContent();
         }
 
+        //Hàm này dùng để tải file pdf --- test trên web browser
+        [HttpGet("pdf/{fileName}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetPdfFile(string fileName)
+        {
+            try
+            {
+                // Construct the full file path
+                var filePath = Path.Combine(_pdfSavePath, fileName);
+
+                // Check if the file exists
+                if (!System.IO.File.Exists(filePath))
+                {
+                    return NotFound("File not found.");
+                }
+
+                // Read the PDF file as byte array
+                var pdfBytes = await System.IO.File.ReadAllBytesAsync(filePath);
+
+                // Return the PDF file as a FileContentResult
+                return File(pdfBytes, MediaTypeNames.Application.Pdf, fileName);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here if needed
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
+        }
+
         [HttpPost("")]
         [Authorize(Roles = "1,2")]
         public async Task<ActionResult<ResponseResumeDTO>> CreateCV([FromBody] ResumeDTO resume)
@@ -116,7 +146,7 @@ namespace Recuitment_Group3.Controllers
                 // 6. Return the relative file path and filename
                 var relativePath = Path.Combine("PDFs", fileName);
 
-                var savedResume = await _resumeService.CreateResumeAsync(relativePath, user.Id);
+                var savedResume = await _resumeService.CreateResumeAsync(fileName, user.Id, resume);
 
                 return Ok(savedResume);
             }
