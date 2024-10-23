@@ -22,5 +22,6 @@ namespace DAL.Repositories.Impl
         {
             return UserDAO.Instance.FindByEmail(email);
         }
+        public Task<bool> AddUserSkill(long id, long skillId, string? ex) => UserDAO.Instance.AddSkillForUser(id, skillId,ex);
     }
 }

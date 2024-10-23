@@ -70,6 +70,55 @@ namespace DAL.DbContenxt
             return await db.Users.FirstOrDefaultAsync(c => c.Email == email);
         }
 
+
+        public async Task<bool> AddSkillForUser(long userId, long skillId, string? experiences = null)
+        {
+            using var db = new RecuitmentDbContext();
+            var user = await db.Users.Include(u => u.UserSkills)
+                                     .FirstOrDefaultAsync(u => u.Id == userId && !u.IsDelete);
+
+            if (user == null)
+            {
+                throw new KeyNotFoundException("User not found.");
+            }
+
+            var skill = await db.Skills.FirstOrDefaultAsync(s => s.Id == skillId && !s.IsDelete);
+            if (skill == null)
+            {
+                throw new KeyNotFoundException("Skill not found.");
+            }
+            var existingUserSkill = await db.UserSkills.FirstOrDefaultAsync(us => us.UserId == user.Id && us.SkillId == skillId);
+
+            //if (user.UserSkills.Any(js => js.SkillId != skillId))
+            if (existingUserSkill == null)
+            {
+                var userSkill = new UserSkill
+                {
+                    UserId = user.Id,
+                    SkillId = skill.Id,
+                    Experiences = experiences
+                };
+
+                user.UserSkills.Add(userSkill);
+                //throw new InvalidOperationException("Skill already exists.");
+            }
+            else
+            {
+                existingUserSkill.Experiences= experiences;
+                db.Entry(existingUserSkill).State = EntityState.Modified;
+            }
+
+
+
+            db.Users.Update(user);
+
+            await db.SaveChangesAsync();
+            return true;
+        }
+
+
+
+
         public async Task<bool> ChangePassword(long userId, string currentPassword, string newPassword)
         {
             using var db = new RecuitmentDbContext();
@@ -96,6 +145,7 @@ namespace DAL.DbContenxt
             return true;
         }
 
+
         private string HashPassword(string password)
         {
             using (var sha256 = SHA256.Create())
@@ -109,6 +159,9 @@ namespace DAL.DbContenxt
                 return builder.ToString();
             }
         }
+
+
+
 
     }
 }

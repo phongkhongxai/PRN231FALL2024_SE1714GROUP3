@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using BusinessObjects.DTO;
+using BusinessObjects.Entity;
 using DAL.DbContenxt;
 using DAL.Repositories;
+using DAL.Repositories.Impl;
 
 namespace Services.Impl
 {
@@ -33,9 +35,9 @@ namespace Services.Impl
             var user = await userRepository.GetUserByIdAsync(id);
             if (user != null)
             {
-                if (userDTO.Email != null)
+                if (userDTO.Username != null)
                 {
-                    user.Email= userDTO.Email;
+                    user.Username = userDTO.Username;
                 }
                 if (userDTO.Address != null)
                 {
@@ -49,6 +51,21 @@ namespace Services.Impl
                 {
                     user.Gender = userDTO.Gender;
                 }
+                if (userDTO.RoleId != null)
+                {
+                    user.RoleId = userDTO.RoleId;
+                }
+                if (userDTO.IsDelete != null)
+                {
+                    user.IsDelete = userDTO.IsDelete;
+                }
+                user.UserSkills.Clear();
+                foreach (var skill in userDTO.SkillIds)
+                {
+                    await userRepository.AddUserSkill(user.Id, skill.SkillId, skill.Experiences);
+                }
+
+
                 var updated = await userRepository.UpdateUser(user);
                 return mapper.Map<UserDTO>(updated);
             }

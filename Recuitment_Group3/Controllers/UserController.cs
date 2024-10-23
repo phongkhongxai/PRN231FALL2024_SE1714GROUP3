@@ -3,21 +3,24 @@ using BusinessObjects.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
 using Services;
 using Services.Impl;
 
 namespace Recuitment_Group3.Controllers
 {
-    //[Authorize]
-    [Route("api/[controller]")]
+    [Authorize]
+    [Route("odata/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserController : ODataController
     {
         private IUserService userService;
         public UserController (IUserService userService)
         {
             this.userService = userService;
         }
+        [EnableQuery]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserDTO>>> GetAllUsers()
         {
