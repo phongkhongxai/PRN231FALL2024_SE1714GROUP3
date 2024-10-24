@@ -146,7 +146,7 @@ namespace Recuitment_Group3.Controllers
                 // 6. Return the relative file path and filename
                 var relativePath = Path.Combine("PDFs", fileName);
 
-                var savedResume = await _resumeService.CreateResumeAsync(fileName, user.Id);
+                var savedResume = await _resumeService.CreateResumeAsync(fileName, user.Id, resume);
 
                 return Ok(savedResume);
             }
