@@ -113,7 +113,7 @@ namespace Recuitment_Group3.Controllers
         }
 
         [HttpPost("")]
-        [Authorize(Roles = "1,2")]
+        [Authorize(Roles = "1,3")]
         public async Task<ActionResult<ResponseResumeDTO>> CreateCV([FromBody] ResumeDTO resume)
         {
             try

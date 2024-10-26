@@ -30,10 +30,30 @@ namespace Services.Impl
             var application = mapper.Map<Application>(applicationCreateDTO);
             var user = await userRepository.GetUserByIdAsync(applicationCreateDTO.UserId);
             var job = await jobRepository.GetJobByIdAsync(applicationCreateDTO.JobId);
-            if (job == null || user == null) return null;
+
+            if (user == null)
+            {
+                throw new Exception("Người dùng không tồn tại");
+            }
+
+            if (job == null)
+            {
+                throw new Exception("Công việc không tồn tại");
+            }
+
+            var userSkills = user.UserSkills.Select(us => us.SkillId).ToList();
+            var jobSkills = job.JobSkills.Select(js => js.SkillId).ToList();
+
+            if (!jobSkills.All(skillId => userSkills.Contains(skillId)))
+            {
+                throw new Exception("Không đủ điều kiện về kỹ năng để apply");
+            }
+
             var created = await repository.CreateApplicationAsync(application);
             return mapper.Map<ApplicationDTO>(created);
         }
+
+
 
         public async Task<bool> DeleteApplicationAsync(long id)
         {

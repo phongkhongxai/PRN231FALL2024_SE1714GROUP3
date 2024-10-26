@@ -18,16 +18,16 @@ namespace Services.Impl
             this.mapper = mapper;
         }
 
-        public async Task<UserDTO> GetUserById(long id)
+        public async Task<UserResponseDTO> GetUserById(long id)
         {
             var user = await userRepository.GetUserByIdAsync(id);
-            return mapper.Map<UserDTO>(user);
+            return mapper.Map<UserResponseDTO>(user);
         }
 
-        public async Task<List<UserDTO>> GetAllUsers()
+        public async Task<List<UserResponseDTO>> GetAllUsers()
         {
             var user = await userRepository.GetAllUsers();
-            return mapper.Map<List<UserDTO>>(user);
+            return mapper.Map<List<UserResponseDTO>>(user);
         }
 
         public async Task<UserDTO> UpdateUser(long id, UserUpdateDTO userDTO)

@@ -15,6 +15,8 @@ namespace BusinessObjects.DTO
         public DateTime CreatedDate { get; set; }
         public string Position { get; set; }
         public long Amount { get; set; }
+        public double MinSalary { get; set; }
+        public double MaxSalary { get; set; }
         public IEnumerable<JobSkillDTO> JobSkills { get; set; }
     }
 }

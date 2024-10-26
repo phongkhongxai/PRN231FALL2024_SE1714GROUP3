@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BusinessObjects.Migrations
 {
     [DbContext(typeof(RecuitmentDbContext))]
-    [Migration("20241006114123_updateDB")]
-    partial class updateDB
+    [Migration("20241018161427_initalDB")]
+    partial class initalDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -205,12 +205,30 @@ namespace BusinessObjects.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<string>("CertificationsJson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactInfoJson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EducationJson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExperiencesJson")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FilePath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
+
+                    b.Property<string>("ProjectsJson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SkillsJson")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
