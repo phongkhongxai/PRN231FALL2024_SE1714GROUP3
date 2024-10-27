@@ -65,5 +65,11 @@ namespace DAL.Repositories.Impl
             return await InterviewSessionDAO.Instance.GetActiveSessionByApplicationIdAsync(applicationId, date);
 
         }
+
+        public async Task<bool> UpdateSessionApplicationStatusAsync(long sessionId, long applicationId, string result, string status)
+        {
+            return await InterviewSessionDAO.Instance.UpdateSessionApplicationStatusAsync(sessionId, applicationId, result, status);
+
+        }
     }
 }
