@@ -39,6 +39,30 @@ namespace Recuitment_Group3.Controllers
             return Ok(app);
         }
 
+        [HttpGet("job/{id}")]
+        [EnableQuery]
+        public async Task<ActionResult<ApplicationDTO>> GetApplicationByJobId([FromRoute] long id)
+        {
+            var app = await applicationService.GetApplicationByJobIdAsync(id);
+            if (app == null)
+            {
+                return NotFound();
+            }
+            return Ok(app);
+        }
+
+        [HttpGet("user/{id}")]
+        [EnableQuery]
+        public async Task<ActionResult<ApplicationDTO>> GetApplicationByUserId([FromRoute] long id)
+        {
+            var app = await applicationService.GetApplicationByUserIdAsync(id);
+            if (app == null)
+            {
+                return NotFound();
+            }
+            return Ok(app);
+        }
+
         [HttpPost]
         public async Task<ActionResult<JobDTO>> CreateApp([FromBody] ApplicationCreateDTO applicationCreateDTO)
         {

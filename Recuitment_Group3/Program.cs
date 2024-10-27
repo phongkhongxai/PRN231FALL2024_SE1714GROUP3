@@ -54,6 +54,8 @@ builder.Services.AddControllers().AddOData(opt =>
 {
     var odataBuilder = new ODataConventionModelBuilder();
     odataBuilder.EntitySet<JobDTO>("Jobs");
+    odataBuilder.EntitySet<JobDTO>("Users");
+    odataBuilder.EntitySet<JobDTO>("Applications");
     odataBuilder.EntitySet<SkillDTO>("Skills");
     odataBuilder.EntitySet<InterviewRoundDTO>("InterviewRounds");
     odataBuilder.EntitySet<ResponseResumeDTO>("Resumes");

@@ -23,8 +23,13 @@ namespace Services.Utils
             CreateMap<Application, ApplicationDTO>()
                 .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User))
                 .ForMember(dest => dest.Job, opt => opt.MapFrom(src => src.Job))
-                //.ForMember(dest => dest.Resume, opt => opt.MapFrom(src => src.Resume))
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
+                .ForMember(dest => dest.ResponseResumeDTO, opt => opt.MapFrom(src => new ResponseResumeDTO
+                {
+                    Id = src.Resume.Id,
+                    UserId = src.Resume.UserId,
+                    FilePath = src.Resume.FilePath,
+                }));
 
             CreateMap<JobCreateDTO, Job>();
             CreateMap<JobUpdatedDTO, Job>();
