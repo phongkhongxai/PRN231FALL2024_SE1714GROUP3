@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using BusinessObjects.DTO;
 using BusinessObjects.Entity;
+using DAL.DbContenxt;
 using DAL.Repositories;
+using DAL.Repositories.Impl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,23 +109,47 @@ namespace Services.Impl
             }
 
             // Handle adding new skills
-            if (jobUpdatedDto.SkillsToAdd != null)
+
+            //job.JobSkills = [];
+            foreach (var skillToAdd in jobUpdatedDto.SkillsToAdd)
             {
-                foreach (var skillToAdd in jobUpdatedDto.SkillsToAdd)
+                // Kiểm tra nếu skill đã tồn tại trong job.JobSkills hay không
+                if (!job.JobSkills.Any(s => s.SkillId == skillToAdd.SkillId))
                 {
-                    await _jobRepository.AddSkillToJobAsync(job.Id, skillToAdd.SkillId, skillToAdd.Experiences);
+                    // Nếu skill chưa có trong job, thêm nó vào
+                    await _jobRepository.AddSkillForJob(job.Id, skillToAdd.SkillId, skillToAdd.Experiences);
                 }
             }
 
-            // Handle removing skills
-            if (jobUpdatedDto.SkillsToRemove != null)
+            // Nếu cần xóa các skill không có trong SkillsToAdd, dùng Except
+            var skillsToRemove = job.JobSkills
+                .Where(s => !jobUpdatedDto.SkillsToAdd.Any(sa => sa.SkillId == s.SkillId))
+                .ToList();
+
+            // Xóa các skill cần loại bỏ
+            foreach (var skill in skillsToRemove)
             {
-                foreach (var skillId in jobUpdatedDto.SkillsToRemove)
-                {
-                    await _jobRepository.RemoveSkillFromJobAsync(job.Id, skillId);
-                }
+                await _jobRepository.RemoveSkillFromJobAsync(job.Id, skill.SkillId);
             }
-             
+
+
+            //if (jobUpdatedDto.SkillsToAdd != null)
+            //{
+            //    foreach (var skillToAdd in jobUpdatedDto.SkillsToAdd)
+            //    {
+            //        await _jobRepository.AddSkillToJobAsync(job.Id, skillToAdd.SkillId, skillToAdd.Experiences);
+            //    }
+            //}
+
+            // Handle removing skills
+            //if (jobUpdatedDto.SkillsToRemove != null)
+            //{
+            //    foreach (var skillId in jobUpdatedDto.SkillsToRemove)
+            //    {
+            //        await _jobRepository.RemoveSkillFromJobAsync(job.Id, skillId);
+            //    }
+            //}
+
             var updatedJob = await _jobRepository.UpdateJobAsync(job);
              
             return _mapper.Map<JobDTO>(updatedJob);

@@ -59,10 +59,30 @@ namespace Services.Impl
                 {
                     user.IsDelete = userDTO.IsDelete;
                 }
-                user.UserSkills.Clear();
-                foreach (var skill in userDTO.SkillIds)
+                //user.UserSkills.Clear();
+                //foreach (var skill in userDTO.SkillIds)
+                //{
+                //    await userRepository.AddUserSkill(user.Id, skill.SkillId, skill.Experiences);
+                //}
+                foreach (var skillToAdd in userDTO.SkillIds)
                 {
-                    await userRepository.AddUserSkill(user.Id, skill.SkillId, skill.Experiences);
+                    // Kiểm tra nếu skill đã tồn tại trong job.JobSkills hay không
+                    if (!user.UserSkills.Any(s => s.SkillId == skillToAdd.SkillId))
+                    {
+                        // Nếu skill chưa có trong job, thêm nó vào
+                        await userRepository.AddUserSkill(user.Id, skillToAdd.SkillId, skillToAdd.Experiences);
+                    }
+                }
+
+                // Nếu cần xóa các skill không có trong SkillsToAdd, dùng Except
+                var skillsToRemove = user.UserSkills
+                    .Where(s => !userDTO.SkillIds.Any(sa => sa.SkillId == s.SkillId))
+                    .ToList();
+
+                // Xóa các skill cần loại bỏ
+                foreach (var skill in skillsToRemove)
+                {
+                    await userRepository.RemoveSkill(user.Id, skill.SkillId);
                 }
 
 

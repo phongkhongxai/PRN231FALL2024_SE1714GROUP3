@@ -119,6 +119,34 @@ namespace DAL.DbContenxt
         }
 
 
+        public async Task<bool> RemoveSkill(long userId, long skillId)
+        {
+            using (var _context = new RecuitmentDbContext())
+            {
+                var user = await _context.Users
+                    .Include(j => j.UserSkills)
+                    .FirstOrDefaultAsync(j => j.Id == userId && !j.IsDelete);
+                if (user == null)
+                {
+                    throw new KeyNotFoundException("User not found.");
+                }
+
+                var userSkill = user.UserSkills.FirstOrDefault(js => js.SkillId == skillId);
+                if (userSkill == null)
+                {
+                    throw new InvalidOperationException("Skill does not exist in the User.");
+                }
+
+                user.UserSkills.Remove(userSkill);
+                _context.UserSkills.Remove(userSkill);
+
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+        }
+
+
 
 
         public async Task<bool> ChangePassword(long userId, string currentPassword, string newPassword)

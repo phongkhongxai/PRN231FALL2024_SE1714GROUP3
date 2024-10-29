@@ -17,13 +17,15 @@ namespace Services.Impl
         IJobRepository jobRepository;
         IUserRepository userRepository;
         private readonly IMapper mapper;
+        private readonly IEmailService emailService;
 
-        public ApplicationService(IApplicationRepository repository, IJobRepository jobRepository, IUserRepository userRepository, IMapper mapper)
+        public ApplicationService(IApplicationRepository repository, IJobRepository jobRepository, IUserRepository userRepository, IMapper mapper, IEmailService emailService)
         {
             this.repository = repository;
             this.jobRepository = jobRepository;
             this.userRepository = userRepository;
             this.mapper = mapper;
+            this.emailService = emailService;
         }
         public async Task<ApplicationDTO> CreateApplicationAsync(ApplicationCreateDTO applicationCreateDTO)
         {
@@ -98,6 +100,13 @@ namespace Services.Impl
             }
 
             var updated = await repository.UpdateApplicationAsync(application);
+            
+            var applicantEmail = application.User.Email;
+
+            var subject = "Application Status Updated";
+            var body = $"Dear {application.User.FullName},<br>Your application status has been updated to: <strong>{application.Status}</strong>.";
+            await emailService.SendMailAsync(applicantEmail, subject, body);
+
             return mapper.Map<ApplicationDTO>(updated);
         }
     }
