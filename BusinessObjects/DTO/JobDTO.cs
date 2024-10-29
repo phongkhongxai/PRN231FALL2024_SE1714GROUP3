@@ -12,6 +12,8 @@ namespace BusinessObjects.DTO
         public long UserId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public double MinSalary { get; set; }
+        public double MaxSalary { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Position { get; set; }
         public long Amount { get; set; }

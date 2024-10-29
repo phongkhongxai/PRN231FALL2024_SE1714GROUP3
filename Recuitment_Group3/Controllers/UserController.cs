@@ -10,7 +10,7 @@ using Services.Impl;
 
 namespace Recuitment_Group3.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("odata/[controller]")]
     [ApiController]
     public class UserController : ODataController
