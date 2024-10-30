@@ -21,6 +21,8 @@ namespace DAL.Repositories
         Task<SessionInterviewer?> GetActiveSessionByInterviewerIdAsync(long interviewerId, DateTime date);
         Task<SessionApplication?> GetActiveSessionByApplicationIdAsync(long applicationId, DateTime date);
         Task<bool> UpdateSessionApplicationStatusAsync(long sessionId, long applicationId, string result, string status);
+        Task<IEnumerable<SessionInterviewer>> GetInterviewerSessionsScheduleAsync(long interviewerId);
+        Task<IEnumerable<SessionApplication>> GetApplicantSessionsScheduleAsync(long applicationId);
     }
 }
 

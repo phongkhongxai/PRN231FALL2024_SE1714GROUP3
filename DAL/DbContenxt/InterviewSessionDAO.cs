@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DAL.DbContenxt
 {
@@ -269,6 +270,24 @@ namespace DAL.DbContenxt
 
                 return true;
             }
+        }
+
+        public async Task<IEnumerable<SessionInterviewer>> GetInterviewerSessionsScheduleAsync(long interviewerId)
+        {
+            var _context = new RecuitmentDbContext();
+            return await _context.SessionInterviewers
+                .Where(sa => sa.UserId == interviewerId)
+                .Include(sa => sa.InterviewSession)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<SessionApplication>> GetApplicantSessionsScheduleAsync(long applicationId)
+        {
+            var _context = new RecuitmentDbContext(); 
+            return await _context.SessionApplications
+                .Where(sa => sa.ApplicationId == applicationId)
+                .Include(sa => sa.InterviewSession)
+                .ToListAsync();
         }
 
 
