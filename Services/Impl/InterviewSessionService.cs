@@ -16,15 +16,17 @@ namespace Services.Impl
     {
         private readonly IInterviewSessionRepository _interviewSessionRepository; 
         private readonly IApplicationRepository _applicationRepository;
-        private readonly IUserRepository _userRepository;
+        private readonly IUserRepository _userRepository; 
+        private readonly IApplicationService _applicationService;
         private readonly IMapper _mapper;
 
-        public InterviewSessionService(IInterviewSessionRepository interviewSessionRepository, IMapper mapper, IApplicationRepository applicationRepository, IUserRepository userRepository)
+        public InterviewSessionService(IInterviewSessionRepository interviewSessionRepository, IMapper mapper, IApplicationRepository applicationRepository, IUserRepository userRepository, IApplicationService applicationService)
         {
             _interviewSessionRepository = interviewSessionRepository;
             _mapper = mapper;
             _applicationRepository = applicationRepository;
             _userRepository = userRepository;
+            _applicationService = applicationService;
         }
         public async Task<InterviewSessionDTO> CreateSessionAsync(InterviewSessionCreateDTO interviewSessionCreateDTO)
         {
@@ -113,8 +115,26 @@ namespace Services.Impl
             if (string.IsNullOrWhiteSpace(status) || (status != "FAIL" && status != "PASS"))
             {
                 throw new ArgumentException("Status must be either 'FAIL' or 'PASS'.", nameof(status));
+            } 
+            bool sessionUpdateResult = await _interviewSessionRepository.UpdateSessionApplicationStatusAsync(sessionId, applicationId, result, status);
+            if (!sessionUpdateResult)
+            {
+                return false;  
             }
-            return await _interviewSessionRepository.UpdateSessionApplicationStatusAsync(sessionId, applicationId, result, status);
+             
+            if (status == "FAIL")
+            {
+                var application = await _applicationRepository.GetApplicationByIdAsync(applicationId);
+                if (application == null)
+                {
+                    return false;  
+                }
+
+                application.Status = "REJECTED";
+                await _applicationRepository.UpdateApplicationAsync(application);
+            }
+
+            return true;
 
         }
 

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BusinessObjects.Migrations
 {
     [DbContext(typeof(RecuitmentDbContext))]
-    [Migration("20241019061645_add name")]
-    partial class addname
+    [Migration("20241030083428_update status round")]
+    partial class updatestatusround
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,6 +83,10 @@ namespace BusinessObjects.Migrations
 
                     b.Property<int>("RoundNumber")
                         .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -5,14 +5,14 @@
 namespace BusinessObjects.Migrations
 {
     /// <inheritdoc />
-    public partial class addname : Migration
+    public partial class updatestatusround : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "FullName",
-                table: "Users",
+                name: "Status",
+                table: "InterviewRounds",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
@@ -22,8 +22,8 @@ namespace BusinessObjects.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "FullName",
-                table: "Users");
+                name: "Status",
+                table: "InterviewRounds");
         }
     }
 }

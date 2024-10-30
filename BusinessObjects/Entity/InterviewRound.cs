@@ -16,6 +16,7 @@ namespace BusinessObjects.Entity
         public long JobId { get; set; }
         public int RoundNumber { get; set; }
         public string RoundName { get; set; } 
+        public string Status { get; set; }
         public string Description { get; set; } 
         public bool IsDelete { get; set; } = false; 
         public Job Job { get; set; }
