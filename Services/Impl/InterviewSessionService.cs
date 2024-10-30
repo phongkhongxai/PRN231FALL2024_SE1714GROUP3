@@ -221,6 +221,41 @@ namespace Services.Impl
             var updatedSession = await _interviewSessionRepository.GetInterviewSessionByIdAsync(id);  
             return _mapper.Map<InterviewSessionDTO>(updatedSession);
         }
+        public async Task<IEnumerable<InterviewerScheduleDTO>> GetScheduleForInterviewerAsync(long interviewerId)
+        { 
+            var sessionInterviewers = await _interviewSessionRepository.GetInterviewerSessionsScheduleAsync(interviewerId);
+             
+            var interviewerSchedules = sessionInterviewers
+                .Select(si => new InterviewerScheduleDTO
+                {
+                    InterviewSessionId = si.InterviewSession.Id,
+                    Location = si.InterviewSession.Location,
+                    InterviewDate = si.InterviewSession.InterviewDate,
+                    Duration = si.InterviewSession.Duration
+                });
+
+            return interviewerSchedules;
+        }
+
+        public async Task<IEnumerable<ApplicantScheduleDTO>> GetScheduleForApplicantAsync(long applicationId)
+        { 
+            var sessionApplications = await _interviewSessionRepository.GetApplicantSessionsScheduleAsync(applicationId);
+             
+            var applicantSchedules = sessionApplications
+                .Select(sa => new ApplicantScheduleDTO
+                {
+                    InterviewSessionId = sa.InterviewSession.Id,
+                    Location = sa.InterviewSession.Location,
+                    InterviewDate = sa.InterviewSession.InterviewDate,
+                    Duration = sa.InterviewSession.Duration,
+                    Result = sa.Result ?? "N/A",        
+                    Status = sa.Status ?? "N/A"
+                });
+
+            return applicantSchedules;
+        }
+
+
 
     }
 }
