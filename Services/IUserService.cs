@@ -9,8 +9,8 @@ namespace Services
 {
     public interface IUserService
     {
-        public Task<UserDTO> GetUserById(long id);
-        Task<List<UserDTO>> GetAllUsers();
+        public Task<UserResponseDTO> GetUserById(long id);
+        Task<List<UserResponseDTO>> GetAllUsers();
         Task<UserDTO> UpdateUser(long id, UserUpdateDTO userDTO);
         Task<bool> DeleteUser(long id);
         Task<UserDTO> FindByEmail(string email);

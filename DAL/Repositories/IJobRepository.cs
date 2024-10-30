@@ -20,5 +20,7 @@ namespace DAL.Repositories
 
         Task<bool> AddInterviewRoundAsync(long jobId, InterviewRound interviewRound);
         Task<bool> DeleteInterviewRoundAsync(long jobId, long interviewRoundId);
+        Task<bool> AddSkillForJob(long jobId, long skillId, string? experiences = null);
+
     }
 }

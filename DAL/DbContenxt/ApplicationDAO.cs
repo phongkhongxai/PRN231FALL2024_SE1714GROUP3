@@ -31,6 +31,7 @@ namespace DAL.DbContenxt
                     .Include(c => c.User)
                     .Include(c => c.Resume)
                     .Include(c => c.Job)
+        .               ThenInclude(j => j.InterviewRounds)
                     .Where(c => !c.IsDelete)
                     .ToListAsync();
             }
@@ -44,7 +45,8 @@ namespace DAL.DbContenxt
                     .Include(c => c.User)
                     .Include(c => c.Resume)
                     .Include(c => c.Job)
-                    .FirstOrDefaultAsync(c => c.Id == id && !c.IsDelete);
+                         .ThenInclude(j => j.InterviewRounds)
+                     .FirstOrDefaultAsync(c => c.Id == id && !c.IsDelete);
             }
         }
         public async Task<IEnumerable<Application>> GetByUserIdAsync(long id)
@@ -55,6 +57,8 @@ namespace DAL.DbContenxt
                     .Include(c => c.User)
                     .Include(c => c.Resume)
                     .Include(c => c.Job)
+                    .Include(c => c.Job)
+                        .ThenInclude(j => j.InterviewRounds)
                     .Where(c => c.UserId == id && !c.IsDelete).ToListAsync();
             }
         }
@@ -67,6 +71,8 @@ namespace DAL.DbContenxt
                     .Include(c => c.User)
                     .Include(c => c.Resume)
                     .Include(c => c.Job)
+                    .Include(c => c.Job)
+                        .ThenInclude(j => j.InterviewRounds)
                     .Where(c => c.JobId == id && !c.IsDelete).ToListAsync();
             }
         }
