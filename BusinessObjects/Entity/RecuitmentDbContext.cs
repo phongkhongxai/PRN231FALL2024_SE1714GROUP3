@@ -30,7 +30,7 @@ namespace BusinessObjects.Entity
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345;database=RecuitmentDB;TrustServerCertificate=True;");
+                optionsBuilder.UseSqlServer(GetConnectionString());
 
             }
         }

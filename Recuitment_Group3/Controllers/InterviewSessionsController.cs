@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BusinessObjects.DTO;
 using BusinessObjects.DTOs;
+using DAL.DbContenxt;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
@@ -14,11 +15,11 @@ namespace Recuitment_Group3.Controllers
     [ApiController]
     public class InterviewSessionsController : ODataController
     {
-        private readonly IInterviewSessionService _interviewSessionService; 
+        private readonly IInterviewSessionService _interviewSessionService;
 
         public InterviewSessionsController(IInterviewSessionService interviewSessionService)
         {
-            _interviewSessionService = interviewSessionService; 
+            _interviewSessionService = interviewSessionService;
         }
 
         [HttpGet]
@@ -51,7 +52,7 @@ namespace Recuitment_Group3.Controllers
             }
             var createdSession = await _interviewSessionService.CreateSessionAsync(interviewSessionCreateDTO);
 
-            return Created(new Uri($"/odata/InterviewSessions({createdSession.Id})", UriKind.Relative), createdSession); 
+            return Created(new Uri($"/odata/InterviewSessions({createdSession.Id})", UriKind.Relative), createdSession);
         }
 
 
@@ -65,6 +66,23 @@ namespace Recuitment_Group3.Controllers
             }
 
             return Ok(updatedSession);
+        }
+        [HttpPut("/{sessionId}/applications/{appId}")]
+        public async Task<IActionResult> UpdateSessionApplicationStatus([FromRoute] long appId,
+                                                                        [FromRoute] long sessionId,
+                                                                        [FromQuery] string result,
+                                                                        [FromQuery] string status)
+        { 
+            var updated = await _interviewSessionService.UpdateSessionApplicationStatusAsync(sessionId, appId, result, status);
+
+            if (updated)
+            {
+                return Ok(new { message = "Session application status updated successfully." });
+            }
+            else
+            {
+                return NotFound(new { message = "Session application not found." });
+            }
         }
 
         [HttpDelete("{id}")]

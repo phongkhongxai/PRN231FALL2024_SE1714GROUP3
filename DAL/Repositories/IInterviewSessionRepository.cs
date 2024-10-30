@@ -20,6 +20,7 @@ namespace DAL.Repositories
         Task<bool> RemoveInterviewerFromSessionAsync(long sessionId, long interviewerId);
         Task<SessionInterviewer?> GetActiveSessionByInterviewerIdAsync(long interviewerId, DateTime date);
         Task<SessionApplication?> GetActiveSessionByApplicationIdAsync(long applicationId, DateTime date);
+        Task<bool> UpdateSessionApplicationStatusAsync(long sessionId, long applicationId, string result, string status);
     }
 }
 

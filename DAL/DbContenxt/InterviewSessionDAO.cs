@@ -249,6 +249,28 @@ namespace DAL.DbContenxt
                 .FirstOrDefaultAsync();
         }
 
+        public async Task<bool> UpdateSessionApplicationStatusAsync(long sessionId, long applicationId, string result, string status)
+        {
+            using (var _context = new RecuitmentDbContext())
+            {
+                var sessionApplication = await _context.SessionApplications
+                    .FirstOrDefaultAsync(sa => sa.InterviewSessionId == sessionId && sa.ApplicationId == applicationId);
+
+                if (sessionApplication == null)
+                {
+                    throw new KeyNotFoundException("Session application not found.");
+                }
+
+                sessionApplication.Result = result;
+                sessionApplication.Status = status;
+
+                _context.Entry(sessionApplication).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+        }
+
 
     }
 }

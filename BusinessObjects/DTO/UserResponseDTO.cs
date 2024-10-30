@@ -15,6 +15,7 @@ namespace BusinessObjects.DTO
         [Required]
         [StringLength(100)]
         public string Username { get; set; }
+        public string FullName { get; set; }
 
         [Required]
         [EmailAddress]

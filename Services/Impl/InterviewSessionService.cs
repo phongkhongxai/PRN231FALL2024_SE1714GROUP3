@@ -58,22 +58,19 @@ namespace Services.Impl
                     throw new Exception($"Application with ID {applicationId} is already part of another active session.");
                 }
             }
-
-            // Tạo session sau khi tất cả các kiểm tra đã thành công
+             
             var session = _mapper.Map<InterviewSession>(interviewSessionCreateDTO);
             var createdSession = await _interviewSessionRepository.CreateInterviewSessionAsync(session);
             if (createdSession == null)
             {
                 throw new Exception("Session creation failed.");
             }
-
-            // Thêm các interviewer vào session
+             
             foreach (var interviewerId in interviewSessionCreateDTO.InterviewerIds)
             {
                 await _interviewSessionRepository.AddInterviewerToSessionAsync(createdSession.Id, interviewerId);
             }
-
-            // Thêm các application vào session
+             
             foreach (var applicationId in interviewSessionCreateDTO.ApplicationIds)
             {
                 await _interviewSessionRepository.AddApplicationToSessionAsync(createdSession.Id, applicationId);
@@ -104,6 +101,21 @@ namespace Services.Impl
         {
             var job = await _interviewSessionRepository.GetInterviewSessionByIdAsync(id);
             return _mapper.Map<InterviewSessionDTO>(job);
+        }
+
+        public async Task<bool> UpdateSessionApplicationStatusAsync(long sessionId, long applicationId, string result, string status)
+        {
+            if (string.IsNullOrWhiteSpace(result))
+            {
+                throw new ArgumentException("Result cannot be empty or whitespace.", nameof(result));
+            }
+
+            if (string.IsNullOrWhiteSpace(status) || (status != "FAIL" && status != "PASS"))
+            {
+                throw new ArgumentException("Status must be either 'FAIL' or 'PASS'.", nameof(status));
+            }
+            return await _interviewSessionRepository.UpdateSessionApplicationStatusAsync(sessionId, applicationId, result, status);
+
         }
 
         public async Task<InterviewSessionDTO> UpdateSessionAsync(long id, InterviewSessionUpdateDTO interviewSessionUpdateDTO)
@@ -186,7 +198,7 @@ namespace Services.Impl
                 }
             }
              
-            var updatedSession = await _interviewSessionRepository.GetInterviewSessionByIdAsync(id); // Lấy lại session để đảm bảo tất cả thay đổi đã được áp dụng
+            var updatedSession = await _interviewSessionRepository.GetInterviewSessionByIdAsync(id);  
             return _mapper.Map<InterviewSessionDTO>(updatedSession);
         }
 
