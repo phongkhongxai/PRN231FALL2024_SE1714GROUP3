@@ -60,5 +60,7 @@ namespace DAL.Repositories.Impl
             return await JobDAO.Instance.DeleteInterviewRoundAsync(jobId, interviewRoundId);
 
         }
+        public async Task<bool> AddSkillForJob(long jobId, long skillId, string? experiences = null) => await JobDAO.Instance.AddSkillForJob(jobId, skillId, experiences);  
+
     }
 }

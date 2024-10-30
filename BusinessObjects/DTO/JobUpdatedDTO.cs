@@ -15,6 +15,6 @@ namespace BusinessObjects.DTO
         public double? MaxSalary { get; set; }
         public long? Amount { get; set; }
         public List<SkillAddDTO>? SkillsToAdd { get; set; } = new List<SkillAddDTO>();
-        public List<long>? SkillsToRemove { get; set; } = new List<long>();
+        //public List<long>? SkillsToRemove { get; set; } = new List<long>();
     }
 }

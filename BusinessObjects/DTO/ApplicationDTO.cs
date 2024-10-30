@@ -13,6 +13,5 @@ namespace BusinessObjects.DTO
         public UserDTO User { get; set; }
         public JobDTO Job { get; set; }
         public ResponseResumeDTO ResponseResumeDTO { get; set; }
-
     }
 }
