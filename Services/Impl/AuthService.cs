@@ -64,6 +64,7 @@ namespace Services.Impl
             return new User
             {
                 Username = userDTO.Username,
+                FullName = userDTO.FullName,
                 Email = userDTO.Email,
                 Password = HashPassword(userDTO.Password),
                 Phone = userDTO.Phone ?? "default",
