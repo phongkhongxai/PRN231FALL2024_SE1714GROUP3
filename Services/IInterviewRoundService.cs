@@ -16,6 +16,7 @@ namespace Services
         Task<bool> DeleteInterviewRoundAsync(long id);
         Task<IEnumerable<InterviewRoundDTO>> GetInterviewRoundsByJobIdAsync(long jobId);
         Task<IEnumerable<InterviewRoundDTO>> GetAllInterviewRoundsAsync();
+        Task<InterviewRoundDTO> UpdateStatusInterviewRoundAsync(long id, string status);
 
     }
 }
