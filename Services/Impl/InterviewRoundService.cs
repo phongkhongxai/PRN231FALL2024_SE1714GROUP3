@@ -24,6 +24,7 @@ namespace Services.Impl
         public async Task<InterviewRoundDTO> CreateInterviewRoundAsync(InterviewRoundCreateDTO interviewRoundCreateDto)
         {
             var interviewRound = _mapper.Map<InterviewRound>(interviewRoundCreateDto);
+            interviewRound.Status = "PREPARE";
             var createdInterviewRound = await _interviewRoundRepository.AddAsync(interviewRound);
             return _mapper.Map<InterviewRoundDTO>(createdInterviewRound);
         }
@@ -77,6 +78,24 @@ namespace Services.Impl
             {
                 interviewRound.RoundNumber = interviewRoundUpdateDto.RoundNumber.Value;
             }
+
+            var updatedInterviewRound = await _interviewRoundRepository.UpdateAsync(interviewRound);
+            return _mapper.Map<InterviewRoundDTO>(updatedInterviewRound);
+        }
+
+        public async Task<InterviewRoundDTO> UpdateStatusInterviewRoundAsync(long id, string status)
+        {
+            var interviewRound = await _interviewRoundRepository.GetByIdAsync(id);
+            if (interviewRound == null)
+            {
+                return null;
+            }
+
+            if (string.IsNullOrWhiteSpace(status) || (status != "DONE" && status != "PROCESSING" && status != "PREPARE"))
+            {
+                throw new ArgumentException("Status must be either 'DONE' or 'PROCESSING' or 'PREPARE'.", nameof(status));
+            }
+            interviewRound.Status = status; 
 
             var updatedInterviewRound = await _interviewRoundRepository.UpdateAsync(interviewRound);
             return _mapper.Map<InterviewRoundDTO>(updatedInterviewRound);

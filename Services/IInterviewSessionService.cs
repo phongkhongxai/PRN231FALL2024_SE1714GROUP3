@@ -16,5 +16,7 @@ namespace Services
         Task<InterviewSessionDTO> UpdateSessionAsync(long id, InterviewSessionUpdateDTO interviewSessionUpdateDTO);
         Task<bool> DeleteSessionAsync(long id);
         Task<bool> UpdateSessionApplicationStatusAsync(long sessionId, long applicationId, string result, string status);
+        Task<IEnumerable<InterviewerScheduleDTO>> GetScheduleForInterviewerAsync(long interviewerId);
+        Task<IEnumerable<ApplicantScheduleDTO>> GetScheduleForApplicantAsync(long applicationId);
     }
 }

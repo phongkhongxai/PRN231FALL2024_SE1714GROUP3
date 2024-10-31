@@ -16,15 +16,17 @@ namespace Services.Impl
     {
         private readonly IInterviewSessionRepository _interviewSessionRepository; 
         private readonly IApplicationRepository _applicationRepository;
-        private readonly IUserRepository _userRepository;
+        private readonly IUserRepository _userRepository; 
+        private readonly IApplicationService _applicationService;
         private readonly IMapper _mapper;
 
-        public InterviewSessionService(IInterviewSessionRepository interviewSessionRepository, IMapper mapper, IApplicationRepository applicationRepository, IUserRepository userRepository)
+        public InterviewSessionService(IInterviewSessionRepository interviewSessionRepository, IMapper mapper, IApplicationRepository applicationRepository, IUserRepository userRepository, IApplicationService applicationService)
         {
             _interviewSessionRepository = interviewSessionRepository;
             _mapper = mapper;
             _applicationRepository = applicationRepository;
             _userRepository = userRepository;
+            _applicationService = applicationService;
         }
         public async Task<InterviewSessionDTO> CreateSessionAsync(InterviewSessionCreateDTO interviewSessionCreateDTO)
         {
@@ -113,8 +115,26 @@ namespace Services.Impl
             if (string.IsNullOrWhiteSpace(status) || (status != "FAIL" && status != "PASS"))
             {
                 throw new ArgumentException("Status must be either 'FAIL' or 'PASS'.", nameof(status));
+            } 
+            bool sessionUpdateResult = await _interviewSessionRepository.UpdateSessionApplicationStatusAsync(sessionId, applicationId, result, status);
+            if (!sessionUpdateResult)
+            {
+                return false;  
             }
-            return await _interviewSessionRepository.UpdateSessionApplicationStatusAsync(sessionId, applicationId, result, status);
+             
+            if (status == "FAIL")
+            {
+                var application = await _applicationRepository.GetApplicationByIdAsync(applicationId);
+                if (application == null)
+                {
+                    return false;  
+                }
+
+                application.Status = "REJECTED";
+                await _applicationRepository.UpdateApplicationAsync(application);
+            }
+
+            return true;
 
         }
 
@@ -201,6 +221,41 @@ namespace Services.Impl
             var updatedSession = await _interviewSessionRepository.GetInterviewSessionByIdAsync(id);  
             return _mapper.Map<InterviewSessionDTO>(updatedSession);
         }
+        public async Task<IEnumerable<InterviewerScheduleDTO>> GetScheduleForInterviewerAsync(long interviewerId)
+        { 
+            var sessionInterviewers = await _interviewSessionRepository.GetInterviewerSessionsScheduleAsync(interviewerId);
+             
+            var interviewerSchedules = sessionInterviewers
+                .Select(si => new InterviewerScheduleDTO
+                {
+                    InterviewSessionId = si.InterviewSession.Id,
+                    Location = si.InterviewSession.Location,
+                    InterviewDate = si.InterviewSession.InterviewDate,
+                    Duration = si.InterviewSession.Duration
+                });
+
+            return interviewerSchedules;
+        }
+
+        public async Task<IEnumerable<ApplicantScheduleDTO>> GetScheduleForApplicantAsync(long applicationId)
+        { 
+            var sessionApplications = await _interviewSessionRepository.GetApplicantSessionsScheduleAsync(applicationId);
+             
+            var applicantSchedules = sessionApplications
+                .Select(sa => new ApplicantScheduleDTO
+                {
+                    InterviewSessionId = sa.InterviewSession.Id,
+                    Location = sa.InterviewSession.Location,
+                    InterviewDate = sa.InterviewSession.InterviewDate,
+                    Duration = sa.InterviewSession.Duration,
+                    Result = sa.Result ?? "N/A",        
+                    Status = sa.Status ?? "N/A"
+                });
+
+            return applicantSchedules;
+        }
+
+
 
     }
 }
