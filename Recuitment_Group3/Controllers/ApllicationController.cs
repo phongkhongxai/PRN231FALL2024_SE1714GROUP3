@@ -64,16 +64,25 @@ namespace Recuitment_Group3.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<JobDTO>> CreateApp([FromBody] ApplicationCreateDTO applicationCreateDTO)
+        public async Task<ActionResult<ApplicationDTO>> CreateApp([FromBody] ApplicationCreateDTO applicationCreateDTO)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var createdApp = await applicationService.CreateApplicationAsync(applicationCreateDTO);
 
-            return Created(new Uri($"/odata/Applications({createdApp.Id})", UriKind.Relative), createdApp);
+            try
+            {
+                var createdApp = await applicationService.CreateApplicationAsync(applicationCreateDTO);
+                return Created(new Uri($"/odata/Application({createdApp.Id})", UriKind.Relative), createdApp);
+            }
+            catch (Exception ex) 
+            {
+                return BadRequest(new { message = ex.Message }); 
+            }
         }
+
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateApp([FromRoute] long id, [FromBody] ApplicationUpdateDTO appUpdate)

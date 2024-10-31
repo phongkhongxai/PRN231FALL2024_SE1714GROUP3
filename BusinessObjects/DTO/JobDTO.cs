@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObjects.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,5 +19,7 @@ namespace BusinessObjects.DTO
         public string Position { get; set; }
         public long Amount { get; set; }
         public IEnumerable<JobSkillDTO> JobSkills { get; set; }
+        public ICollection<InterviewRound> InterviewRounds { get; set; } = new List<InterviewRound>();
+
     }
 }

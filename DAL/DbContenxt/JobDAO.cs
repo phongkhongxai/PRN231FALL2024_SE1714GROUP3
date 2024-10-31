@@ -105,6 +105,52 @@ namespace DAL.DbContenxt
             }
         }
 
+
+        public async Task<bool> AddSkillForJob(long jobId, long skillId, string? experiences = null)
+        {
+            using var db = new RecuitmentDbContext();
+            var job = await db.Jobs.Include(u => u.JobSkills)
+                                     .FirstOrDefaultAsync(u => u.Id == jobId && !u.IsDelete);
+
+            if (job == null)
+            {
+                throw new KeyNotFoundException("Job not found.");
+            }
+
+            var skill = await db.Skills.FirstOrDefaultAsync(s => s.Id == skillId && !s.IsDelete);
+            if (skill == null)
+            {
+                throw new KeyNotFoundException("Skill not found.");
+            }
+            var existingUserSkill = await db.JobSkills.FirstOrDefaultAsync(us => us.JobId == job.Id && us.SkillId == skillId);
+
+            //if (user.UserSkills.Any(js => js.SkillId != skillId))
+            if (existingUserSkill == null)
+            {
+                var jobSkill = new JobSkill
+                {
+                    JobId = job.Id,
+                    SkillId = skill.Id,
+                    Experiences = experiences
+                };
+
+                job.JobSkills.Add(jobSkill);
+                //throw new InvalidOperationException("Skill already exists.");
+            }
+            else
+            {
+                existingUserSkill.Experiences = experiences;
+                db.Entry(existingUserSkill).State = EntityState.Modified;
+            }
+
+
+
+            db.Jobs.Update(job);
+
+            await db.SaveChangesAsync();
+            return true;
+        }
+
         public async Task<bool> AddSkillToJobAsync(long jobId, long skillId, string? experiences = null)
         {
             using (var _context = new RecuitmentDbContext())

@@ -22,13 +22,13 @@ namespace Recuitment_Group3.Controllers
         }
         [EnableQuery]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserDTO>>> GetAllUsers()
+        public async Task<ActionResult<IEnumerable<UserResponseDTO>>> GetAllUsers()
         {
             var users = await userService.GetAllUsers();
             return Ok(users);
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserDTO>> GetUserById([FromRoute] long id)
+        public async Task<ActionResult<UserResponseDTO>> GetUserById([FromRoute] long id)
         {
             var user = await userService.GetUserById(id);
             if (user == null)
