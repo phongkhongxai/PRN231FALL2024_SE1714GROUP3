@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObjects.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,9 @@ namespace BusinessObjects.DTO
         public TimeSpan Duration { get; set; }
         public string Result { get; set; }
         public string Status { get; set; }
+        public string JobTitle { get; set; }
+        public int RoundNumber { get; set; } 
+        public string RoundName { get; set; }
+
     }
 }
