@@ -44,6 +44,8 @@ namespace DAL.DbContenxt
                 return await _context.InterviewSessions
                     .Include(iss => iss.InterviewRound)
                     .Include(iss => iss.SessionApplications)
+                        .ThenInclude(sa => sa.Application)
+                            .ThenInclude(app => app.User)
                     .Include(iss => iss.SessionInterviewers)
                     .FirstOrDefaultAsync(iss => iss.Id == id && !iss.IsDelete);
             }
