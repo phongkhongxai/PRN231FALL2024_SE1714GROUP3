@@ -278,6 +278,8 @@ namespace DAL.DbContenxt
             return await _context.SessionInterviewers
                 .Where(sa => sa.UserId == interviewerId)
                 .Include(sa => sa.InterviewSession)
+                .ThenInclude(session => session.InterviewRound)
+                    .ThenInclude(round => round.Job)
                 .ToListAsync();
         }
 
@@ -287,6 +289,8 @@ namespace DAL.DbContenxt
             return await _context.SessionApplications
                 .Where(sa => sa.ApplicationId == applicationId)
                 .Include(sa => sa.InterviewSession)
+                .ThenInclude(session => session.InterviewRound)
+                    .ThenInclude(round => round.Job)
                 .ToListAsync();
         }
 
