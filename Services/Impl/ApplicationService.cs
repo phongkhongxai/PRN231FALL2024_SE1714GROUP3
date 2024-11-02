@@ -100,6 +100,19 @@ namespace Services.Impl
             }
 
             var updated = await repository.UpdateApplicationAsync(application);
+            if (updated.Status.Equals("PASS"))
+            {
+                var job = await jobRepository.GetJobByIdAsync(updated.JobId);
+                if (job == null)
+                {
+                    return null;
+                }
+                if (job.Amount > 0)
+                {
+                    job.Amount = job.Amount - 1; 
+                }
+                var updatedJob = await jobRepository.UpdateJobAsync(job);
+            }
             
             var applicantEmail = application.User.Email;
 
