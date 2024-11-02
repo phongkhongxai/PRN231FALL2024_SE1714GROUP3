@@ -89,7 +89,7 @@ namespace DAL.DbContenxt
             {
                 throw new KeyNotFoundException("Skill not found.");
             }
-            var existingUserSkill = await db.UserSkills.FirstOrDefaultAsync(us => us.UserId == user.Id && us.SkillId == skillId);
+            var existingUserSkill = await db.UserSkills.FirstOrDefaultAsync(us => us.UserId == userId && us.SkillId == skillId);
 
             //if (user.UserSkills.Any(js => js.SkillId != skillId))
             if (existingUserSkill == null)
@@ -107,7 +107,7 @@ namespace DAL.DbContenxt
             else
             {
                 existingUserSkill.Experiences = experiences;
-                db.Entry(existingUserSkill).State = EntityState.Modified;
+                //db.Entry(existingUserSkill).State = EntityState.Modified;
             }
 
 
