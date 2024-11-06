@@ -16,8 +16,6 @@ namespace BusinessObjects.DTO
         public string? Gender { get; set; }
         public bool IsDelete { get; set; } = false;
         public long RoleId { get; set; }
-        public List<SkillAddDTO> SkillIds { get; set; }
-
-
+        public List<SkillAddDTO>? SkillIds { get; set; }
     }
 }

@@ -7925,23 +7925,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
+    "C:\\Users\\84868\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\DAL\\obj\\",
+      "projectPath": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\84868\\.nuget\\packages\\",
+      "outputPath": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\84868\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7957,8 +7957,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\BusinessObjects.csproj": {
-              "projectPath": "D:\\FPTU_Ky8\\PRN231\\Masno\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\BusinessObjects.csproj"
+            "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\BusinessObjects.csproj": {
+              "projectPath": "D:\\Semester 8\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\BusinessObjects.csproj"
             }
           }
         }
@@ -7993,7 +7993,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
