@@ -82,7 +82,7 @@ namespace DAL.DbContenxt
             using (var _context = new RecuitmentDbContext())
             {
                 application.IsDelete = false;
-                application.Status = "1";
+                application.Status = "PENDING";
                 _context.Applications.Add(application);
                 await _context.SaveChangesAsync();
                 return application;

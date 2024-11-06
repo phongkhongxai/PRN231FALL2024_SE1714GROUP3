@@ -44,6 +44,8 @@ namespace DAL.DbContenxt
                 return await _context.InterviewSessions
                     .Include(iss => iss.InterviewRound)
                     .Include(iss => iss.SessionApplications)
+                        .ThenInclude(sa => sa.Application)
+                            .ThenInclude(app => app.User)
                     .Include(iss => iss.SessionInterviewers)
                     .FirstOrDefaultAsync(iss => iss.Id == id && !iss.IsDelete);
             }
@@ -278,6 +280,8 @@ namespace DAL.DbContenxt
             return await _context.SessionInterviewers
                 .Where(sa => sa.UserId == interviewerId)
                 .Include(sa => sa.InterviewSession)
+                .ThenInclude(session => session.InterviewRound)
+                    .ThenInclude(round => round.Job)
                 .ToListAsync();
         }
 
@@ -287,6 +291,8 @@ namespace DAL.DbContenxt
             return await _context.SessionApplications
                 .Where(sa => sa.ApplicationId == applicationId)
                 .Include(sa => sa.InterviewSession)
+                .ThenInclude(session => session.InterviewRound)
+                    .ThenInclude(round => round.Job)
                 .ToListAsync();
         }
 

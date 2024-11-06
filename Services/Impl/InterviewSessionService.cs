@@ -59,6 +59,13 @@ namespace Services.Impl
                 {
                     throw new Exception($"Application with ID {applicationId} is already part of another active session.");
                 }
+                var application = await _applicationRepository.GetApplicationByIdAsync(applicationId);
+                if (application == null)
+                {
+                    throw new Exception($"Application with ID {applicationId} is already part of another active session.");
+                }
+                application.Status = "INTERVIEWING"; 
+                await _applicationRepository.UpdateApplicationAsync(application);
             }
              
             var session = _mapper.Map<InterviewSession>(interviewSessionCreateDTO);
@@ -89,6 +96,21 @@ namespace Services.Impl
             if (session == null)
             {
                 return false;
+            }
+            foreach (var sessionApplication in session.SessionApplications)
+            {
+                await _interviewSessionRepository.RemoveApplicationFromSessionAsync(sessionApplication.InterviewSessionId, sessionApplication.ApplicationId);
+                var application = await _applicationRepository.GetApplicationByIdAsync(sessionApplication.ApplicationId);
+                if (application == null)
+                {
+                    throw new Exception($"Application with ID {sessionApplication.ApplicationId} is already part of another active session.");
+                }
+                application.Status = "PROCESSING";
+                await _applicationRepository.UpdateApplicationAsync(application);
+            }
+            foreach (var sessionInterviewers in session.SessionInterviewers)
+            {
+                await _interviewSessionRepository.RemoveInterviewerFromSessionAsync(sessionInterviewers.InterviewSessionId, sessionInterviewers.UserId); 
             }
             return await _interviewSessionRepository.DeleteInterviewSessionAsync(id);
         }
@@ -131,6 +153,17 @@ namespace Services.Impl
                 }
 
                 application.Status = "REJECTED";
+                await _applicationRepository.UpdateApplicationAsync(application);
+            }
+            if(status == "PASS")
+            {
+                var application = await _applicationRepository.GetApplicationByIdAsync(applicationId);
+                if (application == null)
+                {
+                    return false;
+                }
+
+                application.Status = "PROCESSING";
                 await _applicationRepository.UpdateApplicationAsync(application);
             }
 
@@ -186,6 +219,13 @@ namespace Services.Impl
                         throw new Exception($"Application with ID {applicationId} does not exist.");
                     } 
                     await _interviewSessionRepository.AddApplicationToSessionAsync(session.Id, applicationId);
+                    var application = await _applicationRepository.GetApplicationByIdAsync(applicationId);
+                    if (application == null)
+                    {
+                        throw new Exception($"Application with ID {applicationId} is already part of another active session.");
+                    }
+                    application.Status = "INTERVIEWING";
+                    await _applicationRepository.UpdateApplicationAsync(application);
                 }
             }
              
@@ -194,6 +234,13 @@ namespace Services.Impl
                 foreach (var applicationId in interviewSessionUpdateDTO.ApplicationIdsToRemove)
                 {
                     await _interviewSessionRepository.RemoveApplicationFromSessionAsync(session.Id, applicationId);
+                    var application = await _applicationRepository.GetApplicationByIdAsync(applicationId);
+                    if (application == null)
+                    {
+                        throw new Exception($"Application with ID {applicationId} is already part of another active session.");
+                    }
+                    application.Status = "PROCESSING";
+                    await _applicationRepository.UpdateApplicationAsync(application);
                 }
             } 
 
@@ -231,7 +278,12 @@ namespace Services.Impl
                     InterviewSessionId = si.InterviewSession.Id,
                     Location = si.InterviewSession.Location,
                     InterviewDate = si.InterviewSession.InterviewDate,
-                    Duration = si.InterviewSession.Duration
+                    Duration = si.InterviewSession.Duration, 
+                    JobTitle = si.InterviewSession.InterviewRound.Job.Title,
+                    RoundNumber = si.InterviewSession.InterviewRound.RoundNumber,
+                    RoundName = si.InterviewSession.InterviewRound.RoundName,
+                    InterviewRoundId = si.InterviewSession.InterviewRound.Id,
+                    InterviewRoundStatus = si.InterviewSession.InterviewRound.Status
                 });
 
             return interviewerSchedules;
@@ -244,12 +296,15 @@ namespace Services.Impl
             var applicantSchedules = sessionApplications
                 .Select(sa => new ApplicantScheduleDTO
                 {
-                    InterviewSessionId = sa.InterviewSession.Id,
+                    InterviewSessionId = sa.InterviewSession.Id, 
                     Location = sa.InterviewSession.Location,
                     InterviewDate = sa.InterviewSession.InterviewDate,
                     Duration = sa.InterviewSession.Duration,
                     Result = sa.Result ?? "N/A",        
-                    Status = sa.Status ?? "N/A"
+                    Status = sa.Status ?? "N/A",
+                    JobTitle = sa.InterviewSession.InterviewRound.Job.Title,
+                    RoundNumber = sa.InterviewSession.InterviewRound.RoundNumber,
+                    RoundName = sa.InterviewSession.InterviewRound.RoundName,
                 });
 
             return applicantSchedules;
