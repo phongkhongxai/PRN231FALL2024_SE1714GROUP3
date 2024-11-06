@@ -281,8 +281,9 @@ namespace Services.Impl
                     Duration = si.InterviewSession.Duration, 
                     JobTitle = si.InterviewSession.InterviewRound.Job.Title,
                     RoundNumber = si.InterviewSession.InterviewRound.RoundNumber,
-                    RoundName = si.InterviewSession.InterviewRound.RoundName
-
+                    RoundName = si.InterviewSession.InterviewRound.RoundName,
+                    InterviewRoundId = si.InterviewSession.InterviewRound.Id,
+                    InterviewRoundStatus = si.InterviewSession.InterviewRound.Status
                 });
 
             return interviewerSchedules;
@@ -303,7 +304,7 @@ namespace Services.Impl
                     Status = sa.Status ?? "N/A",
                     JobTitle = sa.InterviewSession.InterviewRound.Job.Title,
                     RoundNumber = sa.InterviewSession.InterviewRound.RoundNumber,
-                    RoundName = sa.InterviewSession.InterviewRound.RoundName
+                    RoundName = sa.InterviewSession.InterviewRound.RoundName,
                 });
 
             return applicantSchedules;
