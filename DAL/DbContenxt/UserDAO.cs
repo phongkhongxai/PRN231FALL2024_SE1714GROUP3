@@ -44,6 +44,19 @@ namespace DAL.DbContenxt
                 .Where(u => !u.IsDelete).ToListAsync();
         }
 
+        public async Task<User> CreateUser(User user)
+        {
+            using var db = new RecuitmentDbContext();
+            var exist = await db.Users.FirstOrDefaultAsync(c => c.Id == user.Id);
+            if(exist != null)
+            {
+                throw new Exception("User already exists");
+            }
+            await db.Users.AddAsync(user);
+            await db.SaveChangesAsync();
+            return user;
+        }
+
         public async Task<User> UpdateUser(User user)
         {
             using var db = new RecuitmentDbContext();
