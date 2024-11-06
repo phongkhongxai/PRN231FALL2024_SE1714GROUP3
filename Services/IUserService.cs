@@ -11,6 +11,7 @@ namespace Services
     {
         public Task<UserResponseDTO> GetUserById(long id);
         Task<List<UserResponseDTO>> GetAllUsers();
+        Task<UserDTO> CreateUser(UserCreateDTO userDTO);
         Task<UserDTO> UpdateUser(long id, UserUpdateDTO userDTO);
         Task<bool> DeleteUser(long id);
         Task<UserDTO> FindByEmail(string email);

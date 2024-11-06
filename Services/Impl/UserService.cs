@@ -51,38 +51,29 @@ namespace Services.Impl
                 {
                     user.Gender = userDTO.Gender;
                 }
-                if (userDTO.RoleId != null)
+                if (userDTO.RoleId != 0)
                 {
                     user.RoleId = userDTO.RoleId;
                 }
-                if (userDTO.IsDelete != null)
+                 user.IsDelete = userDTO.IsDelete;
+                if (userDTO.SkillIds != null)
                 {
-                    user.IsDelete = userDTO.IsDelete;
-                }
-                //user.UserSkills.Clear();
-                //foreach (var skill in userDTO.SkillIds)
-                //{
-                //    await userRepository.AddUserSkill(user.Id, skill.SkillId, skill.Experiences);
-                //}
-                foreach (var skillToAdd in userDTO.SkillIds)
-                {
-                    // Kiểm tra nếu skill đã tồn tại trong job.JobSkills hay không
-                    if (!user.UserSkills.Any(s => s.SkillId == skillToAdd.SkillId))
+                    foreach (var skillToAdd in userDTO.SkillIds)
                     {
-                        // Nếu skill chưa có trong job, thêm nó vào
-                        await userRepository.AddUserSkill(user.Id, skillToAdd.SkillId, skillToAdd.Experiences);
+                        if (!user.UserSkills.Any(s => s.SkillId == skillToAdd.SkillId))
+                        {
+                            await userRepository.AddUserSkill(user.Id, skillToAdd.SkillId, skillToAdd.Experiences);
+                        }
                     }
-                }
 
-                // Nếu cần xóa các skill không có trong SkillsToAdd, dùng Except
-                var skillsToRemove = user.UserSkills
-                    .Where(s => !userDTO.SkillIds.Any(sa => sa.SkillId == s.SkillId))
-                    .ToList();
+                    var skillsToRemove = user.UserSkills
+                        .Where(s => !userDTO.SkillIds.Any(sa => sa.SkillId == s.SkillId))
+                        .ToList();
 
-                // Xóa các skill cần loại bỏ
-                foreach (var skill in skillsToRemove)
-                {
-                    await userRepository.RemoveSkill(user.Id, skill.SkillId);
+                    foreach (var skill in skillsToRemove)
+                    {
+                        await userRepository.RemoveSkill(user.Id, skill.SkillId);
+                    }
                 }
 
 
@@ -115,6 +106,15 @@ namespace Services.Impl
         public async Task<bool> ChangePassword(long id, ChangePasswordDTO changePasswordDTO)
         {
             return await userRepository.ChangePassword(id, changePasswordDTO.currentPassword, changePasswordDTO.newPassword);
+        }
+
+        public async Task<UserDTO> CreateUser(UserCreateDTO userDTO)
+        {
+            var user = mapper.Map<User>(userDTO);
+
+            var createdUser = await userRepository.CreateUser(user);
+
+            return mapper.Map<UserDTO>(createdUser);
         }
     }
 }

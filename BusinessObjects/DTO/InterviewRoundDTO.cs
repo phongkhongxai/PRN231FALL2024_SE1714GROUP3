@@ -11,6 +11,7 @@ namespace BusinessObjects.DTO
         public long Id { get; set; }
         public long JobId { get; set; }
         public int RoundNumber { get; set; }
+        public string Status { get; set; }
         public string RoundName { get; set; }
         public string Description { get; set; }
     }

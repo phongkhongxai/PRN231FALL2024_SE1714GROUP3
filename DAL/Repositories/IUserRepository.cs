@@ -12,6 +12,7 @@ namespace DAL.Repositories
     {
         Task<User> GetUserByIdAsync(long id);
         Task<List<User>> GetAllUsers();
+        Task<User> CreateUser(User user);
         Task<User> UpdateUser(User user);
         Task<bool> DeleteUser(long id);
         Task<User> FindByEmail(string email);

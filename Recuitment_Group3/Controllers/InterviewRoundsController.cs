@@ -87,7 +87,27 @@ namespace Recuitment_Group3.Controllers
             }
 
             return Ok(updatedInterviewRound);
-        } 
+        }
+
+        [HttpPut("/status/{key}")]
+        public async Task<ActionResult<InterviewRoundDTO>> UpdateInterviewRoundStatus(long key, [FromBody] string status)
+        {
+            try
+            { 
+                var updatedInterviewRound = await _interviewRoundService.UpdateStatusInterviewRoundAsync(key, status);
+                 
+                if (updatedInterviewRound == null)
+                {
+                    return NotFound($"Interview round with ID {key} was not found.");
+                } 
+                return Ok(updatedInterviewRound);
+            }
+            catch (ArgumentException ex)
+            { 
+                return BadRequest(ex.Message);
+            }
+        }
+
 
         // DELETE: odata/InterviewRounds(5)
         [HttpDelete("{key}")]
