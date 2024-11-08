@@ -68,7 +68,7 @@ namespace DAL.DbContenxt
         {
             using (var _context = new RecuitmentDbContext())
             {
-                interviewSession.InterviewDate = DateTime.UtcNow;
+                //interviewSession.InterviewDate = DateTime.UtcNow;
                 _context.InterviewSessions.Add(interviewSession);
                 await _context.SaveChangesAsync();
                 return interviewSession;
