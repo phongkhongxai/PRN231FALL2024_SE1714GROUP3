@@ -30,18 +30,20 @@ namespace Services.Impl
         }
         public async Task<InterviewSessionDTO> CreateSessionAsync(InterviewSessionCreateDTO interviewSessionCreateDTO)
         {
+
             // Kiểm tra từng interviewer
             foreach (var interviewerId in interviewSessionCreateDTO.InterviewerIds)
             {
-                if (await _userRepository.GetUserByIdAsync(interviewerId) == null)
+                var interviewer = await _userRepository.GetUserByIdAsync(interviewerId);
+                if (interviewer == null)
                 {
                     throw new Exception($"Interviewer with ID {interviewerId} does not exist.");
                 }
 
-                var existingSession = await _interviewSessionRepository.GetActiveSessionByInterviewerIdAsync(interviewerId, interviewSessionCreateDTO.InterviewDate);
+                var existingSession = await _interviewSessionRepository.GetActiveSessionByInterviewerIdAsync(interviewerId, interviewSessionCreateDTO.InterviewDate.Add(interviewSessionCreateDTO.Duration));
                 if (existingSession != null)
                 {
-                    throw new Exception($"Interviewer with ID {interviewerId} is already assigned to another active session.");
+                    throw new Exception($"Interviewer {interviewer.FullName} is already assigned to another active session.");
                 }
             }
 
@@ -54,7 +56,7 @@ namespace Services.Impl
                     throw new Exception($"Application with ID {applicationId} does not exist.");
                 }
 
-                var existingSession = await _interviewSessionRepository.GetActiveSessionByApplicationIdAsync(applicationId, interviewSessionCreateDTO.InterviewDate);
+                var existingSession = await _interviewSessionRepository.GetActiveSessionByApplicationIdAsync(applicationId, interviewSessionCreateDTO.InterviewDate.Add(interviewSessionCreateDTO.Duration));
                 if (existingSession != null)
                 {
                     throw new Exception($"Application with ID {applicationId} is already part of another active session.");

@@ -38,6 +38,23 @@ namespace Recuitment_Group3.Controllers
             return Ok(user);
         }
 
+        [HttpPost]
+        [Authorize(Roles = "1")]
+        public async Task<IActionResult> CreateUser([FromBody] UserCreateDTO userCreateDTO)
+        {
+            if(userCreateDTO.RoleId != 2 && userCreateDTO.RoleId != 4)
+            {
+                return BadRequest("Only Interviewer and HR roles can be created.");
+            }
+
+            var userCreate = await userService.CreateUser(userCreateDTO);
+            if(userCreate != null)
+            {
+                return Ok(userCreate);
+            }
+            return BadRequest();
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser([FromRoute] long id, [FromBody] UserUpdateDTO userUpdate)
         {

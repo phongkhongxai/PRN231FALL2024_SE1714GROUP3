@@ -14,6 +14,7 @@ namespace Services.Utils
             CreateMap<UserResponseDTO, User>();
             CreateMap<User, UserResponseDTO>();
             CreateMap<UserUpdateDTO, User>();
+            CreateMap<UserCreateDTO, User>();
             CreateMap<Job, JobDTO>()
 
             .ForMember(dest => dest.JobSkills, opt => opt.MapFrom(src => src.JobSkills.Select(js => new JobSkillDTO

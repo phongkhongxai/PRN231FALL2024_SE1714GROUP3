@@ -240,7 +240,7 @@ namespace DAL.DbContenxt
                 var _context = new RecuitmentDbContext();
                 return await _context.SessionInterviewers
                 .Include(si => si.InterviewSession)
-                .Where(si => si.UserId == interviewerId && si.InterviewSession.IsDelete == false && si.InterviewSession.InterviewDate.Date == date.Date)
+                .Where(si => si.UserId == interviewerId && si.InterviewSession.IsDelete == false && si.InterviewSession.InterviewDate == date)
                 .FirstOrDefaultAsync();
         }
         public async Task<SessionApplication?> GetActiveSessionByApplicationIdAsync(long applicationId, DateTime date)
@@ -248,7 +248,7 @@ namespace DAL.DbContenxt
             var _context = new RecuitmentDbContext();
             return await _context.SessionApplications
                 .Include(sa => sa.InterviewSession)
-                .Where(sa => sa.ApplicationId == applicationId && sa.InterviewSession.IsDelete == false && sa.InterviewSession.InterviewDate.Date == date.Date)
+                .Where(sa => sa.ApplicationId == applicationId && sa.InterviewSession.IsDelete == false && sa.InterviewSession.InterviewDate == date)
                 .FirstOrDefaultAsync();
         }
 

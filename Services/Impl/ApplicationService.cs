@@ -43,6 +43,17 @@ namespace Services.Impl
                 throw new Exception("Công việc không tồn tại");
             }
 
+            var listA = await repository.GetApplicationByUserIdAsync(user.Id);
+            foreach (var item in listA) {
+                if (item.JobId == applicationCreateDTO.JobId) {
+                    throw new Exception("Bạn đã apply vào job này rồi");
+                }
+            }
+            if (job.Amount == 0)
+            {
+                throw new Exception("Đ tuyển nữa");
+            }
+
             var userSkills = user.UserSkills.Select(us => us.SkillId).ToList();
             var jobSkills = job.JobSkills.Select(js => js.SkillId).ToList();
 
@@ -100,6 +111,20 @@ namespace Services.Impl
             }
 
             var updated = await repository.UpdateApplicationAsync(application);
+            if (updated.Status.Equals("PASS"))
+            {
+                var job = await jobRepository.GetJobByIdAsync(updated.JobId);
+                if (job == null)
+                {
+                    return null;
+                }
+                if (job.Amount > 0)
+                {
+                    job.Amount = job.Amount - 1; 
+                }
+                var updatedJob = await jobRepository.UpdateJobAsync(job);
+
+            }
             
             var applicantEmail = application.User.Email;
 
