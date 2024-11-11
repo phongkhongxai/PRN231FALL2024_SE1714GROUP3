@@ -11,12 +11,8 @@
       "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\controllers\\resumescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|e:\\prn231\\prn231fall2024_se1714group3\\businessobjects\\dto\\resumedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\dto\\resumedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|e:\\prn231\\prn231fall2024_se1714group3\\businessobjects\\entity\\resume.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9C2051B-11AD-4859-AA9B-0EA58A1627ED}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\entity\\resume.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|e:\\prn231\\prn231fall2024_se1714group3\\recuitment_group3\\infrastructure\\globalexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD4A9A0-5830-4B77-8861-37A6F98FD9AA}|Recuitment_Group3\\Recuitment_Group3.csproj|solutionrelative:recuitment_group3\\infrastructure\\globalexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,39 +54,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Resume.cs",
-              "DocumentMoniker": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\Resume.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Entity\\Resume.cs",
-              "ToolTip": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\Entity\\Resume.cs",
-              "RelativeToolTip": "BusinessObjects\\Entity\\Resume.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBgAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T09:02:49.678Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ResumeDTO.cs",
-              "DocumentMoniker": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\ResumeDTO.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\DTO\\ResumeDTO.cs",
-              "ToolTip": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\BusinessObjects\\DTO\\ResumeDTO.cs",
-              "RelativeToolTip": "BusinessObjects\\DTO\\ResumeDTO.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Title": "GlobalExceptionHandler.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Infrastructure\\GlobalExceptionHandler.cs",
+              "RelativeDocumentMoniker": "Recuitment_Group3\\Infrastructure\\GlobalExceptionHandler.cs",
+              "ToolTip": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Infrastructure\\GlobalExceptionHandler.cs",
+              "RelativeToolTip": "Recuitment_Group3\\Infrastructure\\GlobalExceptionHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T09:00:55.736Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ResumeService.cs",
-              "DocumentMoniker": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\ResumeService.cs",
-              "RelativeDocumentMoniker": "Services\\Impl\\ResumeService.cs",
-              "ToolTip": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\ResumeService.cs",
-              "RelativeToolTip": "Services\\Impl\\ResumeService.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAADwv4gAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T18:26:12.816Z",
+              "WhenOpened": "2024-11-11T09:38:23.454Z",
               "EditorCaption": ""
             },
             {
@@ -101,9 +73,22 @@
               "RelativeDocumentMoniker": "Recuitment_Group3\\Controllers\\ResumesController.cs",
               "ToolTip": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Recuitment_Group3\\Controllers\\ResumesController.cs",
               "RelativeToolTip": "Recuitment_Group3\\Controllers\\ResumesController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwJQAAABiAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T18:25:40.904Z",
+              "WhenOpened": "2024-11-11T09:33:52.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ResumeService.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\ResumeService.cs",
+              "RelativeDocumentMoniker": "Services\\Impl\\ResumeService.cs",
+              "ToolTip": "E:\\PRN231\\PRN231FALL2024_SE1714GROUP3\\Services\\Impl\\ResumeService.cs",
+              "RelativeToolTip": "Services\\Impl\\ResumeService.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAuwIcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T09:33:45.257Z",
               "EditorCaption": ""
             }
           ]

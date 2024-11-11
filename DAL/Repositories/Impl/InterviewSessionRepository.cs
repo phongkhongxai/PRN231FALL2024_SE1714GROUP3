@@ -3,8 +3,10 @@ using DAL.DbContenxt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DAL.Repositories.Impl
 {
@@ -64,6 +66,22 @@ namespace DAL.Repositories.Impl
         {
             return await InterviewSessionDAO.Instance.GetActiveSessionByApplicationIdAsync(applicationId, date);
 
+        }
+
+        public async Task<bool> UpdateSessionApplicationStatusAsync(long sessionId, long applicationId, string result, string status)
+        {
+            return await InterviewSessionDAO.Instance.UpdateSessionApplicationStatusAsync(sessionId, applicationId, result, status);
+
+        }
+
+        public async Task<IEnumerable<SessionInterviewer>> GetInterviewerSessionsScheduleAsync(long interviewerId)
+        {
+            return await InterviewSessionDAO.Instance.GetInterviewerSessionsScheduleAsync(interviewerId);
+        }
+
+        public async Task<IEnumerable<SessionApplication>> GetApplicantSessionsScheduleAsync(long applicationId)
+        {
+            return await InterviewSessionDAO.Instance.GetApplicantSessionsScheduleAsync(applicationId); 
         }
     }
 }

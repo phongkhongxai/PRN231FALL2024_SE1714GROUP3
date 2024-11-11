@@ -3,29 +3,32 @@ using BusinessObjects.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
 using Services;
 using Services.Impl;
 
 namespace Recuitment_Group3.Controllers
 {
-    [Authorize]
-    [Route("api/[controller]")]
+    //[Authorize]
+    [Route("odata/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserController : ODataController
     {
         private IUserService userService;
         public UserController (IUserService userService)
         {
             this.userService = userService;
         }
+        [EnableQuery]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserDTO>>> GetAllUsers()
+        public async Task<ActionResult<IEnumerable<UserResponseDTO>>> GetAllUsers()
         {
             var users = await userService.GetAllUsers();
             return Ok(users);
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserDTO>> GetUserById([FromRoute] long id)
+        public async Task<ActionResult<UserResponseDTO>> GetUserById([FromRoute] long id)
         {
             var user = await userService.GetUserById(id);
             if (user == null)
@@ -33,6 +36,23 @@ namespace Recuitment_Group3.Controllers
                 return NotFound();
             }
             return Ok(user);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "1")]
+        public async Task<IActionResult> CreateUser([FromBody] UserCreateDTO userCreateDTO)
+        {
+            if(userCreateDTO.RoleId != 2 && userCreateDTO.RoleId != 4)
+            {
+                return BadRequest("Only Interviewer and HR roles can be created.");
+            }
+
+            var userCreate = await userService.CreateUser(userCreateDTO);
+            if(userCreate != null)
+            {
+                return Ok(userCreate);
+            }
+            return BadRequest();
         }
 
         [HttpPut("{id}")]

@@ -20,7 +20,7 @@ namespace DAL.DbContenxt
                 {
                     instance = new UserDAO();
                 }
-                return instance; 
+                return instance;
             }
         }
         public async Task<User> GetUserById(long id)
@@ -28,18 +28,33 @@ namespace DAL.DbContenxt
             using var db = new RecuitmentDbContext();
             return db.Users.Include(u => u.Role)
                 .Include(u => u.Resumes)
-                .Include(u => u.Applications) 
-                .Include(u => u.UserSkills)
-                .FirstOrDefault(u => u.Id == id && !u.IsDelete);
+                .Include(u => u.Applications)
+                .Include(j => j.UserSkills)
+                    .ThenInclude(js => js.Skill).
+                FirstOrDefault(u => u.Id == id && !u.IsDelete);
         }
         public async Task<List<User>> GetAllUsers()
         {
             using var db = new RecuitmentDbContext();
             return await db.Users.Include(u => u.Role)
                 .Include(u => u.Resumes)
-                .Include(u => u.Applications) 
-                .Include(u => u.UserSkills)
+                .Include(u => u.Applications)
+                .Include(j => j.UserSkills)
+                    .ThenInclude(js => js.Skill)
                 .Where(u => !u.IsDelete).ToListAsync();
+        }
+
+        public async Task<User> CreateUser(User user)
+        {
+            using var db = new RecuitmentDbContext();
+            var exist = await db.Users.FirstOrDefaultAsync(c => c.Id == user.Id);
+            if(exist != null)
+            {
+                throw new Exception("User already exists");
+            }
+            await db.Users.AddAsync(user);
+            await db.SaveChangesAsync();
+            return user;
         }
 
         public async Task<User> UpdateUser(User user)
@@ -58,9 +73,9 @@ namespace DAL.DbContenxt
             {
                 return false;
             }
-                user.IsDelete = true;
-                db.Entry(user).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+            user.IsDelete = true;
+            db.Entry(user).State = EntityState.Modified;
+            await db.SaveChangesAsync();
             return true;
         }
 
@@ -69,6 +84,83 @@ namespace DAL.DbContenxt
             var db = new RecuitmentDbContext();
             return await db.Users.FirstOrDefaultAsync(c => c.Email == email);
         }
+
+
+        public async Task<bool> AddSkillForUser(long userId, long skillId, string? experiences = null)
+        {
+            using var db = new RecuitmentDbContext();
+            var user = await db.Users.Include(u => u.UserSkills)
+                                     .FirstOrDefaultAsync(u => u.Id == userId && !u.IsDelete);
+
+            if (user == null)
+            {
+                throw new KeyNotFoundException("User not found.");
+            }
+
+            var skill = await db.Skills.FirstOrDefaultAsync(s => s.Id == skillId && !s.IsDelete);
+            if (skill == null)
+            {
+                throw new KeyNotFoundException("Skill not found.");
+            }
+            var existingUserSkill = await db.UserSkills.FirstOrDefaultAsync(us => us.UserId == userId && us.SkillId == skillId);
+
+            //if (user.UserSkills.Any(js => js.SkillId != skillId))
+            if (existingUserSkill == null)
+            {
+                var userSkill = new UserSkill
+                {
+                    UserId = user.Id,
+                    SkillId = skill.Id,
+                    Experiences = experiences
+                };
+
+                user.UserSkills.Add(userSkill);
+                //throw new InvalidOperationException("Skill already exists.");
+            }
+            else
+            {
+                existingUserSkill.Experiences = experiences;
+                //db.Entry(existingUserSkill).State = EntityState.Modified;
+            }
+
+
+
+            db.Users.Update(user);
+
+            await db.SaveChangesAsync();
+            return true;
+        }
+
+
+        public async Task<bool> RemoveSkill(long userId, long skillId)
+        {
+            using (var _context = new RecuitmentDbContext())
+            {
+                var user = await _context.Users
+                    .Include(j => j.UserSkills)
+                    .FirstOrDefaultAsync(j => j.Id == userId && !j.IsDelete);
+                if (user == null)
+                {
+                    throw new KeyNotFoundException("User not found.");
+                }
+
+                var userSkill = user.UserSkills.FirstOrDefault(js => js.SkillId == skillId);
+                if (userSkill == null)
+                {
+                    throw new InvalidOperationException("Skill does not exist in the User.");
+                }
+
+                user.UserSkills.Remove(userSkill);
+                _context.UserSkills.Remove(userSkill);
+
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+        }
+
+
+
 
         public async Task<bool> ChangePassword(long userId, string currentPassword, string newPassword)
         {
@@ -96,6 +188,7 @@ namespace DAL.DbContenxt
             return true;
         }
 
+
         private string HashPassword(string password)
         {
             using (var sha256 = SHA256.Create())
@@ -109,6 +202,9 @@ namespace DAL.DbContenxt
                 return builder.ToString();
             }
         }
+
+
+
 
     }
 }

@@ -17,23 +17,56 @@ namespace Services.Impl
         IJobRepository jobRepository;
         IUserRepository userRepository;
         private readonly IMapper mapper;
+        private readonly IEmailService emailService;
 
-        public ApplicationService(IApplicationRepository repository, IJobRepository jobRepository, IUserRepository userRepository, IMapper mapper)
+        public ApplicationService(IApplicationRepository repository, IJobRepository jobRepository, IUserRepository userRepository, IMapper mapper, IEmailService emailService)
         {
             this.repository = repository;
             this.jobRepository = jobRepository;
             this.userRepository = userRepository;
             this.mapper = mapper;
+            this.emailService = emailService;
         }
         public async Task<ApplicationDTO> CreateApplicationAsync(ApplicationCreateDTO applicationCreateDTO)
         {
             var application = mapper.Map<Application>(applicationCreateDTO);
             var user = await userRepository.GetUserByIdAsync(applicationCreateDTO.UserId);
             var job = await jobRepository.GetJobByIdAsync(applicationCreateDTO.JobId);
-            if (job == null || user == null) return null;
+
+            if (user == null)
+            {
+                throw new Exception("Người dùng không tồn tại");
+            }
+
+            if (job == null)
+            {
+                throw new Exception("Công việc không tồn tại");
+            }
+
+            var listA = await repository.GetApplicationByUserIdAsync(user.Id);
+            foreach (var item in listA) {
+                if (item.JobId == applicationCreateDTO.JobId) {
+                    throw new Exception("Bạn đã apply vào job này rồi");
+                }
+            }
+            if (job.Amount == 0)
+            {
+                throw new Exception("Đ tuyển nữa");
+            }
+
+            var userSkills = user.UserSkills.Select(us => us.SkillId).ToList();
+            var jobSkills = job.JobSkills.Select(js => js.SkillId).ToList();
+
+            if (!jobSkills.All(skillId => userSkills.Contains(skillId)))
+            {
+                throw new Exception("Không đủ điều kiện về kỹ năng để apply");
+            }
+
             var created = await repository.CreateApplicationAsync(application);
             return mapper.Map<ApplicationDTO>(created);
         }
+
+
 
         public async Task<bool> DeleteApplicationAsync(long id)
         {
@@ -78,6 +111,27 @@ namespace Services.Impl
             }
 
             var updated = await repository.UpdateApplicationAsync(application);
+            if (updated.Status.Equals("PASS"))
+            {
+                var job = await jobRepository.GetJobByIdAsync(updated.JobId);
+                if (job == null)
+                {
+                    return null;
+                }
+                if (job.Amount > 0)
+                {
+                    job.Amount = job.Amount - 1; 
+                }
+                var updatedJob = await jobRepository.UpdateJobAsync(job);
+
+            }
+            
+            var applicantEmail = application.User.Email;
+
+            var subject = "Application Status Updated";
+            var body = $"Dear {application.User.FullName},<br>Your application status has been updated to: <strong>{application.Status}</strong>.";
+            await emailService.SendMailAsync(applicantEmail, subject, body);
+
             return mapper.Map<ApplicationDTO>(updated);
         }
     }

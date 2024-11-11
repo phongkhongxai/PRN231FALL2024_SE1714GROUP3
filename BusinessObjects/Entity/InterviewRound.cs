@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace BusinessObjects.Entity
 {
@@ -16,8 +17,10 @@ namespace BusinessObjects.Entity
         public long JobId { get; set; }
         public int RoundNumber { get; set; }
         public string RoundName { get; set; } 
+        public string Status { get; set; }
         public string Description { get; set; } 
-        public bool IsDelete { get; set; } = false; 
+        public bool IsDelete { get; set; } = false;
+        [JsonIgnore]
         public Job Job { get; set; }
         public ICollection<InterviewSession> InterviewSessions { get; set; } = new List<InterviewSession>(); 
 

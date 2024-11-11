@@ -113,7 +113,7 @@ namespace Recuitment_Group3.Controllers
         }
 
         [HttpPost("")]
-        [Authorize(Roles = "1,2")]
+        [Authorize(Roles = "1,3")]
         public async Task<ActionResult<ResponseResumeDTO>> CreateCV([FromBody] ResumeDTO resume)
         {
             try
@@ -134,7 +134,8 @@ namespace Recuitment_Group3.Controllers
                 // 2. Convert HTML to PDF using DinkToPdf
                 var pdfFile = ConvertHtmlToPdf(htmlContent);
                 // 3. Generate a unique filename
-                string fileName = $"Resume_{Guid.NewGuid().ToString("N")}.pdf";
+                string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                string fileName = $"Resume_{user.FullName.Replace(" ", "_")}_{timestamp}.pdf";
 
                 // 4. Ensure the directory exists
                 Directory.CreateDirectory(_pdfSavePath);

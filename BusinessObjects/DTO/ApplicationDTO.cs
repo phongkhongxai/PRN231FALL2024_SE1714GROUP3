@@ -12,6 +12,6 @@ namespace BusinessObjects.DTO
         public string Status { get; set; }
         public UserDTO User { get; set; }
         public JobDTO Job { get; set; }
-        //public ResumeDTO Resume { get; set; }
+        public ResponseResumeDTO ResponseResumeDTO { get; set; }
     }
 }

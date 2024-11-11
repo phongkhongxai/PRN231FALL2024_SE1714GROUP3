@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using BusinessObjects.DTO;
+using BusinessObjects.Entity;
 using DAL.DbContenxt;
 using DAL.Repositories;
+using DAL.Repositories.Impl;
 
 namespace Services.Impl
 {
@@ -16,16 +18,16 @@ namespace Services.Impl
             this.mapper = mapper;
         }
 
-        public async Task<UserDTO> GetUserById(long id)
+        public async Task<UserResponseDTO> GetUserById(long id)
         {
             var user = await userRepository.GetUserByIdAsync(id);
-            return mapper.Map<UserDTO>(user);
+            return mapper.Map<UserResponseDTO>(user);
         }
 
-        public async Task<List<UserDTO>> GetAllUsers()
+        public async Task<List<UserResponseDTO>> GetAllUsers()
         {
             var user = await userRepository.GetAllUsers();
-            return mapper.Map<List<UserDTO>>(user);
+            return mapper.Map<List<UserResponseDTO>>(user);
         }
 
         public async Task<UserDTO> UpdateUser(long id, UserUpdateDTO userDTO)
@@ -33,9 +35,9 @@ namespace Services.Impl
             var user = await userRepository.GetUserByIdAsync(id);
             if (user != null)
             {
-                if (userDTO.Email != null)
+                if (userDTO.Username != null)
                 {
-                    user.Email= userDTO.Email;
+                    user.Username = userDTO.Username;
                 }
                 if (userDTO.Address != null)
                 {
@@ -49,6 +51,32 @@ namespace Services.Impl
                 {
                     user.Gender = userDTO.Gender;
                 }
+                if (userDTO.RoleId != 0)
+                {
+                    user.RoleId = userDTO.RoleId;
+                }
+                 user.IsDelete = userDTO.IsDelete;
+                if (userDTO.SkillIds != null)
+                {
+                    foreach (var skillToAdd in userDTO.SkillIds)
+                    {
+                        if (!user.UserSkills.Any(s => s.SkillId == skillToAdd.SkillId))
+                        {
+                            await userRepository.AddUserSkill(user.Id, skillToAdd.SkillId, skillToAdd.Experiences);
+                        }
+                    }
+
+                    var skillsToRemove = user.UserSkills
+                        .Where(s => !userDTO.SkillIds.Any(sa => sa.SkillId == s.SkillId))
+                        .ToList();
+
+                    foreach (var skill in skillsToRemove)
+                    {
+                        await userRepository.RemoveSkill(user.Id, skill.SkillId);
+                    }
+                }
+
+
                 var updated = await userRepository.UpdateUser(user);
                 return mapper.Map<UserDTO>(updated);
             }
@@ -78,6 +106,15 @@ namespace Services.Impl
         public async Task<bool> ChangePassword(long id, ChangePasswordDTO changePasswordDTO)
         {
             return await userRepository.ChangePassword(id, changePasswordDTO.currentPassword, changePasswordDTO.newPassword);
+        }
+
+        public async Task<UserDTO> CreateUser(UserCreateDTO userDTO)
+        {
+            var user = mapper.Map<User>(userDTO);
+
+            var createdUser = await userRepository.CreateUser(user);
+
+            return mapper.Map<UserDTO>(createdUser);
         }
     }
 }

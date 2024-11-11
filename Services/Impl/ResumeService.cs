@@ -131,6 +131,10 @@ namespace Services.Impl
         public async Task<ResponseResumeDTO> GetResumeByIdAsync(long id)
         {
             var resumes = await _resumeRepository.GetResumeByIdAsync(id);
+            if(resumes == null)
+            {
+                throw new Exception("resume not found");
+            }
             // Chuyển đổi JSON thành danh sách đối tượng WorkExperienceDTO
             var workExperiences = !string.IsNullOrEmpty(resumes.ExperiencesJson)
             ? JsonConvert.DeserializeObject<List<WorkExperienceDTO>>(resumes.ExperiencesJson)

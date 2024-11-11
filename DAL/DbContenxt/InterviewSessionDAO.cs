@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DAL.DbContenxt
 {
@@ -43,6 +44,8 @@ namespace DAL.DbContenxt
                 return await _context.InterviewSessions
                     .Include(iss => iss.InterviewRound)
                     .Include(iss => iss.SessionApplications)
+                        .ThenInclude(sa => sa.Application)
+                            .ThenInclude(app => app.User)
                     .Include(iss => iss.SessionInterviewers)
                     .FirstOrDefaultAsync(iss => iss.Id == id && !iss.IsDelete);
             }
@@ -65,7 +68,7 @@ namespace DAL.DbContenxt
         {
             using (var _context = new RecuitmentDbContext())
             {
-                interviewSession.InterviewDate = DateTime.UtcNow;
+                //interviewSession.InterviewDate = DateTime.UtcNow;
                 _context.InterviewSessions.Add(interviewSession);
                 await _context.SaveChangesAsync();
                 return interviewSession;
@@ -237,7 +240,7 @@ namespace DAL.DbContenxt
                 var _context = new RecuitmentDbContext();
                 return await _context.SessionInterviewers
                 .Include(si => si.InterviewSession)
-                .Where(si => si.UserId == interviewerId && si.InterviewSession.IsDelete == false && si.InterviewSession.InterviewDate.Date == date.Date)
+                .Where(si => si.UserId == interviewerId && si.InterviewSession.IsDelete == false && si.InterviewSession.InterviewDate == date)
                 .FirstOrDefaultAsync();
         }
         public async Task<SessionApplication?> GetActiveSessionByApplicationIdAsync(long applicationId, DateTime date)
@@ -245,8 +248,52 @@ namespace DAL.DbContenxt
             var _context = new RecuitmentDbContext();
             return await _context.SessionApplications
                 .Include(sa => sa.InterviewSession)
-                .Where(sa => sa.ApplicationId == applicationId && sa.InterviewSession.IsDelete == false && sa.InterviewSession.InterviewDate.Date == date.Date)
+                .Where(sa => sa.ApplicationId == applicationId && sa.InterviewSession.IsDelete == false && sa.InterviewSession.InterviewDate == date)
                 .FirstOrDefaultAsync();
+        }
+
+        public async Task<bool> UpdateSessionApplicationStatusAsync(long sessionId, long applicationId, string result, string status)
+        {
+            using (var _context = new RecuitmentDbContext())
+            {
+                var sessionApplication = await _context.SessionApplications
+                    .FirstOrDefaultAsync(sa => sa.InterviewSessionId == sessionId && sa.ApplicationId == applicationId);
+
+                if (sessionApplication == null)
+                {
+                    throw new KeyNotFoundException("Session application not found.");
+                }
+
+                sessionApplication.Result = result;
+                sessionApplication.Status = status;
+
+                _context.Entry(sessionApplication).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+        }
+
+        public async Task<IEnumerable<SessionInterviewer>> GetInterviewerSessionsScheduleAsync(long interviewerId)
+        {
+            var _context = new RecuitmentDbContext();
+            return await _context.SessionInterviewers
+                .Where(sa => sa.UserId == interviewerId)
+                .Include(sa => sa.InterviewSession)
+                .ThenInclude(session => session.InterviewRound)
+                    .ThenInclude(round => round.Job)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<SessionApplication>> GetApplicantSessionsScheduleAsync(long applicationId)
+        {
+            var _context = new RecuitmentDbContext(); 
+            return await _context.SessionApplications
+                .Where(sa => sa.ApplicationId == applicationId)
+                .Include(sa => sa.InterviewSession)
+                .ThenInclude(session => session.InterviewRound)
+                    .ThenInclude(round => round.Job)
+                .ToListAsync();
         }
 
 

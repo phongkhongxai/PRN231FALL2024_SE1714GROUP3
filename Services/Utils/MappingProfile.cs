@@ -1,5 +1,5 @@
 ﻿using BusinessObjects.DTO;
-using BusinessObjects.Entity; 
+using BusinessObjects.Entity;
 using AutoMapper;
 using BusinessObjects.DTOs;
 
@@ -10,21 +10,44 @@ namespace Services.Utils
         public MappingProfile()
         {
             CreateMap<User, UserDTO>();
-            CreateMap<UserDTO, User>(); 
+            CreateMap<UserDTO, User>();
+            CreateMap<UserResponseDTO, User>();
+            CreateMap<User, UserResponseDTO>();
             CreateMap<UserUpdateDTO, User>();
+            CreateMap<UserCreateDTO, User>();
             CreateMap<Job, JobDTO>()
+
             .ForMember(dest => dest.JobSkills, opt => opt.MapFrom(src => src.JobSkills.Select(js => new JobSkillDTO
             {
                 SkillId = js.SkillId,
-                SkillName = js.Skill.Name,  
+                SkillName = js.Skill.Name,
                 Experiences = js.Experiences
             })));
 
+            CreateMap<User, UserResponseDTO>()
+            .ForMember(dest => dest.UserSkills, opt => opt.MapFrom(src => src.UserSkills.Select(js => new UserSkillDTO
+            {
+                SkillId = js.SkillId,
+                SkillName = js.Skill.Name,
+                Experiences = js.Experiences
+            })));
+
+            //CreateMap<Application, ApplicationDTO>()
+            //    .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User))
+            //    .ForMember(dest => dest.Job, opt => opt.MapFrom(src => src.Job))
+            //    //.ForMember(dest => dest.Resume, opt => opt.MapFrom(src => src.Resume))
+            //    .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
+
             CreateMap<Application, ApplicationDTO>()
-                .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User))
-                .ForMember(dest => dest.Job, opt => opt.MapFrom(src => src.Job))
-                //.ForMember(dest => dest.Resume, opt => opt.MapFrom(src => src.Resume))
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
+            .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User))
+            .ForMember(dest => dest.Job, opt => opt.MapFrom(src => src.Job))
+            .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
+            .ForMember(dest => dest.ResponseResumeDTO, opt => opt.MapFrom(src => new ResponseResumeDTO
+            {
+                Id = src.Resume.Id,
+                UserId = src.Resume.UserId,
+                FilePath = src.Resume.FilePath
+            }));
 
             CreateMap<JobCreateDTO, Job>();
             CreateMap<JobUpdatedDTO, Job>();
@@ -51,7 +74,7 @@ namespace Services.Utils
 
             CreateMap<SessionInterviewer, SessionInterviewerDTO>()
                 .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User));
-             
+
 
 
 

@@ -22,5 +22,12 @@ namespace DAL.Repositories.Impl
         {
             return UserDAO.Instance.FindByEmail(email);
         }
+        public Task<bool> AddUserSkill(long id, long skillId, string? ex) => UserDAO.Instance.AddSkillForUser(id, skillId,ex);
+        public async Task<bool> RemoveSkill(long userId, long skillId) => await UserDAO.Instance.RemoveSkill(userId, skillId);
+
+        public Task<User> CreateUser(User user)
+        {
+            return UserDAO.Instance.CreateUser(user);
+        }
     }
 }
