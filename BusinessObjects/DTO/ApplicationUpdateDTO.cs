@@ -9,6 +9,6 @@ namespace BusinessObjects.DTO
     public class ApplicationUpdateDTO
     {
         public string? Status { get; set; }
-        public string? Reason { get; set; }
+        //public string? Reason { get; set; }
     }
 }
