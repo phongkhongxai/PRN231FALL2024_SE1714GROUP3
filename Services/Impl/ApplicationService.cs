@@ -127,9 +127,30 @@ namespace Services.Impl
             }
             
             var applicantEmail = application.User.Email;
-
             var subject = "Application Status Updated";
-            var body = $"Dear {application.User.FullName},<br>Your application status has been updated to: <strong>{application.Status}</strong>.";
+            var body = $@"
+    <div style='font-family: Arial, sans-serif; padding: 20px;'>
+        <h2 style='color: #333;'>Application Status Update</h2>
+        <p>Dear <strong>{application.User.FullName}</strong>,</p>
+        <p>Your application status has been updated to:</p>
+        <p style='font-size: 18px; color: {(!application.Status.Equals("PASS") ? "#dc3545" : "#007bff")};'>
+            <strong>{application.Status}</strong>
+        </p>";
+
+            if (!application.Status.Equals("PASS"))
+            {
+                body += @"
+        <p>Unfortunately, your application did not meet the required criteria this time. We encourage you to apply for future opportunities that match your skills and interests.</p>
+        <p>We greatly appreciate your time and effort, and we hope to see your application again soon.</p>";
+            }
+
+            body += @"
+        <br>
+        <p>Best regards,</p>
+        <p><strong>Group 3 Company</strong></p>
+    </div>
+";
+
             await emailService.SendMailAsync(applicantEmail, subject, body);
 
             return mapper.Map<ApplicationDTO>(updated);
